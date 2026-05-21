@@ -36,7 +36,7 @@ function Stat({ n, l }) {
 export default function Hero({ onCTA, variant }) {
   const ROLES = [
     "follows data.",
-    "ships the code.",
+    "writes code.",
     "leads projects.",
     "trains teams.",
   ];
