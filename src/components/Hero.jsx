@@ -161,9 +161,9 @@ export default function Hero({ onCTA, variant }) {
             marginBottom: 40,
           }}
         >
-          I'm Hannah — a Google-certified UX designer and full-stack developer.
-          I take projects from research to production: Figma to React, brief to
-          live build. One person, end-to-end.
+          Hi, I'm Hannah. I work across research, design, and development for
+          small teams who want continuity, clarity, and a personal approach to
+          their products.
         </p>
 
         {/* CTAs */}
@@ -181,22 +181,45 @@ export default function Hero({ onCTA, variant }) {
 
         {/* Stats row */}
         {variant !== "minimal" && (
-          <div
-            className="reveal hero-evidence"
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 0,
-              marginTop: 96,
-              paddingTop: 28,
-              borderTop: "1px solid var(--border)",
-            }}
-          >
-            <Stat n="20+" l="Projects shipped" />
-            <Stat n="08" l="Live retainers" />
-            <Stat n="03" l="Training partners" />
-            <Stat n="02 yrs" l="Solo studio" />
-          </div>
+          <>
+            <div
+              className="reveal"
+              style={{
+                marginTop: 96,
+                paddingTop: 28,
+                borderTop: "1px solid var(--border)",
+              }}
+            >
+              <p
+                style={{
+                  fontFamily: "var(--font-mono)",
+                  fontSize: 11,
+                  letterSpacing: "0.12em",
+                  textTransform: "uppercase",
+                  color: "var(--fg-3)",
+                  margin: "0 0 28px 0",
+                }}
+              >
+                Two years. One studio. Real impact.
+              </p>
+            </div>
+
+            <div
+              className="reveal hero-evidence"
+              style={{
+                display: "grid",
+                gridTemplateColumns: "repeat(4, 1fr)",
+                gap: 0,
+                borderTop: "1px solid var(--border)",
+                paddingTop: 28,
+              }}
+            >
+              <Stat n="20+" l="Projects shipped" />
+              <Stat n="08" l="Live retainers" />
+              <Stat n="03" l="Training partners" />
+              <Stat n="02 yrs" l="Solo studio" />
+            </div>
+          </>
         )}
       </div>
 

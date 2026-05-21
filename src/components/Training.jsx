@@ -46,7 +46,7 @@ export default function Training() {
               }}
             >
               I deliver digital-skills training to small business owners across
-              North Yorkshire — on behalf of three regional partners — alongside
+              North Yorkshire on behalf of three regional partners, alongside
               client work.
             </p>
 
