@@ -174,7 +174,7 @@ export default function Contact() {
             </div>
             <h2>Working on something interesting?</h2>
           </div>
-          <span className="meta">/ 05</span>
+          <span className="meta">/ 06</span>
         </div>
 
         <div

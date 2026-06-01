@@ -22,7 +22,7 @@ export default function Training() {
             </div>
             <h2>Certified to design. Trusted to teach.</h2>
           </div>
-          <span className="meta">/ 03</span>
+          <span className="meta">/ 04</span>
         </div>
 
         <div
