@@ -144,7 +144,17 @@ export default function Footer() {
           color: "var(--fg-4)",
         }}
       >
-        <span>HF Design · Jorvik Web Dev © 2026</span>
+        <span>
+          HF Design ·{" "}
+          <a
+            href="https://www.jorvikweb.dev"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Jorvik Web Dev
+          </a>{" "}
+          © 2026
+        </span>
         <span>Designed and built by Hannah Feehan in York</span>
       </div>
     </footer>
