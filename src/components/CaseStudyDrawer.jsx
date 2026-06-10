@@ -360,6 +360,188 @@ export default function CaseStudyDrawer({ entry, onClose }) {
             </ol>
           </div>
 
+          {/* Body content */}
+          {entry.body && entry.body.length > 0 && (
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                gap: 32,
+                paddingTop: 8,
+                borderTop: "1px solid var(--border)",
+              }}
+            >
+              {entry.body.map((block, i) => {
+                if (block.kind === "eyebrow-h")
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 8,
+                      }}
+                    >
+                      <div className="eyebrow">{block.label}</div>
+                      <h3
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          fontSize: "clamp(20px, 2.4vw, 28px)",
+                          fontWeight: 700,
+                          letterSpacing: "-0.02em",
+                          lineHeight: 1.15,
+                          margin: 0,
+                          color: "var(--fg-1)",
+                          textWrap: "balance",
+                        }}
+                      >
+                        {block.title}
+                      </h3>
+                    </div>
+                  );
+                if (block.kind === "p")
+                  return (
+                    <p
+                      key={i}
+                      style={{
+                        fontSize: 16,
+                        lineHeight: 1.65,
+                        color: "var(--fg-2)",
+                        margin: 0,
+                        maxWidth: "62ch",
+                      }}
+                    >
+                      {block.text}
+                    </p>
+                  );
+                if (block.kind === "pull-quote")
+                  return (
+                    <blockquote
+                      key={i}
+                      style={{
+                        borderLeft: `3px solid ${entry.accent}`,
+                        paddingLeft: 20,
+                        margin: 0,
+                      }}
+                    >
+                      <p
+                        style={{
+                          fontFamily: "var(--font-display)",
+                          fontSize: "clamp(18px, 2vw, 22px)",
+                          lineHeight: 1.4,
+                          color: "var(--fg-1)",
+                          fontStyle: "italic",
+                          margin: 0,
+                        }}
+                      >
+                        {block.text}
+                      </p>
+                    </blockquote>
+                  );
+                if (block.kind === "list")
+                  return (
+                    <ul
+                      key={i}
+                      style={{
+                        listStyle: "none",
+                        padding: 0,
+                        margin: 0,
+                        display: "flex",
+                        flexDirection: "column",
+                        gap: 12,
+                      }}
+                    >
+                      {block.items.map((item, j) => (
+                        <li
+                          key={j}
+                          style={{
+                            display: "grid",
+                            gridTemplateColumns: "20px 1fr",
+                            gap: 12,
+                            alignItems: "baseline",
+                          }}
+                        >
+                          <span
+                            style={{
+                              width: 5,
+                              height: 5,
+                              borderRadius: 999,
+                              background: entry.accent,
+                              display: "block",
+                              marginTop: 8,
+                            }}
+                          />
+                          <p
+                            style={{
+                              fontSize: 15,
+                              lineHeight: 1.6,
+                              color: "var(--fg-2)",
+                              margin: 0,
+                            }}
+                          >
+                            {item}
+                          </p>
+                        </li>
+                      ))}
+                    </ul>
+                  );
+                if (block.kind === "metrics-row")
+                  return (
+                    <div
+                      key={i}
+                      style={{
+                        display: "grid",
+                        gridTemplateColumns: `repeat(${block.items.length}, 1fr)`,
+                        gap: 1,
+                        background: "var(--border)",
+                        border: "1px solid var(--border)",
+                        borderRadius: "var(--r-3)",
+                        overflow: "hidden",
+                      }}
+                    >
+                      {block.items.map((m) => (
+                        <div
+                          key={m.label}
+                          style={{
+                            display: "flex",
+                            flexDirection: "column",
+                            gap: 8,
+                            padding: 24,
+                            background: "var(--bg-2)",
+                          }}
+                        >
+                          <span
+                            style={{
+                              fontFamily: "var(--font-display)",
+                              fontWeight: 700,
+                              fontSize: 32,
+                              letterSpacing: "-0.02em",
+                              color: "var(--fg-1)",
+                              lineHeight: 1,
+                            }}
+                          >
+                            {m.value}
+                          </span>
+                          <span
+                            style={{
+                              fontFamily: "var(--font-mono)",
+                              fontSize: 11,
+                              letterSpacing: "0.08em",
+                              textTransform: "uppercase",
+                              color: "var(--fg-3)",
+                            }}
+                          >
+                            {m.label}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  );
+                return null;
+              })}
+            </div>
+          )}
+
           {/* Footer CTA */}
           <div
             style={{

@@ -65,8 +65,8 @@ export default function About() {
             >
               I'm Hannah — a UX designer based in York who codes, and a
               developer who designs. I take projects from research through to
-              live Webflow or Next.js, then stay on as a retainer when there's
-              reason to.
+              live Webflow or Next.js products, and work with clients as a web
+              consultant and trainer.
             </p>
             <p
               style={{
@@ -78,10 +78,8 @@ export default function About() {
               }}
             >
               The brief I keep getting is the same: small teams or product
-              owners need design and the build, and would rather not coordinate
-              two people across timezones. By doing both, I maintain continuity
-              across the project and develop a deep understanding of the product
-              and the company{" "}
+              owners need research, designs and the build, and would rather not
+              coordinate more than two people across timezones. By doing
               <em
                 style={{
                   color: "var(--fg-1)",
@@ -89,9 +87,10 @@ export default function About() {
                   borderBottom: "1px solid var(--fg-4)",
                 }}
               >
-                and
+                all three
               </em>{" "}
-              develop a deep understanding of the product and the company.
+              I get properly embedded in the product and the business — which,
+              it turns out, makes everything better.
             </p>
             <p
               style={{
@@ -102,10 +101,10 @@ export default function About() {
                 maxWidth: "54ch",
               }}
             >
-              You can't create a good design without real research, and I
-              genuinely enjoy the building process too. It's extremely
-              satisfying to reflect back on the research and see the end product
-              come together.
+              Good design needs real research behind it. I also genuinely enjoy
+              the build side, which is lucky, because I do a lot of it. There's
+              something satisfying about going back to those early sticky notes
+              and seeing how it all shook out in the final product.
             </p>
 
             <p
@@ -117,10 +116,10 @@ export default function About() {
                 maxWidth: "54ch",
               }}
             >
-              When I'm not shipping client work, I train small-business owners
-              across North Yorkshire in digital skills. These include UX design,
-              e-commerce, data-driven decision making, and I do this on behalf
-              of three regional partners.
+              When I'm not on client work, I inflict digital skills training on
+              small business owners across North Yorkshire — UX design,
+              e-commerce, data-driven decision making — through three regional
+              partners. They seem to enjoy it.
             </p>
 
             <div
@@ -146,30 +145,31 @@ export default function About() {
                   color: "var(--fg-1)",
                 }}
               >
-                Research first. I absorb myself in everything user-related. I
-                use empathy maps extensively, then apply that thinking to
-                personas and user journeys. <br />
-                <br />I constantly ask myself: "What do I want from this
-                product?" and "Am I achieving my goal here?" Design with
-                intention. <br />
-                <br />I start with basic paper layouts of main sections and
-                elements, playing with them until something feels natural and
-                efficient. <br />
+                Research first. I absorb myself in everything user-related;
+                empathy maps, personas, user journeys, the works. The question I
+                keep coming back to is: does this actually help someone get what
+                they came for? If the answer's no, we're not done yet.
                 <br />
-                Then I move to Figma for lofi design. I implement branding in a
-                way that suits the client's characteristics — learned through a
-                thorough questionnaire at the start. The design becomes finding
-                the middle ground between client goals and user goals. I love
-                this challenge. <br />
                 <br />
-                Code with clarity. I get the skeleton up quickly, create
-                components as needed, and test as I go. I believe in clean code
-                — everything is labelled so it's easy to read and troubleshoot
-                later. <br />
+                Design with intention. It starts on paper. I push sections and
+                elements around until something clicks, then take it into Figma
+                for lo-fi. <br />
                 <br />
-                Test with real people. Once it's done, I ask the client and a
-                few developers I know to complete five simple tasks and give
-                feedback. This is how I know it actually works.
+                Branding comes in from a proper questionnaire at the start of
+                every project. I'm not guessing at the vibe. The real puzzle is
+                finding the middle ground between what the client wants and what
+                the user needs. Genuinely one of my favourite parts of the job.
+                <br />
+                <br />
+                Code with clarity. Skeleton up fast, components built as needed,
+                testing as I go. Clean, labelled code, because future-me (or
+                whoever picks this up next) deserves to actually understand
+                what's happening. <br />
+                <br />
+                Test with real people. Once it's built, I get the client and a
+                few developer contacts to run through five simple tasks and tell
+                me where it falls apart. That's how I know it works — not just
+                that it looks like it works.
               </p>
             </div>
           </div>

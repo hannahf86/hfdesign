@@ -64,7 +64,7 @@ export default function SkillStack() {
             <div className="eyebrow" style={{ marginBottom: 8 }}>
               Stack
             </div>
-            <h2>What I reach for.</h2>
+            <h2>The skills and tools I use.</h2>
           </div>
           <span className="meta">/ 05</span>
         </div>

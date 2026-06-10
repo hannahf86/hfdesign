@@ -161,9 +161,11 @@ export default function Hero({ onCTA, variant }) {
             marginBottom: 40,
           }}
         >
-          Hi, I'm Hannah. I work across research, design, and development for
-          small teams who want continuity, clarity, and a personal approach to
-          their products.
+          Hi, I'm Hannah Feehan. <br />
+          <br />
+          I'm a UX designer and full-stack developer specialising in working
+          with small teams who want continuity, clarity, and a personal approach
+          to their products.
         </p>
 
         {/* CTAs */}
