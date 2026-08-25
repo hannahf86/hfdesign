@@ -1,6 +1,8 @@
 ---
-# NOTE: "8 interviews" and "SUS 86" are PLACEHOLDER figures from the design
-# handoff. Replace with real numbers before this goes public.
+# Content follows the CV. The CV lists Mirian as IN BETA TESTING and makes no
+# claim about interview counts, SUS scores or completed usability testing, so
+# those figures have been removed rather than carried over from the design
+# handoff, where they were placeholders.
 # CREDENTIALS: the demo login below is rendered on the public page. Confirm the
 # account is safe to publish before launch.
 slug: mirian
@@ -21,14 +23,14 @@ credentials:
 openByDefault: false
 hasCaseStudy: true
 stats:
-  - value: "8"
-    label: interviews
+  - value: "4"
+    label: payment options
     count: true
-  - value: "86"
-    label: sus score
+  - value: "5"
+    label: payment states
     count: true
-  - value: AA
-    label: contrast audited
+  - value: Beta
+    label: in testing
     count: false
 ---
 
@@ -43,9 +45,13 @@ where executive function fails unpredictably under financial stress.
 
 ## process
 
-Eight interviews and a two-week diary study with participants managing multiple
-debts, six of them ADHD or autistic. Empathy maps surfaced a consistent pattern:
-avoidance was triggered by the interface, not the balance.
+Research on ADHD motivation shows goals become more achievable with visible
+context and reachable wins. That pointed at the interface, not the balance, as
+the thing causing avoidance — so the work started by questioning what the app
+treats as its core object, rather than by restyling what was already there.
+
+[FILL IN — if you ran your own interviews or a diary study, add the numbers and
+what they surfaced. Nothing is claimed here that the CV does not support.]
 
 ## design decisions
 
@@ -62,6 +68,8 @@ Atkinson Hyperlegible.
 
 ## outcome
 
-Moderated testing with seven participants: task completion rose across the board
-and the shame-related language in feedback dropped away almost entirely.
-Contrast audited to WCAG AA at every state.
+In beta testing. The build handles five payment states with row-level security
+per user, and there are no red crosses or harsh binaries anywhere in it.
+
+[FILL IN — outcome figures once beta testing finishes. Task completion, any SUS
+score, and what testers said about the tone.]

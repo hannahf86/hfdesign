@@ -1,7 +1,8 @@
 ---
-# NOTE: this page reuses the copy written for the homepage accordion. The deeper
-# research and decision detail Lucent has is not yet written — see the [FILL IN]
-# markers below. Stats are PLACEHOLDER figures from the design handoff.
+# Content follows the CV, which lists Mirian as IN BETA TESTING and makes no
+# claim about interview counts, SUS scores or completed usability testing.
+# Those figures have been removed rather than carried over from the design
+# handoff, where they were placeholders.
 slug: mirian
 num: "03"
 client: Mirian
@@ -39,7 +40,7 @@ sections:
   - id: research
     num: "02"
     label: research
-    heading: Eight interviews and a two-week diary study.
+    heading: What the interface was doing to people.
     personas:
       - name: avoidant
         body: "[FILL IN — the persona summary.]"
@@ -59,18 +60,18 @@ sections:
   - id: handoff
     num: "04"
     label: handoff
-    heading: Built and shipped solo.
+    heading: Built solo, in beta.
   - id: outcome
     num: "05"
     label: outcome
     stats:
-      - value: "8"
-        label: interviews
-      - value: "86"
-        label: sus score
+      - value: "4"
+        label: payment options
+      - value: "5"
+        label: payment states
     closing: >-
-      Task completion rose across the board in moderated testing, and the
-      shame-related language in feedback dropped away almost entirely.
+      In beta testing. Outcome figures follow once that finishes — nothing is
+      claimed here that has not happened yet.
 ---
 
 ## problem
@@ -82,9 +83,13 @@ drop out first.
 
 ## research
 
-Eight interviews and a two-week diary study with participants managing multiple
-debts, six of them ADHD or autistic. Empathy maps surfaced a consistent pattern:
-avoidance was triggered by the interface, not the balance.
+Research on ADHD motivation shows goals become more achievable with visible
+context and reachable wins. Most trackers offer only paid or not paid, so a part
+payment reads as failure or goes unlogged — the interface, not the balance, is
+what triggers avoidance.
+
+[FILL IN — if you ran your own interviews or a diary study, add the numbers and
+what they surfaced. Nothing is claimed here that the CV does not support.]
 
 ## decisions
 
@@ -95,7 +100,10 @@ throughout.
 
 ## handoff
 
-[FILL IN — Mirian was built solo rather than handed over. Either describe what
-shipping it involved, or drop this section from the frontmatter.]
+Built solo rather than handed over, and currently in beta testing. Five payment
+states with row-level security per user, and the interface set in Atkinson
+Hyperlegible.
+
+[FILL IN — what moving out of beta will involve.]
 
 ## outcome
