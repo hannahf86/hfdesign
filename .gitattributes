@@ -1,0 +1,5 @@
+# Content files must stay LF so the markdown parser sees consistent line endings.
+*.md text eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
