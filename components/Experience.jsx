@@ -4,27 +4,39 @@
 
 import SectionHead from './SectionHead'
 
+// Dates and roles follow the CV (Hannah-Feehan-UX-Designer-Web-Developer-CV-2026).
+// The site previously had Jorvik Web Dev at 2022 and the training at 2023; both
+// were a year early, and the two 2021 contract roles were missing entirely.
 const TIMELINE = [
   {
-    year: '2022',
-    role: 'Jorvik Web Dev, founder and sole trader',
-    detail: 'Web design, SEO, Webflow. Certified Webflow Partner.',
+    year: '2024',
+    role: 'Digital skills trainer',
+    detail:
+      'York & North Yorkshire Growth Hub · Enterprise Cube · LX Foundry. Seven workshops to 100+ business owners, plus five Growth Hub webinars.',
   },
   {
     year: '2023',
-    role: 'Digital skills trainer',
-    detail: 'Enterprise Cube · York & North Yorkshire Growth Hub · LX Foundry',
-  },
-  {
-    year: '2022',
-    role: 'Google UX Design certificate · IT Career Switch full-stack',
-    detail: 'Career transition into design and development.',
-  },
-  {
-    year: 'before',
-    role: 'Music education',
+    role: 'Jorvik Web Dev, founder and sole trader',
     detail:
-      'Curriculum design and teaching across mixed-needs groups. Constant practice at working out why something is not landing and rebuilding it on the spot.',
+      'Web design, SEO and Webflow for small businesses. Certified Webflow Foundations Partner, 20 paying clients and a five-star Google rating.',
+  },
+  {
+    year: '2022 — 2023',
+    role: 'Retrained into design and development',
+    detail:
+      'Google UX Design Professional Certificate (Coursera) · Fullstack Engineer (IT Career Switch and Codecademy).',
+  },
+  {
+    year: '2021',
+    role: 'UX Designer, CareDial · UI Designer, Miricyl',
+    detail:
+      'Contract and freelance, both remote. Journey maps and information architecture for a care staffing agency; the Self-Care section of a mental health app, built inside its existing design system.',
+  },
+  {
+    year: '2006 — 2023',
+    role: 'Teacher of music, graphic design and ICT',
+    detail:
+      'Bootham School, York, and private tuition. Curriculum design across mixed-needs groups. Constant practice at working out why something is not landing and rebuilding it on the spot.',
   },
 ]
 

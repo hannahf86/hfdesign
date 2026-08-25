@@ -1,6 +1,7 @@
 ---
-# NOTE: every figure in `stats` is a PLACEHOLDER from the design handoff.
-# Replace with real numbers before this goes anywhere public.
+# NOTE: "pages shipped" and "components" are still PLACEHOLDER figures from the
+# design handoff. Lighthouse (97) and accessibility (93) come from the CV and
+# are real — the CV records desktop performance lifted from 67 to 97.
 slug: lucent-biopharma
 num: "01"
 title: Lucent Biopharma
@@ -23,7 +24,7 @@ stats:
   - value: "40"
     label: components
     count: true
-  - value: "98"
+  - value: "97"
     label: lighthouse
     count: true
 ---

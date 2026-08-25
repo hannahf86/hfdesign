@@ -1,6 +1,7 @@
 ---
-# NOTE: 98 / 40 / 14 in `outcome.stats` are PLACEHOLDER figures from the design
-# handoff. Replace with real numbers before this goes anywhere public.
+# NOTE: 97 lighthouse and 93 accessibility come from the CV and are real (the CV
+# records desktop performance lifted from 67 to 97). "pages shipped" is still a
+# PLACEHOLDER from the design handoff.
 slug: lucent-biopharma
 num: "01"
 client: Lucent Biopharma
@@ -67,10 +68,10 @@ sections:
     num: "05"
     label: outcome
     stats:
-      - value: "98"
+      - value: "97"
         label: lighthouse performance
-      - value: "40"
-        label: system components
+      - value: "93"
+        label: accessibility score
       - value: "14"
         label: pages shipped
     closing: >-

@@ -3,12 +3,30 @@
 
 import SectionHead from './SectionHead'
 
+// Reconciled against the CV: added Wireframing, Adobe Illustrator, GSAP,
+// Framer, HTML, Tailwind, Node.js, Express, Prisma, NextAuth, Shopify/Liquid
+// and WordPress, all of which the CV lists but the site was omitting.
 const STACK = [
-  { label: 'research', items: ['Interviews', 'Personas', 'User journeys', 'Empathy maps', 'Data analysis'] },
-  { label: 'design', items: ['Figma', 'Design systems', 'Adobe CC', 'Canva', 'UX research methods'] },
-  { label: 'frontend', items: ['Webflow', 'React', 'TypeScript', 'React Native', 'Expo', 'Next.js', 'Vite'] },
-  { label: 'backend', items: ['Supabase', 'Postgres', 'SQL', 'Vercel'] },
-  { label: 'other', items: ['GA4', 'Meta Pixel', 'Webflow CMS', 'Client seat migration'] },
+  {
+    label: 'research',
+    items: ['Interviews', 'Personas', 'Empathy maps', 'User journeys', 'Information architecture', 'Wireframing', 'Prototyping', 'Data analysis'],
+  },
+  {
+    label: 'design',
+    items: ['Figma', 'Design systems', 'Adobe Illustrator', 'Adobe XD', 'Canva', 'GSAP', 'Framer'],
+  },
+  {
+    label: 'frontend',
+    items: ['React', 'Next.js', 'TypeScript', 'React Native', 'Expo', 'HTML', 'CSS', 'Tailwind', 'Vite'],
+  },
+  {
+    label: 'backend',
+    items: ['Node.js', 'Express', 'PostgreSQL', 'Supabase', 'Prisma', 'NextAuth', 'SQL', 'Vercel'],
+  },
+  {
+    label: 'platforms',
+    items: ['Webflow', 'Webflow CMS', 'Shopify and Liquid', 'WordPress', 'SEO and analytics', 'GA4', 'Meta Pixel'],
+  },
 ]
 
 export default function SkillStack() {
