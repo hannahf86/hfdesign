@@ -71,8 +71,8 @@ export default function Contact() {
 
         <div data-anim="up" className="contact-row">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
-            <a href="mailto:hello@hfdesign.co.uk" className="btn btn-primary">
-              hello@hfdesign.co.uk →
+            <a href="mailto:hannahfeehan.dev@gmail.com" className="btn btn-primary">
+              hannahfeehan.dev@gmail.com →
             </a>
             {hasCv && (
               <a href={CV_PATH} className="btn btn-ghost" download>

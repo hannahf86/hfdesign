@@ -11,7 +11,7 @@ import { Fragment } from 'react'
 const DISPLAY = 'UX Engineer'
 const WORDS = DISPLAY.split(' ')
 
-const CERTS = ['Google UX Design', 'Webflow Partner', 'Meta Social Media Marketing']
+const CERTS = ['Google UX Design', 'Webflow Foundations Partner', 'Meta Social Media Marketing']
 
 export default function Hero() {
   return (

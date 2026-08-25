@@ -93,7 +93,7 @@ export default async function BlogPostPage({ params }) {
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>
                 <Link href="/#contact" className="btn btn-primary">
-                  hello@hfdesign.co.uk →
+                  hannahfeehan.dev@gmail.com →
                 </Link>
                 {next && (
                   <Link href={`/blog/${next.slug}`} className="btn btn-ghost">

@@ -47,12 +47,19 @@ database objects.
 
 ## design decisions
 
-One screen, one decision. A Today view answers what is due and what is blocked;
-everything else sits behind progressive disclosure. Status is stated in words,
-never colour alone. No dashboard of vanity charts.
+One screen, one decision. Five overlapping tools replaced by one system serving
+two very different users — a studio owner living in it daily and a client
+dropping in as needed — with the information architecture organised around each.
+
+The interface is incapable of implying something untrue: retainers show logged
+hours rather than a stalled progress bar, and empty states say plainly that
+nothing is needed. Status is stated in words, never colour alone. No dashboard
+of vanity charts.
 
 ## outcome
 
-In daily use across live client projects. Status-chasing email cut sharply, and
-onboarding a new project now follows a single guided path instead of a checklist
-held in my head.
+Phase one is live and in daily use across client projects. It covers document
+upload, branded invoices, scheduling, sign-off and task management, each
+confirmed in plain English rather than a browser alert. Status-chasing email cut
+sharply, and onboarding a new project now follows a single guided path instead
+of a checklist held in my head.

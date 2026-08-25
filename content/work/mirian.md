@@ -37,7 +37,9 @@ stats:
 Debt tools are built for people who feel fine about their debt. Red totals,
 streaks and scolding notifications punish exactly the moment a user most needs
 to engage, and neurodivergent users, who are over-represented in problem debt,
-drop out first.
+drop out first. Most trackers offer only paid or not paid, so a part payment
+reads as failure or goes unlogged entirely — designed for adults with ADHD,
+where executive function fails unpredictably under financial stress.
 
 ## process
 
@@ -47,10 +49,16 @@ avoidance was triggered by the interface, not the balance.
 
 ## design decisions
 
-No red, no streaks, no total on the home screen unless the user asks for it.
-Plain-language framing over financial jargon. Every destructive or overdue state
-written as a sentence, never signalled by colour alone. Reduced-motion respected
-throughout.
+Four payment options instead of a binary, so an imperfect month stays honest.
+The core object is reframed from amount owed to a live cleared-by date, because
+research on ADHD motivation shows goals become more achievable with visible
+context and reachable wins — every payment moves that date closer.
+
+Logging is one tap away, notes are optional and confirmation copy never scolds,
+because avoidance is the failure point rather than effort. No red, no streaks,
+no total on the home screen unless asked for. Five payment states with row-level
+security per user. No harsh binaries anywhere, and the interface is set in
+Atkinson Hyperlegible.
 
 ## outcome
 
