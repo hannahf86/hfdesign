@@ -1,0 +1,128 @@
+/* =============================================================
+   HF Design — Foundations (2026 redesign)
+   Colour values are unchanged from the HF design system.
+   Type is the redesign's: Archivo display, DM Sans prose,
+   DM Mono labels, Cormorant Garamond for a single pull quote.
+   ============================================================= */
+
+:root {
+  /* ---------- Brand palette ---------- */
+  --hf-accent:       #6657d4;
+  --hf-accent-light: #9388e8;
+  --hf-accent-deep:  #4a3da8;
+  --hf-accent-glow:  rgba(102, 87, 212, 0.30);
+  --hf-accent-tint:  rgba(102, 87, 212, 0.08);
+
+  --hf-bg:        #0c0a10;
+  --hf-bg-2:      #1a1920;
+  --hf-bg-3:      #25232e;
+  --hf-line:      #2a2833;
+  --hf-line-soft: #1f1d28;
+  --hf-glyph-mid: #3a3550;
+
+  --hf-text:       #ffffff;
+  --hf-text-soft:  #cac8f3;
+  --hf-text-muted: #8a87a8;
+
+  --hf-success: #5be6a8;
+
+  /* Values that used to be literals in components, so both themes can set them */
+  --img-bg:    #15141b;                        /* letterbox behind cover images */
+  --glyph-dim: #312d44;                        /* the dashed/among-the-quietest glyph stroke */
+  --glow:      rgba(102, 87, 212, 0.30);       /* hero radial glow */
+
+  /* Sticky header fills */
+  --nav-bg-top: rgba(12, 10, 16, 0.55);
+  --nav-bg:     rgba(12, 10, 16, 0.86);
+
+  /* ---------- Semantic ---------- */
+  --fg-1: var(--hf-text);
+  --fg-2: var(--hf-text-soft);
+  --fg-3: var(--hf-text-muted);
+
+  --bg-1: var(--hf-bg);
+  --bg-2: var(--hf-bg-2);
+  --bg-3: var(--hf-bg-3);
+
+  --accent:       var(--hf-accent);
+  --accent-light: var(--hf-accent-light);
+
+  --border:      var(--hf-line);
+  --border-soft: var(--hf-line-soft);
+
+  /* CONTRAST RULE — carried over from the design handoff and enforced here:
+     #6657d4 and #5a5870 fail 4.5:1 on this canvas and must never be used for
+     small text. Small labels use --fg-3 (#8a87a8, 5.3:1) or --accent-light
+     (#9388e8, 6.0:1). The accent is for borders, fills and large type only. */
+
+  /* ---------- Type families ---------- */
+  --font-display:  var(--font-archivo), system-ui, sans-serif;
+  --font-body:     var(--font-dm-sans), system-ui, -apple-system, sans-serif;
+  --font-mono:     var(--font-dm-mono), ui-monospace, 'SF Mono', monospace;
+  --font-quote:    var(--font-cormorant), Georgia, serif;
+
+  /* ---------- Spacing (4px base) ---------- */
+  --s-1: 4px;   --s-2: 8px;   --s-3: 12px;  --s-4: 16px;
+  --s-5: 24px;  --s-6: 32px;  --s-7: 48px;  --s-8: 64px;
+  --s-9: 96px;  --s-10: 128px; --s-11: 192px;
+
+  /* ---------- Radius ---------- */
+  --r-1: 4px;
+  --r-2: 8px;    /* buttons, chips */
+  --r-3: 12px;   /* cards — default */
+  --r-4: 16px;   /* hero panels */
+  --r-5: 26px;   /* phone frames */
+  --r-pill: 999px;
+
+  /* ---------- Elevation ---------- */
+  --shadow-phone: 0 24px 60px rgba(0, 0, 0, 0.55);
+
+  /* ---------- Motion ---------- */
+  --ease-out:    cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-1: 120ms; --dur-2: 220ms; --dur-3: 360ms;
+
+  /* ---------- Layout ---------- */
+  --container: 1240px;
+  --prose:     760px;
+  --prose-wide: 880px;
+  --rail:      clamp(20px, 4vw, 64px);
+  --rhythm:    128px;   /* between homepage blocks */
+}
+
+@media (max-width: 860px) {
+  :root { --rhythm: 64px; }
+}
+
+/* =============================================================
+   Light mode.
+   The redesign is dark-first and the light palette is NOT part of the
+   design — these values come from the HF design system's own
+   `[data-theme="light"]` block, remapped onto this build's token names.
+
+   One deliberate divergence: --accent-light is #9388e8 on dark, which is
+   only 2.6:1 on the light canvas. Small labels, links and the index marker
+   all use it, so on light it resolves to the deeper #4a3da8 (7.9:1).
+   ============================================================= */
+[data-theme='light'] {
+  --hf-bg:        #f8f7f4;
+  --hf-bg-2:      #ffffff;
+  --hf-bg-3:      #eeecf3;
+  --hf-line:      #e2dfeb;
+  --hf-line-soft: #efedf5;
+  --hf-glyph-mid: #b9b3cc;
+
+  --hf-text:       #0c0a10;
+  --hf-text-soft:  #2a2833;
+  --hf-text-muted: #5a5870;
+
+  --accent:       #4a3da8;
+  --accent-light: #4a3da8;
+
+  --nav-bg-top: rgba(255, 255, 255, 0.55);
+  --nav-bg:     rgba(255, 255, 255, 0.86);
+
+  --img-bg:    #eeecf3;
+  --glyph-dim: #c9c3d8;
+  --glow:      rgba(102, 87, 212, 0.16);
+}

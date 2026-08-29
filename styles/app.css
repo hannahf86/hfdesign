@@ -1,0 +1,404 @@
+/* HF Design — global styles (2026 redesign) */
+@import './tokens.css';
+@import './case-study.css';
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg-1);
+  color: var(--fg-1);
+  font-family: var(--font-mono);
+  font-size: 14px;
+  line-height: 1.75;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body { overflow-x: hidden; }
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-variation-settings: 'wdth' 112;
+  letter-spacing: -0.03em;
+  /* Without this, headings inherit the body's 1.75 and large display type sits
+     far too loose once it wraps. 1.1 is the design system's --lh-heading. */
+  line-height: 1.1;
+  margin: 0;
+  text-wrap: balance;
+  color: var(--fg-1);
+}
+
+p {
+  margin: 0;
+  color: var(--fg-2);
+  text-wrap: pretty;
+  font-family: var(--font-body);
+}
+
+a {
+  color: var(--accent-light);
+  text-decoration: none;
+  transition: color var(--dur-2) var(--ease-out);
+}
+a:hover { color: var(--fg-1); }
+
+button { font-family: inherit; }
+img { display: block; max-width: 100%; }
+
+::selection { background: var(--accent); color: #fff; }
+
+::-webkit-scrollbar { width: 9px; }
+::-webkit-scrollbar-track { background: var(--bg-1); }
+::-webkit-scrollbar-thumb { background: var(--bg-3); }
+
+:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 3px;
+  border-radius: var(--r-1);
+}
+
+/* Anchored sections clear the fixed header */
+[id] { scroll-margin-top: 78px; }
+
+/* ---------- Layout primitives ---------- */
+.wrap {
+  max-width: var(--container);
+  margin: 0 auto;
+  padding-left: var(--rail);
+  padding-right: var(--rail);
+}
+
+/* Homepage block rhythm */
+.block { padding-top: var(--rhythm); }
+
+/* ---------- Shared type roles ---------- */
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+.label-accent { color: var(--accent-light); }
+
+.prose {
+  font-family: var(--font-body);
+  font-size: 13.5px;
+  line-height: 1.85;
+  color: var(--fg-2);
+}
+
+/* Section head: index numeral, title, spacer, optional trailing note */
+.sec-head {
+  display: flex;
+  align-items: baseline;
+  gap: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--border);
+  flex-wrap: wrap;
+}
+.sec-head h2 {
+  font-size: clamp(24px, 2.5vw, 34px);
+  letter-spacing: -0.02em;
+}
+.sec-head .spacer { flex: 1; }
+.sec-head .note {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--fg-3);
+}
+
+/* ---------- Chips ---------- */
+.chip {
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: 6px 13px;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--fg-2);
+}
+.chip-pill {
+  border-radius: var(--r-pill);
+  padding: 5px 12px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: var(--r-2);
+  padding: 14px 22px;
+  border: 1px solid transparent;
+  cursor: pointer;
+  transition: background var(--dur-2) var(--ease-out),
+              border-color var(--dur-2) var(--ease-out),
+              color var(--dur-2) var(--ease-out);
+  min-height: 44px;
+}
+.btn-primary { background: var(--accent); color: #fff; }
+.btn-primary:hover { background: var(--accent-light); color: #fff; }
+.btn-ghost { border-color: var(--border); color: var(--fg-1); background: transparent; }
+.btn-ghost:hover { border-color: var(--accent-light); background: var(--bg-3); color: var(--fg-1); }
+
+/* ---------- Availability dot ---------- */
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: var(--r-pill);
+  background: var(--hf-success);
+  display: block;
+  flex: none;
+}
+
+/* ---------- Underline accent (hero) ---------- */
+.ul-accent {
+  color: var(--fg-1);
+  text-decoration: underline;
+  text-decoration-color: var(--accent-light);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+/* ---------- Skip link ---------- */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 200;
+  background: var(--accent);
+  color: #fff;
+  padding: 12px 18px;
+  border-radius: 0 0 var(--r-2) 0;
+  font-size: 13px;
+}
+.skip-link:focus-visible { left: 0; }
+
+.sr-only {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ---------- Motion baseline ----------
+   Elements the GSAP layer animates start hidden ONLY when `js-anim` is set,
+   which the bootstrap script does only when motion is allowed. No-JS,
+   system-reduced-motion and user-reduced-motion visitors all see final state. */
+html.js-anim [data-anim='up'],
+html.js-anim [data-reveal='1'] > * { opacity: 0; }
+html.js-anim [data-hero-line] > * { opacity: 0; }
+
+/* ---------- Work accordion panel ----------
+   Height is animated with CSS grid rows rather than GSAP. The visible result
+   matches the design's easing and duration, but the collapsed/expanded state is
+   a computed style rather than the end of a tween — so it is always correct even
+   if the tab is backgrounded mid-animation or JS never runs. Everything else on
+   the page still animates through GSAP. */
+.work-panel {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transition:
+    grid-template-rows 400ms cubic-bezier(0.45, 0, 0.55, 1),
+    opacity 400ms cubic-bezier(0.45, 0, 0.55, 1);
+}
+.work-panel[data-open='true'] {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  /* expo.out, matching the design's 550ms expand */
+  transition:
+    grid-template-rows 550ms cubic-bezier(0.16, 1, 0.3, 1),
+    opacity 550ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.work-panel-inner { overflow: hidden; min-height: 0; }
+
+@media (prefers-reduced-motion: reduce) {
+  .work-panel, .work-panel[data-open='true'] { transition: none; }
+}
+html[data-motion='reduced'] .work-panel,
+html[data-motion='reduced'] .work-panel[data-open='true'] { transition: none; }
+
+/* ---------- Touch targets ----------
+   The design renders several affordances as plain inline text links. On touch
+   viewports they are padded out to the 44px minimum the handoff specifies,
+   without changing how they look. */
+/* The labelled motion button needs real room. Below this the header still has
+   its nav links, availability pill and CV button, so the control falls back to
+   the icon — the accessible name and tooltip stay either way. */
+@media (max-width: 1100px) {
+  .pref-label { display: none; }
+  .pref-btn { padding: 0 !important; width: 34px; justify-content: center; }
+}
+
+@media (max-width: 900px) {
+  .work-panel a,
+  .cs-back,
+  .cs-index a,
+  .contact-links a,
+  header a[href="/"],
+  .nav-links a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
+  .nav-burger { width: 44px !important; height: 44px !important; }
+  /* Icon-only below the desktop header layout, where the label will not fit */
+  .pref-label { display: none; }
+  .pref-btn { width: 44px !important; height: 44px !important; padding: 0 !important; justify-content: center; }
+}
+
+/* ================================================================
+   Enhancement motion — initial states.
+   Everything here is behind `html.js-anim`, which is only set when JS is
+   running AND motion is allowed. No-JS and reduced-motion visitors get the
+   final state with no hidden content.
+   ================================================================ */
+
+/* Hero display: per-character mask reveal, plus the variable width axis
+   settling from condensed to the design's 118. The default is the FINAL value
+   so the headline is correct even if the tween never runs. */
+.hero-display { --wdth: 118; font-variation-settings: 'wdth' var(--wdth); }
+
+/* Each word is its own nowrap mask. Breaks can only happen at spaces, and a
+   wrapped line is never clipped because the mask is per word rather than on the
+   whole h1. The bottom padding keeps the descender in "Engineer" off the clip
+   edge; the character starts below that padded box, hence 130% not 112%. */
+.hero-word {
+  display: inline-block;
+  white-space: nowrap;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 0.1em;
+}
+.hero-char { display: inline-block; will-change: transform; }
+/* Opacity only — NOT a transform. GSAP parses any pre-existing CSS transform
+   into its own `y` (pixels) and then applies `yPercent` as a separate property,
+   so the two stack and animating yPercent back to 0 leaves the pixel offset
+   behind. The rule: CSS hides with opacity, GSAP owns every transform. */
+html.js-anim .hero-char { opacity: 0; }
+
+/* Section-head hairline wipes in from the left */
+.sec-head { position: relative; border-bottom: 0; }
+.sec-rule {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1px;
+  background: var(--border);
+  transform-origin: left center;
+}
+/* Safe to set here: GSAP animates the same `scaleX` property, so it overrides
+   rather than stacking (unlike translateY vs yPercent above). */
+html.js-anim .sec-rule { transform: scaleX(0); }
+
+/* Images wipe up and settle out of a slight over-scale.
+   CSS rather than GSAP, for the same reason as the panel stagger: a keyframe
+   animation always resolves to its final frame, where a killed tween can leave
+   the image clipped out of existence. */
+@keyframes img-reveal {
+  from { clip-path: inset(0 0 100% 0); }
+  to   { clip-path: inset(0 0 0% 0); }
+}
+@keyframes img-settle {
+  from { transform: scale(1.14); }
+  to   { transform: none; }
+}
+[data-img-reveal] { animation: img-reveal 1150ms cubic-bezier(0.16, 1, 0.3, 1) both; }
+[data-img-reveal] img { animation: img-settle 1600ms cubic-bezier(0.16, 1, 0.3, 1) both; will-change: transform; }
+
+@media (prefers-reduced-motion: reduce) {
+  [data-img-reveal], [data-img-reveal] img { animation: none; }
+}
+html[data-motion='reduced'] [data-img-reveal],
+html[data-motion='reduced'] [data-img-reveal] img { animation: none; }
+
+/* Chips arrive one after another rather than as a block */
+html.js-anim [data-chips] > * { opacity: 0; }
+
+/* Case-study index: an accent marker that slides to the active section */
+.cs-index { position: relative; padding-left: 14px; }
+.cs-index-marker {
+  position: absolute;
+  left: 0;
+  width: 2px;
+  height: 12px;
+  background: var(--accent-light);
+  border-radius: 1px;
+  transition: transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1), opacity 220ms linear;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .cs-index-marker { transition: none; }
+}
+html[data-motion='reduced'] .cs-index-marker { transition: none; }
+
+/* ---------- Sticky header fill ----------
+   Driven by a class from the motion layer rather than a colour tween, so the
+   header stays correct in both themes. */
+[data-nav] {
+  background: var(--nav-bg-top);
+  border-bottom: 1px solid transparent;
+  transition: background 300ms var(--ease-out), border-color 300ms var(--ease-out);
+}
+[data-nav].is-scrolled {
+  background: var(--nav-bg);
+  border-bottom-color: var(--border);
+}
+html[data-motion='reduced'] [data-nav] { transition: none; }
+
+/* Suppress transitions for the frame in which a preference flips, so nothing
+   transitioning a custom property sticks at the old value. */
+html.prefs-switching,
+html.prefs-switching *,
+html.prefs-switching *::before,
+html.prefs-switching *::after { transition: none !important; }
+
+/* ---------- Work panel content stagger ----------
+   Pure CSS, deliberately. This was a GSAP tween twice over and twice it left the
+   panel's contents stranded at opacity 0 when the tween did not complete.
+   A keyframe animation with `both` fill mode holds the from-state only while the
+   animation is pending and the to-state forever after, so the content cannot be
+   lost. Children are only ever hidden while an open panel is animating them in —
+   a closed panel leaves them at their natural, visible state. */
+@keyframes panel-rise {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: none; }
+}
+
+.work-panel[data-open='true'] [data-panel-stagger] > *,
+.work-panel[data-open='true'] [data-panel-aside] > * {
+  animation: panel-rise 550ms cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.work-panel[data-open='true'] [data-panel-stagger] > *:nth-child(1) { animation-delay: 120ms; }
+.work-panel[data-open='true'] [data-panel-stagger] > *:nth-child(2) { animation-delay: 180ms; }
+.work-panel[data-open='true'] [data-panel-stagger] > *:nth-child(3) { animation-delay: 240ms; }
+.work-panel[data-open='true'] [data-panel-stagger] > *:nth-child(4) { animation-delay: 300ms; }
+.work-panel[data-open='true'] [data-panel-stagger] > *:nth-child(5) { animation-delay: 360ms; }
+
+.work-panel[data-open='true'] [data-panel-aside] > *:nth-child(1) { animation-delay: 200ms; }
+.work-panel[data-open='true'] [data-panel-aside] > *:nth-child(2) { animation-delay: 260ms; }
+.work-panel[data-open='true'] [data-panel-aside] > *:nth-child(3) { animation-delay: 320ms; }
+
+@media (prefers-reduced-motion: reduce) {
+  .work-panel[data-open='true'] [data-panel-stagger] > *,
+  .work-panel[data-open='true'] [data-panel-aside] > * { animation: none; }
+}
+html[data-motion='reduced'] .work-panel[data-open='true'] [data-panel-stagger] > *,
+html[data-motion='reduced'] .work-panel[data-open='true'] [data-panel-aside] > * { animation: none; }
