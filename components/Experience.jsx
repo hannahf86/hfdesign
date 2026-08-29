@@ -21,7 +21,7 @@ const TIMELINE = [
       'Web design, SEO and Webflow for small businesses. Certified Webflow Foundations Partner, 20 paying clients and a five-star Google rating.',
   },
   {
-    year: '2022 — 2023',
+    year: '2022',
     role: 'Retrained into design and development',
     detail:
       'Google UX Design Professional Certificate (Coursera) · Fullstack Engineer (IT Career Switch and Codecademy).',
