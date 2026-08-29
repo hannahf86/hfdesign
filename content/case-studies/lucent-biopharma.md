@@ -5,13 +5,15 @@
 slug: lucent-biopharma
 num: "01"
 client: Lucent Biopharma
-eyebrow: case study 01 · 2025
+eyebrow: case study 01 · 2026
 title: Lucent
 titleLine2: Biopharma
 lead: >-
   Persona-led research, a 40-component design system, and a Figma-to-Webflow
   build the client can maintain.
 hero: /assets/work/lucent-biopharma.webp
+liveUrl: https://www.lucentbiopharma.com
+liveLabel: Visit lucentbiopharma.com
 heroAlt: The rebuilt Lucent Biopharma homepage, showing the pipeline overview.
 meta:
   - label: role
@@ -50,7 +52,12 @@ sections:
         body: Mechanism, published evidence, who to contact.
       - name: prospective hire
         body: What it is like here, and what I would work on.
-    artefact: artefact · journey map
+    artefact:
+      label: artefact · persona
+      image: /assets/case-studies/lucent-persona-sarah-patel.webp
+      alt: >-
+        Persona for Dr Sarah Patel, Head of Regulatory Affairs: her brief story,
+        goals, frustrations, personality traits and key tasks on the Lucent site.
   - id: decisions
     num: "03"
     label: decisions
@@ -59,7 +66,13 @@ sections:
       - "Pipeline as a CMS collection: stage, indication, modality, last reviewed date."
       - Evidence blocks cite the paper inline, so claims are checkable without leaving the page.
       - Contrast and focus states audited to WCAG AA before build, not after.
-    artefact: figma · component library
+    artefact:
+      label: artefact · user journey map
+      image: /assets/case-studies/lucent-journey-map-james-thornton.webp
+      alt: >-
+        User journey map for James Thornton across five stages, from trigger and
+        awareness through to conversion, tracking actions, goals, feelings, pain
+        points and opportunities at each step.
   - id: handoff
     num: "04"
     label: handoff

@@ -159,6 +159,24 @@
   place-items: center;
 }
 
+/* An artefact that has its asset renders as a figure, not a dashed box. */
+.cs-artefact-figure { margin: 28px 0 0; }
+.cs-artefact-figure img { background: var(--img-bg); }
+
+/* ---------- Live project link ---------- */
+.cs-live { margin-top: 22px; }
+.cs-live a {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 2px;
+}
+.cs-live a:hover { color: var(--fg-1); }
+
 /* ---------- Numbered decision rows ---------- */
 .cs-numbered { list-style: none; margin: 32px 0 0; padding: 0; }
 .cs-numbered li {

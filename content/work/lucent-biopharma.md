@@ -5,8 +5,8 @@
 slug: lucent-biopharma
 num: "01"
 title: Lucent Biopharma
-meta: 2025 · UX research, design system, Webflow build
-year: "2025"
+meta: 2026 · UX research, design system, Webflow build
+year: "2026"
 summary: >-
   A science-first pipeline story buried under a generic corporate site. Rebuilt
   around three personas and shipped from Figma into Webflow CMS.

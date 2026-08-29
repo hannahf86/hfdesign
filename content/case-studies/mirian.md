@@ -13,6 +13,8 @@ lead: >-
   A debt tracker designed to reduce shame, because shame is why people stop
   opening the app.
 hero: /assets/work/mirian.webp
+liveUrl: https://www.mirian-debt-tracker.app/auth/login
+liveLabel: Visit the Mirian beta
 heroAlt: The Mirian debt tracker, showing the calm, red-free balance view.
 meta:
   - label: role

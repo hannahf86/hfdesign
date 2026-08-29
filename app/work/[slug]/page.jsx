@@ -11,6 +11,7 @@ import Footer from '@/components/Footer'
 import CaseIndex from '@/components/CaseIndex'
 import { FillInText, hasFillIn } from '@/components/case-study/FillIn'
 import CaseMarkdown from '@/components/case-study/CaseMarkdown'
+import IMAGE_SIZES from '@/public/assets/case-studies/manifest.json'
 import { getCaseStudy, getCaseStudySlugs } from '@/lib/case-studies'
 
 export function generateStaticParams() {
@@ -68,12 +69,31 @@ function Personas({ personas }) {
   )
 }
 
-// Section: an artefact slot that has no asset yet.
-function ArtefactPlaceholder({ label }) {
+// Section: an artefact slot. A bare string is still an empty placeholder; an
+// object with `image` renders the artefact, captioned by its label. Dimensions
+// come from the manifest `npm run images` writes, so the space is reserved.
+function Artefact({ artefact }) {
+  if (typeof artefact === 'string') {
+    return (
+      <div className="cs-artefact" role="note">
+        <span className="label">{artefact}</span>
+      </div>
+    )
+  }
+
+  const dims = IMAGE_SIZES[artefact.image]
   return (
-    <div className="cs-artefact" role="note">
-      <span className="label">{label}</span>
-    </div>
+    <figure className="cs-figure cs-artefact-figure">
+      {/* eslint-disable-next-line @next/next/no-img-element */}
+      <img
+        src={artefact.image}
+        alt={artefact.alt || artefact.label || ''}
+        loading="lazy"
+        decoding="async"
+        {...(dims ? { width: dims.width, height: dims.height } : {})}
+      />
+      {artefact.label && <figcaption className="label">{artefact.label}</figcaption>}
+    </figure>
   )
 }
 
@@ -92,12 +112,20 @@ function NumberedRows({ rows }) {
 }
 
 // Section: the outcome counters.
+// Only a bare number gets `data-count`. The count-up tween rewrites the whole
+// textContent on every frame, so a value like "4 → 1" or "5-10" would parse to
+// its leading digit and land as "4" / "5", silently losing the rest.
+const isCountable = (value) => /^\d+(\.\d+)?$/.test(String(value).trim())
+
 function Counters({ stats }) {
   return (
     <div className="cs-counters">
       {stats.map((s) => (
         <div key={s.label}>
-          <div className="cs-counter-value" data-count={s.value}>
+          <div
+            className="cs-counter-value"
+            {...(isCountable(s.value) ? { 'data-count': s.value } : {})}
+          >
             {s.value}
           </div>
           <div className="label">{s.label}</div>
@@ -188,9 +216,16 @@ export default async function CaseStudyPage({ params }) {
                 {s.quote && <PullQuote quote={s.quote} />}
                 {s.personas && <Personas personas={s.personas} />}
                 {s.numbered && <NumberedRows rows={s.numbered} />}
-                {s.artefact && <ArtefactPlaceholder label={s.artefact} />}
+                {s.artefact && <Artefact artefact={s.artefact} />}
                 {s.stats && <Counters stats={s.stats} />}
                 {s.closing && <p className="cs-closing">{s.closing}</p>}
+                {s.id === 'outcome' && cs.liveUrl && (
+                  <p className="cs-live">
+                    <a href={cs.liveUrl} target="_blank" rel="noopener noreferrer">
+                      {cs.liveLabel || 'View the live project'} <span aria-hidden="true">↗</span>
+                    </a>
+                  </p>
+                )}
               </article>
             ))}
           </div>

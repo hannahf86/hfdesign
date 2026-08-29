@@ -6,8 +6,8 @@
 slug: jwd-portal
 num: "02"
 title: JWD Client Portal
-meta: 2025 · product, design, full-stack
-year: "2025"
+meta: 2026 · product, design, full-stack
+year: "2026"
 summary: >-
   A portal for my own studio, built around one question: what do I need to see,
   at what point.
