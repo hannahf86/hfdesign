@@ -75,23 +75,10 @@ export default function Experience() {
           </p>
         </div>
 
-        <div>
+        <div className="exp-timeline">
           {TIMELINE.map((row) => (
-            <div
-              key={`${row.year}-${row.role}`}
-              data-anim="up"
-              className="exp-row"
-              style={{
-                display: 'grid',
-                gridTemplateColumns: 'auto 1fr',
-                gap: 'clamp(20px, 3vw, 40px)',
-                borderTop: '1px solid var(--border-soft)',
-                padding: '20px 0',
-              }}
-            >
-              <span className="label" style={{ letterSpacing: '.18em', minWidth: 56 }}>
-                {row.year}
-              </span>
+            <div key={`${row.year}-${row.role}`} data-anim="up" className="exp-row">
+              <span className="label exp-year">{row.year}</span>
               <div>
                 <div style={{ fontFamily: 'var(--font-body)', fontSize: 13.5, color: 'var(--fg-1)' }}>
                   {row.role}
@@ -114,6 +101,30 @@ export default function Experience() {
       </div>
 
       <style>{`
+        /* The timeline is one grid, not five. Each row subgrids onto the shared
+           columns so the year column is sized once, to the widest label
+           ("2006 — 2023"), and every role starts at the same x. Sizing the
+           column per-row is what pushed the ranged rows out of alignment. */
+        .exp-timeline {
+          display: grid;
+          grid-template-columns: max-content 1fr;
+          column-gap: clamp(20px, 3vw, 40px);
+        }
+        .exp-row {
+          grid-column: 1 / -1;
+          display: grid;
+          grid-template-columns: subgrid;
+          border-top: 1px solid var(--border-soft);
+          padding: 20px 0;
+        }
+        .exp-year { letter-spacing: .18em; }
+        @supports not (grid-template-columns: subgrid) {
+          .exp-timeline { display: block; }
+          .exp-row {
+            grid-template-columns: 108px 1fr;
+            column-gap: clamp(20px, 3vw, 40px);
+          }
+        }
         .exp-grid {
           display: grid;
           grid-template-columns: 1fr 1fr;
