@@ -46,7 +46,7 @@ sections:
   - id: research
     num: "02"
     label: research
-    heading: An audit, five interviews, twelve competitors, three personas.
+    heading: A full UX audit, competitive analysis and a full user journey mapped.
     personas:
       - name: investor
         body: what stage, what timeline, what's de-risked
