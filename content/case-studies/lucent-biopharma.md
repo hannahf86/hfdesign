@@ -162,8 +162,9 @@ would have flattened exactly the differences the personas needed to see. Custom
 card flip animations, built in JavaScript, HTML and CSS, let services and team
 members reveal detail on demand without adding another page to click through.
 
-A complex grid layout and multiple custom breakpoints kept the design coherent
-from investor-desk widescreens down to mobile.
+A complex grid layout and multiple custom breakpoints, matched precisely to the
+graphic designer's hi-fi wireframes, kept the design coherent from investor-desk
+widescreens down to mobile.
 
 Every page also got a fully separate mobile design rather than a scaled-down
 desktop layout, so the experience holds up regardless of screen size, in line
