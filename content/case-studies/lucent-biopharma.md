@@ -69,9 +69,14 @@ sections:
     closing: >-
       Working alongside LUCENT Biopharma's copywriter and graphic designer,
       wireframes were then built in Figma around that persona-led IA.
-    # Placeholder until the wireframe export exists. Swap this string for an
-    # object with label, image and alt to render the real thing.
-    closingArtefact: Wireframes
+    # Placeholders until the wireframe exports exist. Replace each string with
+    # an object carrying image and alt; the count here is a guess.
+    closingArtefact:
+      label: Wireframes
+      items:
+        - Wireframe 01
+        - Wireframe 02
+        - Wireframe 03
   - id: development
     num: "03"
     label: development

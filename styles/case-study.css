@@ -170,6 +170,71 @@
    this file, so it wins on source order at equal specificity. Qualifying the
    selector makes this margin independent of where either rule sits. */
 .cs-figure.cs-artefact-figure { margin: 48px 0 0; }
+
+/* ---------- Artefact gallery ----------
+   One scroll container, snapping a slide at a time. The arrows scroll it
+   rather than tracking an index of their own, so touch, trackpad, keyboard
+   and the buttons can never disagree about where the gallery is. */
+.cs-gallery { margin-top: 48px; }
+.cs-gallery-track {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 100%;
+  gap: 16px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+  border-radius: var(--r-3);
+}
+.cs-gallery-slide { scroll-snap-align: start; margin: 0; min-width: 0; }
+.cs-gallery-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: var(--r-3);
+  border: 1px solid var(--border);
+  background: var(--img-bg);
+}
+.cs-gallery-slide figcaption { margin-top: 10px; }
+.cs-gallery-placeholder {
+  aspect-ratio: 16 / 7;
+  border: 1px dashed var(--hf-glyph-mid);
+  border-radius: var(--r-3);
+  background: rgba(102, 87, 212, 0.04);
+  display: grid;
+  place-items: center;
+}
+.cs-gallery-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 14px;
+}
+.cs-gallery-arrows { display: flex; gap: 8px; }
+.cs-gallery-arrows button {
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--bg-2);
+  color: var(--fg-2);
+  cursor: pointer;
+  transition: border-color var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
+}
+.cs-gallery-arrows button:hover:not(:disabled) { border-color: var(--accent-light); color: var(--fg-1); }
+/* Kept visible rather than hidden at the ends, so the control row does not
+   reflow as the reader scrolls. */
+.cs-gallery-arrows button:disabled { opacity: 0.35; cursor: default; }
+
+@media (prefers-reduced-motion: reduce) {
+  .cs-gallery-track { scroll-behavior: auto; }
+  .cs-gallery-arrows button { transition: none; }
+}
+html[data-motion='reduced'] .cs-gallery-track { scroll-behavior: auto; }
+html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 .cs-artefact-figure img { background: var(--img-bg); }
 
 /* ---------- Live project link ---------- */

@@ -11,6 +11,7 @@ import Footer from '@/components/Footer'
 import CaseIndex from '@/components/CaseIndex'
 import { FillInText, hasFillIn } from '@/components/case-study/FillIn'
 import CaseMarkdown from '@/components/case-study/CaseMarkdown'
+import ArtefactGallery from '@/components/case-study/ArtefactGallery'
 import IMAGE_SIZES from '@/public/assets/case-studies/manifest.json'
 import { getCaseStudy, getCaseStudySlugs } from '@/lib/case-studies'
 
@@ -73,6 +74,11 @@ function Personas({ personas }) {
 // object with `image` renders the artefact, captioned by its label. Dimensions
 // come from the manifest `npm run images` writes, so the space is reserved.
 function Artefact({ artefact }) {
+  // An artefact carrying `items` holds several boards, so it scrolls.
+  if (artefact.items) {
+    return <ArtefactGallery label={artefact.label} items={artefact.items} />
+  }
+
   if (typeof artefact === 'string') {
     return (
       <div className="cs-artefact" role="note">
