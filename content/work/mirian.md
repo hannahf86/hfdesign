@@ -62,25 +62,31 @@ Something needs to change.
 Every decision started from the same question: what does this app do on
 someone's worst day?
 
-The paid/unpaid toggle went first. It became on time, late, short or overpaid,
-so a bad month still leaves an honest record instead of no record at all. A note
-is there if it's needed, but never demanded. Partial payments count.
-Overpayments count.
+That ruled out the paid/unpaid toggle first. A binary only works if life is
+binary, and debt rarely is, so it became on time, late, short or overpaid, built
+to hold a bad month rather than erase it. A note is there for when someone knows
+why but can't say it yet, but it was never allowed to become a gate. Partial
+payments count because they happened. Overpayments count because they're
+progress too.
 
-Due dates are tracked so the app carries the mental load, not the user.
+Due dates get logged rather than left to memory, because remembering under
+financial stress is exactly the skill that goes first. The app was built to
+carry that load instead of asking for it back.
 
-The balance owed stopped being the headline. In its place: a live debt-free-by
-date that moves closer with every payment, a reason to open the app instead of a
-reason to avoid it.
+The balance owed had to go from the headline. An open number only measures
+distance from a goal, so it becomes a reason to look away. A live debt-free-by
+date does the opposite: it moves closer with every entry, which makes opening
+the app the same action as making progress.
 
-Arrangements are shown as in place, needs setting up, or awaiting response,
-because most real debt is mid-negotiation, not settled.
+Arrangements needed a third state, because in place / not in place doesn't
+reflect how debt actually gets negotiated. Most of it sits somewhere unresolved,
+so the interface says as much: in place, needs setting up, or awaiting response.
 
-A creditor email sits ready for the moment someone's ready to use it.
-
-There is no red emergency colouring anywhere. No streaks. No scolding. Jade
-green and peach replace the harsh contrast the category runs on, set in Atkinson
-Hyperlegible, with a leaf standing in for growth instead of debt.
+And nothing in the interface was allowed to punish. No red, no streaks, no
+scolding, because shame is the thing that stops people opening the app in the
+first place, not the thing that gets them to pay. Jade green and peach replace
+the harsh contrast the category runs on, set in Atkinson Hyperlegible, with a
+leaf standing in for growth instead of debt.
 
 ## key features
 
