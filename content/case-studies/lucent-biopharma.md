@@ -69,14 +69,37 @@ sections:
     closing: >-
       Working alongside LUCENT Biopharma's copywriter and graphic designer,
       wireframes were then built in Figma around that persona-led IA.
-    # Placeholders until the wireframe exports exist. Replace each string with
-    # an object carrying image and alt; the count here is a guess.
     closingArtefact:
       label: Wireframes
       items:
-        - Wireframe 01
-        - Wireframe 02
-        - Wireframe 03
+        - label: Home
+          image: /assets/case-studies/lucent-wireframe-home.webp
+          alt: >-
+            Wireframe of the LUCENT Biopharma home page at desktop and mobile:
+            a hero with a single call to action, a two-column intro, a six-card
+            services grid, a statement band, a numbers section pairing a team
+            photo with four statistics, and a footer.
+        - label: About Us
+          image: /assets/case-studies/lucent-wireframe-about.webp
+          alt: >-
+            Wireframe of the About Us page at desktop and mobile: a mission
+            statement, four differentiators with icons, then leadership, heads
+            of department and wider team sections separated by statement bands,
+            ending on a full-width company timeline.
+        - label: LUCENT Academy
+          image: /assets/case-studies/lucent-wireframe-academy.webp
+          alt: >-
+            Wireframe of the LUCENT Academy page at desktop and mobile: a hero
+            with no call to action, an Our Academy block pairing four benefit
+            points with an infographic, a Key Features section carried as a
+            single image, and a closing contact call to action.
+        - label: Insights
+          image: /assets/case-studies/lucent-wireframe-insights.webp
+          alt: >-
+            Wireframe of the Insights page at desktop and mobile: a hero, an
+            intro, five category filter chips, a paginated grid of article cards
+            each carrying a title and a Read more link, and previous and next
+            pagination.
   - id: development
     num: "03"
     label: development

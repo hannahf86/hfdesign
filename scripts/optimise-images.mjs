@@ -28,6 +28,12 @@ const FILES = [
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
   ['cms collection and relations.webp', 'lucent-cms-collections', 2600],
+  // Wireframe boards. The source set also contains 'lb wireframes 05', which
+  // is a second render of the Academy page and is not used.
+  ['lb wireframes 01.webp', 'lucent-wireframe-home', 2600],
+  ['lb wireframes 02.webp', 'lucent-wireframe-about', 2600],
+  ['lb wireframes 03.webp', 'lucent-wireframe-academy', 2600],
+  ['lb wireframes 04.webp', 'lucent-wireframe-insights', 2600],
   // The export below is mis-named at source: it is the Sarah Patel persona
   // board, not a journey map.
   ['User Journey - FULL.webp', 'LB-user-persona-02', 2600],
