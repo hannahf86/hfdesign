@@ -55,7 +55,7 @@ sections:
       - name: prospective hire
         body: what it's like here, and what I'd work on
     artefact:
-      label: artefact · persona
+      label: "User Persona #02"
       image: /assets/case-studies/lucent-persona-sarah-patel.webp
       alt: >-
         Persona for Dr Sarah Patel, Head of Regulatory Affairs: her brief story,
