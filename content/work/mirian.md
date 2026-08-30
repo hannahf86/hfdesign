@@ -1,8 +1,7 @@
 ---
-# Content follows the CV. The CV lists Mirian as IN BETA TESTING and makes no
-# claim about interview counts, SUS scores or completed usability testing, so
-# those figures have been removed rather than carried over from the design
-# handoff, where they were placeholders.
+# Copy, stats and tools come from Hannah's own notes: Mirian is built and live,
+# awaiting its first testers. No interview counts, SUS scores or usability
+# testing results are claimed here, because none have been run yet.
 # CREDENTIALS: the demo login below is rendered on the public page. Confirm the
 # account is safe to publish before launch.
 slug: mirian
@@ -16,7 +15,7 @@ summary: >-
 cover: /assets/work/mirian.webp
 coverAlt: The Mirian debt tracker, showing the calm, red-free balance view.
 role: Product design, research, frontend
-tools: Figma, React, TypeScript, Supabase
+tools: Figma, Canva, VS Code, React, Next.js, TypeScript, NextAuth, PostgreSQL, Vercel
 liveUrl: https://www.mirian-debt-tracker.app/auth/login
 credentials:
   username: client@jorvikweb.dev
@@ -24,15 +23,15 @@ credentials:
 openByDefault: false
 hasCaseStudy: true
 stats:
-  - value: "4"
-    label: payment options
+  - value: "12"
+    label: core pages
     count: true
-  - value: "5"
-    label: payment states
+  - value: "1"
+    label: solo build
     count: true
-  - value: Beta
-    label: in testing
-    count: false
+  - value: "100"
+    label: "% row-level security"
+    count: true
 ---
 
 ## problem
@@ -61,16 +60,6 @@ anxiety and avoidance, so the more a notification pushes "pay now", the more it
 gets ignored. The app has to lower the demand, not raise it.
 
 Something needs to change.
-
-## process
-
-Research on ADHD motivation shows goals become more achievable with visible
-context and reachable wins. That pointed at the interface, not the balance, as
-the thing causing avoidance, so the work started by questioning what the app
-treats as its core object, rather than by restyling what was already there.
-
-[FILL IN — if you ran your own interviews or a diary study, add the numbers and
-what they surfaced. Nothing is claimed here that the CV does not support.]
 
 ## design decisions
 
@@ -111,8 +100,7 @@ Hyperlegible, with a leaf standing in for growth instead of debt.
 
 ## outcome
 
-In beta testing. The build handles five payment states with row-level security
-per user, and there are no red crosses or harsh binaries anywhere in it.
-
-[FILL IN — outcome figures once beta testing finishes. Task completion, any SUS
-score, and what testers said about the tone.]
+Mirian is built and live, ready for its first testers. Five payment states, four
+payment options, full auth and a Supabase schema scoped with row-level security
+per user. No red crosses. No harsh binaries. Just a debt tracker that assumes a
+bad month, rather than punishing one.
