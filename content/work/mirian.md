@@ -51,10 +51,6 @@ streaks and scolding notifications punish exactly the moment a user most needs
 to engage, and neurodivergent users, who are over-represented in problem debt,
 drop out first.
 
-Most trackers offer only paid or not paid, so a part payment reads as failure or
-goes unlogged entirely, designed for adults with ADHD, where executive function
-fails unpredictably under financial stress.
-
 For users with a PDA profile, it goes further. Demands themselves trigger
 anxiety and avoidance, so the more a notification pushes "pay now", the more it
 gets ignored. The app has to lower the demand, not raise it.
