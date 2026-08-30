@@ -39,8 +39,10 @@ sections:
     label: problem
     heading: New brand guidelines, and a site that buried the service.
     quote:
-      text: We send investors a PDF because the site does not answer their questions.
-      attribution: stakeholder interview · 02
+      text: >-
+        I don't need marketing and science; I understand the science. I need
+        evidence I can trust
+      attribution: persona · clinical partner
   - id: research
     num: "02"
     label: research
