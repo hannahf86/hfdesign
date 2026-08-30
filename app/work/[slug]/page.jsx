@@ -223,6 +223,10 @@ export default async function CaseStudyPage({ params }) {
                 {s.numberedAfterArtefact && s.numbered && <NumberedRows rows={s.numbered} />}
                 {s.stats && <Counters stats={s.stats} />}
                 {s.closing && <p className="cs-closing">{s.closing}</p>}
+                {/* A second artefact, after the closing line rather than before
+                    it. Same shape as `artefact`: a bare string is a placeholder
+                    until the asset exists, an object renders the image. */}
+                {s.closingArtefact && <Artefact artefact={s.closingArtefact} />}
                 {s.id === 'outcome' && cs.liveUrl && (
                   <p className="cs-live">
                     <a href={cs.liveUrl} target="_blank" rel="noopener noreferrer">
