@@ -1,20 +1,21 @@
 ---
-# NOTE: "9 live projects" and "62% less status email" are PLACEHOLDER figures
-# from the design handoff. Replace with real numbers before this goes public.
+# NOTE: figures come from Hannah's handover notes — 8 live clients as of Aug
+# 2026 and roughly 60% less admin. These replace the old "9 live projects" and
+# "62% less status email" placeholders.
 # CREDENTIALS: the demo login below is rendered on the public page. Confirm the
 # account is safe to publish (read-only, disposable data) before launch.
 slug: jwd-portal
 num: "02"
 title: JWD Client Portal
-meta: 2026 · product, design, full-stack
+meta: 2026 · UX/UI design, development
 year: "2026"
 summary: >-
   A portal for my own studio, built around one question: what do I need to see,
   at what point.
 cover: /assets/work/jwd-portal.webp
 coverAlt: The JWD Client Portal dashboard, showing project status and milestones.
-role: Product, design, full-stack
-tools: Next.js, TypeScript, Supabase, Postgres, Vercel
+role: UX/UI Designer | Developer
+tools: VS Code, Next.js, TypeScript, React, NextAuth, Postgres, Vercel, Canva
 liveUrl: https://portal.jorvikweb.dev
 credentials:
   username: client@jorvikweb.dev
@@ -22,11 +23,11 @@ credentials:
 openByDefault: false
 hasCaseStudy: true
 stats:
-  - value: "9"
-    label: live projects
+  - value: "8"
+    label: live clients
     count: true
-  - value: "62"
-    label: "% less status email"
+  - value: "60"
+    label: "% less admin"
     count: true
   - value: AA
     label: wcag 2.2
@@ -35,32 +36,28 @@ stats:
 
 ## problem
 
-Running Jorvik Web Dev on my own, project state lived across an inbox, a
-spreadsheet and memory. Clients asked reasonable questions I could not answer
-quickly, and the cost of re-orienting between projects was the real tax.
-
-## process
-
-I mapped a fortnight of my own working days and logged every moment I had to
-hunt for something. Designing with my AuDHD rather than against it meant
-building the information architecture around moments of need, not around
-database objects.
+As a freelance web developer running multiple clients at once, my projects were
+organised across ClickUp, Notion and various Google apps. As an AuDHD
+individual, I often found this overwhelming and frustrating to work with.
+Clients also found having to learn ClickUp and Notion confusing, and it felt
+like an unnecessary step in the project — so I decided enough was enough.
 
 ## design decisions
 
-One screen, one decision. Five overlapping tools replaced by one system serving
-two very different users — a studio owner living in it daily and a client
-dropping in as needed — with the information architecture organised around each.
-
-The interface is incapable of implying something untrue: retainers show logged
-hours rather than a stalled progress bar, and empty states say plainly that
-nothing is needed. Status is stated in words, never colour alone. No dashboard
-of vanity charts.
+I needed a system that was intuitive and easy for clients, rather than one that
+had me finding ways to work around a set system and adapting my way of working
+to suit it. It had to be flexible. Starting with hand-drawn wireframes, I
+thought about what I needed to see and when: what was the vital information that
+had to get my attention, and how would I make this work? Everything had to be
+meaningful and serve a purpose, and I designed it all to fit on one screen,
+because scrolling to find things was grating.
 
 ## outcome
 
-Phase one is live and in daily use across client projects. It covers document
-upload, branded invoices, scheduling, sign-off and task management, each
-confirmed in plain English rather than a browser alert. Status-chasing email cut
-sharply, and onboarding a new project now follows a single guided path instead
-of a checklist held in my head.
+Phase 1 is live, and cancelling the Notion and ClickUp subscriptions has cut my
+monthly expenditure. I now have one system where I communicate directly with
+clients, manage all document uploads, produce invoices, get approvals, create
+custom project templates, book meetings, track my own tasks and set tasks for
+clients. I am extremely proud of it, and v2 is planned: a calendar API so a
+Google Meet no longer has to be added in two places, payments taken directly,
+notifications, and custom UI functionality.
