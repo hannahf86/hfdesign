@@ -47,17 +47,21 @@ sections:
     heading: An audit, five interviews, twelve competitors, three personas.
     personas:
       - name: investor
-        body: What stage, what timeline, what is de-risked.
+        body: what stage, what timeline, what's de-risked
       - name: clinical partner
-        body: Mechanism, published evidence, who to contact.
+        body: mechanism, published evidence, who to contact
       - name: prospective hire
-        body: What it is like here, and what I would work on.
+        body: what it's like here, and what I'd work on
     artefact:
       label: artefact · persona
       image: /assets/case-studies/lucent-persona-sarah-patel.webp
       alt: >-
         Persona for Dr Sarah Patel, Head of Regulatory Affairs: her brief story,
         goals, frustrations, personality traits and key tasks on the LUCENT site.
+    # Renders after the artefact, which is where this line sits in the layout.
+    closing: >-
+      Working alongside LUCENT Biopharma's copywriter and graphic designer,
+      wireframes were then built in Figma around that persona-led IA.
   - id: development
     num: "03"
     label: development
@@ -89,50 +93,47 @@ sections:
         label: pages shipped
     closing: >-
       The site now answers each audience's first question above the fold, and the
-      LUCENT Biopharma team have been updating it themselves every month since
-      launch.
+      LUCENT Biopharma team have kept it running themselves ever since launch.
 ---
 
 ## problem
 
-LUCENT Biopharma arrived with new brand guidelines and a website that did
-nothing to communicate them. They wanted a site that demonstrated their
-expertise and skill in the field, and the existing one demonstrated neither: the
-science sat at the same level of hierarchy as everything else, and the services
-behind it were hard to make out at all.
+LUCENT Biopharma had new brand guidelines and a website that did nothing with
+them. They needed a site that demonstrated their expertise in the field, and the
+existing one demonstrated neither: the science sat at the same level as
+everything else, and the services behind it were hard to find at all.
 
-Research bore that out. Potential clients were fed up with biopharma sites that
-were too heavy on the science and not transparent enough about what was actually
-on offer. Internally the problem showed up as maintenance — the pipeline table
-had not been updated in nine months, because updating it required a developer.
+Research backed that up fast. Potential clients were tired of biopharma sites
+that led with dense science and said little about what was actually on offer.
+Internally, the same problem showed up as maintenance: the pipeline table hadn't
+been updated in nine months, because updating it meant going through a
+developer.
 
 ## research
 
-I conducted a full UX audit and wrote it up as a formal report, detailing users'
-pain points and providing data-driven solutions for how the website should be
-designed. Five stakeholder interviews across science, commercial and leadership
-sat alongside an audit of twelve comparable biopharma sites: the competitor work
-gave me a vocabulary the sector already understands, and the interviews told me
-which questions each audience arrives with. Three personas came out of it —
-investor, clinical partner, prospective hire — and each was given a defined route
-through the site before any visual work started.
+I ran a full UX audit and wrote it up as a formal report, mapping user pain
+points against data-driven recommendations for how the site should work. Five
+stakeholder interviews across science, commercial and leadership ran alongside
+an audit of twelve comparable biopharma sites: the competitor work gave me a
+vocabulary the sector already understands, and the interviews told me which
+questions each audience shows up with.
 
-Working alongside LUCENT Biopharma's copywriter and graphic designer, wireframes
-were then produced in Figma, structured around the persona-led IA.
+Three personas came out of it — investor, clinical partner, prospective hire —
+each given a defined route through the site before any visual work started.
 
 ## development
 
-Services, employees and Insights, the blog, were consolidated into Webflow's CMS
-collections, with a custom filter and card animations in JavaScript and CSS so a
-visitor finds the right service in one step. The pipeline became a CMS collection
-too — stage, indication, modality, last reviewed date — so the science team
-updates trial data themselves rather than raising a ticket for it.
+Services, employees and Insights (the blog) were consolidated into Webflow CMS
+collections, with a custom filter and card animations in JavaScript and CSS, so
+a visitor finds the right service in one step. The pipeline became a CMS
+collection too — stage, indication, modality, last reviewed date — so the
+science team updates trial data themselves instead of raising a ticket for it.
 
 ## handoff
 
-A formal UX report was provided, and the LUCENT Biopharma team were trained to
-manage their website independently moving forward. Two client seats were migrated
-with a written maintenance doc, so editors can add a trial, a service or a paper
-without opening a support ticket.
+A formal UX report was handed over, and the LUCENT Biopharma team were trained
+to manage the site themselves. Two client seats were migrated with a written
+maintenance doc, so editors can add a trial, a service or a paper without
+opening a support ticket.
 
 ## outcome
