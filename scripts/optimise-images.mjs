@@ -26,7 +26,6 @@ const FILES = [
   ['user-persona-rp.png', 'lucent-persona-sarah-patel', 2600],
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
-  ['user-journey-map-tom.png', 'lucent-journey-map-james-thornton', 3000],
   // Wise Mind screens live in the app's own repo
   // These exports carry a 16px grey Android bezel; crop it so the screen fills
   // the frame the site draws around it.

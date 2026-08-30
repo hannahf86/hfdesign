@@ -72,13 +72,6 @@ sections:
       - Services, employees and Insights consolidated into Webflow CMS collections, so the team edits content rather than requests it.
       - A custom filter across the collections, with card animations written in JavaScript and CSS.
       - Contrast and focus states audited to WCAG AA during the build, not after it.
-    artefact:
-      label: artefact · user journey map
-      image: /assets/case-studies/lucent-journey-map-james-thornton.webp
-      alt: >-
-        User journey map for James Thornton across five stages, from trigger and
-        awareness through to conversion, tracking actions, goals, feelings, pain
-        points and opportunities at each step.
   - id: handoff
     num: "04"
     label: handoff
