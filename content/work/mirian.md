@@ -37,18 +37,36 @@ stats:
 
 ## problem
 
+- 97% of neurodivergent people say their neurodivergence makes debt harder to
+  manage
+- 64% never ask their creditors for help
+- Only 32% of those who reach debt advice disclose being neurodivergent at all
+
+(StepChange/Equifax, 2025)
+
+The gap isn't awareness. It's shame: overwhelm, anxiety and stigma are the top
+reasons people go quiet exactly when they need support most.
+
 Debt tools are built for people who feel fine about their debt. Red totals,
 streaks and scolding notifications punish exactly the moment a user most needs
 to engage, and neurodivergent users, who are over-represented in problem debt,
-drop out first. Most trackers offer only paid or not paid, so a part payment
-reads as failure or goes unlogged entirely — designed for adults with ADHD,
-where executive function fails unpredictably under financial stress.
+drop out first.
+
+Most trackers offer only paid or not paid, so a part payment reads as failure or
+goes unlogged entirely, designed for adults with ADHD, where executive function
+fails unpredictably under financial stress.
+
+For users with a PDA profile, it goes further. Demands themselves trigger
+anxiety and avoidance, so the more a notification pushes "pay now", the more it
+gets ignored. The app has to lower the demand, not raise it.
+
+Something needs to change.
 
 ## process
 
 Research on ADHD motivation shows goals become more achievable with visible
 context and reachable wins. That pointed at the interface, not the balance, as
-the thing causing avoidance — so the work started by questioning what the app
+the thing causing avoidance, so the work started by questioning what the app
 treats as its core object, rather than by restyling what was already there.
 
 [FILL IN — if you ran your own interviews or a diary study, add the numbers and
@@ -59,7 +77,7 @@ what they surfaced. Nothing is claimed here that the CV does not support.]
 Four payment options instead of a binary, so an imperfect month stays honest.
 The core object is reframed from amount owed to a live cleared-by date, because
 research on ADHD motivation shows goals become more achievable with visible
-context and reachable wins — every payment moves that date closer.
+context and reachable wins, and every payment moves that date closer.
 
 Logging is one tap away, notes are optional and confirmation copy never scolds,
 because avoidance is the failure point rather than effort. No red, no streaks,
