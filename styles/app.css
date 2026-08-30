@@ -84,11 +84,30 @@ img { display: block; max-width: 100%; }
 }
 .label-accent { color: var(--accent-light); }
 
+/* Prose inside a work card. Mirrors .cs-prose so a card block and a case study
+   section read identically — the card just sets its own measure. */
 .prose {
   font-family: var(--font-body);
   font-size: 13.5px;
   line-height: 1.85;
   color: var(--fg-2);
+}
+.prose p { margin: 0 0 1.1em; }
+.prose > *:last-child { margin-bottom: 0; }
+.prose strong { color: var(--fg-1); font-weight: 600; }
+.prose em { color: var(--fg-1); }
+.prose ul, .prose ol { margin: 0 0 1.1em; padding-left: 0; list-style: none; }
+.prose li { position: relative; padding-left: 22px; margin-bottom: 0.6em; }
+.prose li:last-child { margin-bottom: 0; }
+.prose ul > li::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 0.7em;
+  width: 5px;
+  height: 5px;
+  border-radius: var(--r-pill);
+  background: var(--accent-light);
 }
 
 /* Section head: index numeral, title, spacer, optional trailing note */

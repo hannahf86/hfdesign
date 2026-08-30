@@ -8,6 +8,8 @@
 import { useState, useId, useRef } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
+import ReactMarkdown from 'react-markdown'
+import remarkGfm from 'remark-gfm'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
 // Component: StatCell — one figure in the three-up row under the cover image.
@@ -184,7 +186,9 @@ function WorkCard({ item, isOpen, onToggle }) {
                   <div className="label label-accent" style={{ marginBottom: 9 }}>
                     {b.label}
                   </div>
-                  <p className="prose">{b.body}</p>
+                  <div className="prose">
+                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{b.body}</ReactMarkdown>
+                  </div>
                 </div>
               ))}
 

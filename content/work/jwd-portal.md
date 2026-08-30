@@ -1,5 +1,5 @@
 ---
-# NOTE: figures come from Hannah's handover notes — 8 live clients as of Aug
+# NOTE: figures come from Hannah's handover notes: 8 live clients as of Aug
 # 2026 and roughly 60% less admin. These replace the old "9 live projects" and
 # "62% less status email" placeholders.
 # CREDENTIALS: the demo login below is rendered on the public page. Confirm the
@@ -36,28 +36,41 @@ stats:
 
 ## problem
 
-As a freelance web developer running multiple clients at once, my projects were
-organised across ClickUp, Notion and various Google apps. As an AuDHD
+As a freelance web developer working with multiple clients at once, my projects
+were organised across ClickUp, Notion and various Google apps. As an AuDHD
 individual, I often found this overwhelming and frustrating to work with.
 Clients also found having to learn ClickUp and Notion confusing, and it felt
-like an unnecessary step in the project — so I decided enough was enough.
+like an unnecessary step in the project, so I decided enough was enough.
 
 ## design decisions
 
 I needed a system that was intuitive and easy for clients, rather than one that
 had me finding ways to work around a set system and adapting my way of working
-to suit it. It had to be flexible. Starting with hand-drawn wireframes, I
-thought about what I needed to see and when: what was the vital information that
-had to get my attention, and how would I make this work? Everything had to be
-meaningful and serve a purpose, and I designed it all to fit on one screen,
-because scrolling to find things was grating.
+to suit it. It had to be flexible.
+
+Starting with hand-drawn wireframes, I thought about what I needed to see and
+when: what was the vital information that had to get my attention, and how would
+I make this work?
+
+Everything had to be meaningful and serve a purpose, and I designed it all to
+fit on one screen, because scrolling to find things was grating.
 
 ## outcome
 
 Phase 1 is live, and cancelling the Notion and ClickUp subscriptions has cut my
-monthly expenditure. I now have one system where I communicate directly with
-clients, manage all document uploads, produce invoices, get approvals, create
-custom project templates, book meetings, track my own tasks and set tasks for
-clients. I am extremely proud of it, and v2 is planned: a calendar API so a
-Google Meet no longer has to be added in two places, payments taken directly,
-notifications, and custom UI functionality.
+monthly expenditure. I now have one system where I can:
+
+- communicate with clients directly
+- manage all document uploads
+- produce invoices and get approvals
+- create custom project templates
+- book meetings
+- track my own tasks
+- create tasks for clients
+
+I am extremely proud of this product, and v2 is planned. It will include:
+
+- a calendar API, so a Google Meet no longer has to be added in two places
+- payments taken directly
+- notifications
+- custom UI functionality
