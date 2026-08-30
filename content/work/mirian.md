@@ -15,7 +15,8 @@ summary: >-
   opening the app.
 cover: /assets/work/mirian.webp
 coverAlt: The Mirian debt tracker, showing the calm, red-free balance view.
-roleTools: Product design, research, frontend · Figma, React, TypeScript, Supabase
+role: Product design, research, frontend
+tools: Figma, React, TypeScript, Supabase
 liveUrl: https://www.mirian-debt-tracker.app/auth/login
 credentials:
   username: client@jorvikweb.dev

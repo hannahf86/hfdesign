@@ -13,7 +13,8 @@ summary: >-
   at what point.
 cover: /assets/work/jwd-portal.webp
 coverAlt: The JWD Client Portal dashboard, showing project status and milestones.
-roleTools: Product, design, full-stack · Next.js, TypeScript, Supabase, Postgres, Vercel
+role: Product, design, full-stack
+tools: Next.js, TypeScript, Supabase, Postgres, Vercel
 liveUrl: https://portal.jorvikweb.dev
 credentials:
   username: client@jorvikweb.dev

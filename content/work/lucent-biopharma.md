@@ -5,14 +5,15 @@
 slug: lucent-biopharma
 num: "01"
 title: LUCENT Biopharma
-meta: 2026 · UX research, wireframes, Webflow build
+meta: 2026 · UX research, design, development
 year: "2026"
 summary: >-
   A science-heavy site that never got to the services. Rebuilt around a UX audit,
   three personas and new brand guidelines, then shipped into Webflow CMS.
 cover: /assets/work/lucent-biopharma.webp
 coverAlt: The rebuilt LUCENT Biopharma site, showing the pipeline overview.
-roleTools: UX audit, wireframes, Webflow build · Figma, Webflow, Webflow CMS, GA4
+role: UX Researcher and Designer | Developer
+tools: Figma, Adobe CC, Webflow and CMS, Custom CSS and JavaScript
 liveUrl: https://www.lucentbiopharma.com
 credentials: null
 openByDefault: true

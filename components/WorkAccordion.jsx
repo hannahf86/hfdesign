@@ -239,9 +239,14 @@ function WorkCard({ item, isOpen, onToggle }) {
 
               <div>
                 <div className="label" style={{ marginBottom: 10 }}>
-                  role &amp; tools
+                  role
                 </div>
-                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.roleTools}</p>
+                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.role}</p>
+
+                <div className="label" style={{ marginTop: 18, marginBottom: 10 }}>
+                  tools
+                </div>
+                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.tools}</p>
 
                 <div style={{ marginTop: 18, paddingTop: 16, borderTop: '1px solid var(--border-soft)' }}>
                   <a
