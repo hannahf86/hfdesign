@@ -27,7 +27,7 @@ const FILES = [
   ['empathy-map.png', 'lucent-empathy-map', 2000],
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
-  ['CMS Relations-selection-sm.png', 'lucent-cms-collections', 2600, { flatten: true }],
+  ['cms collection and relations.webp', 'lucent-cms-collections', 2600],
   // The export below is mis-named at source: it is the Sarah Patel persona
   // board, not a journey map.
   ['User Journey - FULL.webp', 'LB-user-persona-02', 2600],
