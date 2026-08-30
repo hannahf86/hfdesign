@@ -74,16 +74,40 @@ what they surfaced. Nothing is claimed here that the CV does not support.]
 
 ## design decisions
 
-Four payment options instead of a binary, so an imperfect month stays honest.
-The core object is reframed from amount owed to a live cleared-by date, because
-research on ADHD motivation shows goals become more achievable with visible
-context and reachable wins, and every payment moves that date closer.
+Every decision started from the same question: what does this app do on
+someone's worst day?
 
-Logging is one tap away, notes are optional and confirmation copy never scolds,
-because avoidance is the failure point rather than effort. No red, no streaks,
-no total on the home screen unless asked for. Five payment states with row-level
-security per user. No harsh binaries anywhere, and the interface is set in
-Atkinson Hyperlegible.
+The paid/unpaid toggle went first. It became on time, late, short or overpaid,
+so a bad month still leaves an honest record instead of no record at all. A note
+is there if it's needed, but never demanded. Partial payments count.
+Overpayments count.
+
+Due dates are tracked so the app carries the mental load, not the user.
+
+The balance owed stopped being the headline. In its place: a live debt-free-by
+date that moves closer with every payment, a reason to open the app instead of a
+reason to avoid it.
+
+Arrangements are shown as in place, needs setting up, or awaiting response,
+because most real debt is mid-negotiation, not settled.
+
+A creditor email sits ready for the moment someone's ready to use it.
+
+There is no red emergency colouring anywhere. No streaks. No scolding. Jade
+green and peach replace the harsh contrast the category runs on, set in Atkinson
+Hyperlegible, with a leaf standing in for growth instead of debt.
+
+## key features
+
+- Branching payment states: on time, late, short, overpaid
+- Optional notes on every payment
+- Partial and overpayment support
+- Due date tracking per debt
+- Live debt-free-by date
+- Arrangement status: in place / needs setting up / awaiting response
+- Creditor contact email field
+- Shame-free visual language and copy throughout
+- Jade green and peach palette, Atkinson Hyperlegible typeface
 
 ## outcome
 
