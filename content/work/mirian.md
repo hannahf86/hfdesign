@@ -44,11 +44,6 @@ stats:
 The gap isn't awareness. It's shame: overwhelm, anxiety and stigma are the top
 reasons people go quiet exactly when they need support most.
 
-Debt tools are built for people who feel fine about their debt. Red totals,
-streaks and scolding notifications punish exactly the moment a user most needs
-to engage, and neurodivergent users, who are over-represented in problem debt,
-drop out first.
-
 For users with a PDA profile, it goes further. Demands themselves trigger
 anxiety and avoidance, so the more a notification pushes "pay now", the more it
 gets ignored. The app has to lower the demand, not raise it.
