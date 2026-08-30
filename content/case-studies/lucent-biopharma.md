@@ -56,10 +56,13 @@ sections:
         body: what it's like here, and what I'd work on
     artefact:
       label: "User Persona #02"
-      image: /assets/case-studies/lucent-persona-sarah-patel.webp
+      image: /assets/case-studies/LB-user-persona-02.webp
       alt: >-
-        Persona for Dr Sarah Patel, Head of Regulatory Affairs: her brief story,
-        goals, frustrations, personality traits and key tasks on the LUCENT site.
+        Persona board for Dr Sarah Patel, aged 52, Head of Regulatory Affairs at
+        a large biotech company in Cambridge, with an MSc in Regulatory Affairs.
+        Her quote reads "If it's not inspection-ready, it's not ready." The board
+        sets out her brief story, her goals, her frustrations, her personality
+        traits, and her key tasks on the LUCENT Biopharma website.
     # Renders after the artefact, which is where this line sits in the layout.
     closing: >-
       Working alongside LUCENT Biopharma's copywriter and graphic designer,

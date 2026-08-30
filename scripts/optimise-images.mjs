@@ -27,6 +27,9 @@ const FILES = [
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
   ['CMS Relations-selection.webp', 'lucent-cms-collections', 2600],
+  // The export below is mis-named at source: it is the Sarah Patel persona
+  // board, not a journey map.
+  ['User Journey - FULL.webp', 'LB-user-persona-02', 2600],
   // Wise Mind screens live in the app's own repo
   // These exports carry a 16px grey Android bezel; crop it so the screen fills
   // the frame the site draws around it.
