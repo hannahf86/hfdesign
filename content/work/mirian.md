@@ -39,7 +39,7 @@ stats:
 - 64% never ask their creditors for help
 - Only 32% of those who reach debt advice disclose being neurodivergent at all
 
-(StepChange/Equifax, 2025)
+([StepChange/Equifax, 2025](https://www.stepchange.org/about-us/impact-report-2025/equifax.aspx))
 
 The gap isn't awareness. It's shame: overwhelm, anxiety and stigma are the top
 reasons people go quiet exactly when they need support most.
@@ -53,33 +53,19 @@ Something needs to change.
 ## design decisions
 
 Every decision started from the same question: what does this app do on
-someone's worst day?
+someone's worst day? The paid/unpaid toggle became on time, late, short or
+overpaid, because a binary only works if life is binary. Due dates get logged
+rather than left to memory, so the app carries that load instead of asking for
+it back. The balance owed stepped aside for a live debt-free-by date, one that
+moves closer with every entry instead of just measuring distance from a goal.
+And arrangements got a third state, because most real debt sits unresolved, not
+settled: in place, needs setting up, or awaiting response.
 
-That ruled out the paid/unpaid toggle first. A binary only works if life is
-binary, and debt rarely is, so it became on time, late, short or overpaid, built
-to hold a bad month rather than erase it. A note is there for when someone knows
-why but can't say it yet, but it was never allowed to become a gate. Partial
-payments count because they happened. Overpayments count because they're
-progress too.
-
-Due dates get logged rather than left to memory, because remembering under
-financial stress is exactly the skill that goes first. The app was built to
-carry that load instead of asking for it back.
-
-The balance owed had to go from the headline. An open number only measures
-distance from a goal, so it becomes a reason to look away. A live debt-free-by
-date does the opposite: it moves closer with every entry, which makes opening
-the app the same action as making progress.
-
-Arrangements needed a third state, because in place / not in place doesn't
-reflect how debt actually gets negotiated. Most of it sits somewhere unresolved,
-so the interface says as much: in place, needs setting up, or awaiting response.
-
-And nothing in the interface was allowed to punish. No red, no streaks, no
-scolding, because shame is the thing that stops people opening the app in the
-first place, not the thing that gets them to pay. Jade green and peach replace
-the harsh contrast the category runs on, set in Atkinson Hyperlegible, with a
-leaf standing in for growth instead of debt.
+Nothing in the interface was allowed to punish. No red, no streaks, no scolding,
+because shame is what stops people opening the app in the first place, not what
+gets them to pay. Jade green and peach replace the harsh contrast the category
+runs on, set in Atkinson Hyperlegible, with a leaf standing in for growth
+instead of debt.
 
 ## key features
 

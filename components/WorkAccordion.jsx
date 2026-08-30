@@ -12,6 +12,19 @@ import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 
+// Card prose is markdown, so a block can carry paragraphs, lists and the odd
+// source link. External links open in a new tab, same rule as CaseMarkdown.
+const MD_COMPONENTS = {
+  a({ href, children }) {
+    const external = href?.startsWith('http')
+    return (
+      <a href={href} {...(external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}>
+        {children}
+      </a>
+    )
+  },
+}
+
 // Component: StatCell — one figure in the three-up row under the cover image.
 function StatCell({ stat }) {
   return (
@@ -187,7 +200,9 @@ function WorkCard({ item, isOpen, onToggle }) {
                     {b.label}
                   </div>
                   <div className="prose">
-                    <ReactMarkdown remarkPlugins={[remarkGfm]}>{b.body}</ReactMarkdown>
+                    <ReactMarkdown remarkPlugins={[remarkGfm]} components={MD_COMPONENTS}>
+                      {b.body}
+                    </ReactMarkdown>
                   </div>
                 </div>
               ))}

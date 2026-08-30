@@ -1,7 +1,7 @@
 ---
 # NOTE: "22 pages shipped" and "40 components" come from the client's own
 # handover notes. Lighthouse (97) and accessibility (93) come from the CV and
-# are real — the CV records desktop performance lifted from 67 to 97.
+# are real: the CV records desktop performance lifted from 67 to 97.
 slug: lucent-biopharma
 num: "01"
 title: LUCENT Biopharma

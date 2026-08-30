@@ -96,6 +96,9 @@ img { display: block; max-width: 100%; }
 .prose > *:last-child { margin-bottom: 0; }
 .prose strong { color: var(--fg-1); font-weight: 600; }
 .prose em { color: var(--fg-1); }
+/* A link sitting inside body copy needs more than colour to mark it out, so
+   prose links carry an underline the standalone affordance links don't. */
+.prose a { text-decoration: underline; text-underline-offset: 2px; }
 .prose ul, .prose ol { margin: 0 0 1.1em; padding-left: 0; list-style: none; }
 .prose li { position: relative; padding-left: 22px; margin-bottom: 0.6em; }
 .prose li:last-child { margin-bottom: 0; }
