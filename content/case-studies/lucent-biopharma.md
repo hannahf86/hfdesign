@@ -72,6 +72,15 @@ sections:
       - Services, employees and Insights consolidated into Webflow CMS collections, so the team edits content rather than requests it.
       - A custom filter across the collections, with card animations written in JavaScript and CSS.
       - Contrast and focus states audited to WCAG AA during the build, not after it.
+    artefact:
+      label: "CMS Collections & Relations"
+      image: /assets/case-studies/lucent-cms-collections.webp
+      alt: >-
+        CMS structure for lucentbiopharma.com. Seven Webflow collections
+        (Teams, Employees, Services, Authors, Blogs, Blog Categories and
+        Policies) with their fields listed, and three reference fields doing all
+        the linking: Employees to Teams, and Blogs to both Authors and Blog
+        Categories. Services and Policies stand alone.
   - id: handoff
     num: "04"
     label: handoff

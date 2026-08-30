@@ -26,6 +26,7 @@ const FILES = [
   ['user-persona-rp.png', 'lucent-persona-sarah-patel', 2600],
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
+  ['CMS Relations-selection.webp', 'lucent-cms-collections', 2600],
   // Wise Mind screens live in the app's own repo
   // These exports carry a 16px grey Android bezel; crop it so the screen fills
   // the frame the site draws around it.
@@ -37,7 +38,12 @@ fs.mkdirSync(OUT_DIR, { recursive: true })
 
 let totalIn = 0
 let totalOut = 0
-const manifest = {}
+// Seed from the existing manifest so an asset whose source is not present
+// locally keeps its dimensions rather than silently losing them.
+const MANIFEST_PATH = path.join(OUT_DIR, 'manifest.json')
+const manifest = fs.existsSync(MANIFEST_PATH)
+  ? JSON.parse(fs.readFileSync(MANIFEST_PATH, 'utf8'))
+  : {}
 
 for (const [src, name, maxWidth, opts = {}] of FILES) {
   const from = isAbsolute(src) ? src : path.join(SOURCE_DIR, src)
@@ -73,7 +79,7 @@ for (const [src, name, maxWidth, opts = {}] of FILES) {
 // Dimensions manifest so rendered images can reserve their space and avoid
 // layout shift. Read by components/case-study/CaseMarkdown.jsx.
 fs.writeFileSync(
-  path.join(OUT_DIR, 'manifest.json'),
+  MANIFEST_PATH,
   JSON.stringify(manifest, null, 2) + '\n',
 )
 
