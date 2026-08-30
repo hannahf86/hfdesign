@@ -17,7 +17,9 @@ liveLabel: Visit lucentbiopharma.com
 heroAlt: The rebuilt LUCENT Biopharma homepage, showing the pipeline overview.
 meta:
   - label: role
-    value: UX Researcher and Designer | Developer
+    value: |-
+      UX Researcher and Designer
+      Developer
   - label: tools
     value: Figma, Adobe CC, Webflow and CMS, Custom CSS and JavaScript
   - label: duration

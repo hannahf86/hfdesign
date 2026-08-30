@@ -47,6 +47,9 @@
   line-height: 1.6;
   color: var(--fg-1);
   margin-top: 8px;
+  /* A meta value may carry its own line breaks, so a long role or tool list
+     breaks where it reads best rather than wherever the column runs out. */
+  white-space: pre-line;
 }
 @media (max-width: 760px) {
   .cs-meta { grid-template-columns: 1fr 1fr; gap: 20px; }
