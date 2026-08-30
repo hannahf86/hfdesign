@@ -6,7 +6,7 @@
 slug: mirian
 num: "03"
 client: Mirian
-eyebrow: case study 03 · 2024
+eyebrow: case study 03 · 2026
 title: Mirian
 titleLine2: Debt Tracker
 lead: >-
