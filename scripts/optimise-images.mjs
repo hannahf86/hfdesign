@@ -23,7 +23,6 @@ const FILES = [
   ['lucent-biopharma-cover.png', 'lucent-biopharma-cover', 1600],
   ['client-portal-cover.png', 'jwd-portal-cover', 1600],
   ['empathy-map.png', 'lucent-empathy-map', 2000],
-  ['user-persona-rp.png', 'lucent-persona-sarah-patel', 2600],
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
   ['CMS Relations-selection.webp', 'lucent-cms-collections', 2600],
