@@ -270,7 +270,7 @@ export const CASES = [
       "I was losing hours a day context-switching between Notion, email, ClickUp, and spreadsheets. Separate services that almost did what I needed but never quite fit. So I built a portal to consolidate everything: projects, milestones, handovers, client tasks, useful links — all in one place, queryable, and fast.",
       "I started with schema design. Projects have milestones; milestones have handovers; handovers surface client tasks. Built NextAuth for the auth layer and a light RBAC so clients can see their own work without access to everything else.",
       "The dashboard answers one question: what's overdue? Stats at the top, recent project list, pending actions. Nothing extraneous. If it doesn't answer that question, it doesn't get built.",
-      "Shipped six routes over a long weekend; the rest landed across two evenings each. Lucent Biopharma, Feel Good Menopause, Wise Mind DBT, and Mirian are all managed inside it. Eating your own cooking means the tool evolves with the business.",
+      "Shipped six routes over a long weekend; the rest landed across two evenings each. LUCENT Biopharma, Feel Good Menopause, Wise Mind DBT, and Mirian are all managed inside it. Eating your own cooking means the tool evolves with the business.",
     ],
     stack: [
       "Next.js",
@@ -361,7 +361,7 @@ export const CASES = [
       },
       {
         kind: "p",
-        text: "Shipped the MVP over a single long weekend. The remaining routes came across two evenings each. No ceremony, no planning sprints — just schema, build, deploy, use. Lucent Biopharma, Feel Good Menopause, Wise Mind DBT, and Mirian are all managed inside it now. The tool evolves as the business does.",
+        text: "Shipped the MVP over a single long weekend. The remaining routes came across two evenings each. No ceremony, no planning sprints — just schema, build, deploy, use. LUCENT Biopharma, Feel Good Menopause, Wise Mind DBT, and Mirian are all managed inside it now. The tool evolves as the business does.",
       },
       {
         kind: "eyebrow-h",

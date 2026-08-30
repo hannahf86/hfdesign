@@ -27,7 +27,7 @@ meta:
     value: Personal finance
 next:
   slug: lucent-biopharma
-  label: Lucent Biopharma
+  label: LUCENT Biopharma
 seo:
   title: Mirian — case study
   description: >-
