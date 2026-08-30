@@ -17,6 +17,8 @@ const OUT_DIR = path.join(process.cwd(), 'public', 'assets', 'case-studies')
 // [source file, output name, max width, options?]
 // options.extract crops before resizing — used to remove a device bezel that is
 // baked into a screenshot, so the site's own frame is the only frame.
+// options.flatten composites onto white — for exports with a transparent
+// background, whose own dark strokes would otherwise vanish on this canvas.
 // Covers sit at 1600px; the wide research boards get 2600px so the sticky notes
 // stay readable when a reader zooms in.
 const FILES = [
@@ -25,7 +27,7 @@ const FILES = [
   ['empathy-map.png', 'lucent-empathy-map', 2000],
   ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
   ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
-  ['CMS Relations-selection.webp', 'lucent-cms-collections', 2600],
+  ['CMS Relations-selection-sm.png', 'lucent-cms-collections', 2600, { flatten: true }],
   // The export below is mis-named at source: it is the Sarah Patel persona
   // board, not a journey map.
   ['User Journey - FULL.webp', 'LB-user-persona-02', 2600],
@@ -59,6 +61,7 @@ for (const [src, name, maxWidth, opts = {}] of FILES) {
 
   let pipeline = sharp(from)
   if (opts.extract) pipeline = pipeline.extract(opts.extract)
+  if (opts.flatten) pipeline = pipeline.flatten({ background: '#ffffff' })
   const sourceWidth = opts.extract ? opts.extract.width : meta.width
   await pipeline
     .resize({ width: Math.min(maxWidth, sourceWidth), withoutEnlargement: true })
