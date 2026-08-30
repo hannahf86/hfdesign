@@ -28,7 +28,7 @@ next:
   slug: jwd-portal
   label: JWD Client Portal
 seo:
-  title: LUCENT Biopharma — case study
+  title: LUCENT Biopharma case study
   description: >-
     A full UX audit, persona-led wireframes, and a Figma-to-Webflow build the
     client can maintain.
@@ -114,13 +114,13 @@ developer.
 ## research
 
 I ran a full UX audit and wrote it up as a formal report, mapping user pain
-points against data-driven recommendations for how the site should work. Five
-stakeholder interviews across science, commercial and leadership ran alongside
-an audit of twelve comparable biopharma sites: the competitor work gave me a
+points against data-driven recommendations for how the site should work.
+Stakeholder interviews across science, commercial and leadership ran alongside
+an audit of five comparable biopharma sites: the competitor work gave me a
 vocabulary the sector already understands, and the interviews told me which
 questions each audience shows up with.
 
-Three personas came out of it — investor, clinical partner, prospective hire —
+Three personas came out of it: investor, clinical partner and prospective hire,
 each given a defined route through the site before any visual work started.
 
 ## development
@@ -128,8 +128,9 @@ each given a defined route through the site before any visual work started.
 Services, employees and Insights (the blog) were consolidated into Webflow CMS
 collections, with a custom filter and card animations in JavaScript and CSS, so
 a visitor finds the right service in one step. The pipeline became a CMS
-collection too — stage, indication, modality, last reviewed date — so the
-science team updates trial data themselves instead of raising a ticket for it.
+collection too, carrying stage, indication, modality and last reviewed date, so
+the science team updates trial data themselves instead of raising a ticket for
+it.
 
 ## handoff
 
