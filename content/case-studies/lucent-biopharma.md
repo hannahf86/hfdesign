@@ -71,10 +71,23 @@ sections:
     num: "03"
     label: development
     heading: Built so the team can run it without me.
+    # The list summarises the build, so it reads after the diagram, not before.
+    numberedAfterArtefact: true
     numbered:
-      - Services, employees and Insights consolidated into Webflow CMS collections, so the team edits content rather than requests it.
-      - A custom filter across the collections, with card animations written in JavaScript and CSS.
-      - Contrast and focus states audited to WCAG AA during the build, not after it.
+      - Full mobile-specific designs on every page, not scaled desktop layouts
+      - Custom JS, HTML and CSS card flip animations for services and team members
+      - Custom search, filter, tabs and pagination on Insights
+      - Multiple custom breakpoints matched to the hi-fi wireframe
+      - Custom iconography for fast, low-text scanning
+      - Site-wide image optimisation
+      - Bespoke hero sections per service page, no shared template
+      - No reusable card components, so each page's content stays distinct
+      - HubSpot and Google Analytics integration
+      - Schema markup, meta titles and descriptions site-wide
+      - Complex grid layout across breakpoints
+      - Custom-coded accordion for the team section on the mobile About Us page
+      - Conditional visibility for team photos and blog cover images
+      - Colour-coded blog post categories
     artefact:
       label: "CMS Collections & Relations"
       image: /assets/case-studies/lucent-cms-collections.webp
@@ -130,12 +143,50 @@ each given a defined route through the site before any visual work started.
 
 ## development
 
+Every build decision traced back to the same research finding: visitors want
+their first question answered fast, and each persona's question was different.
+That shaped everything from layout to iconography.
+
 Services, employees and Insights (the blog) were consolidated into Webflow CMS
-collections, with a custom filter and card animations in JavaScript and CSS, so
-a visitor finds the right service in one step. The pipeline became a CMS
-collection too, carrying stage, indication, modality and last reviewed date, so
-the science team updates trial data themselves instead of raising a ticket for
-it.
+collections, with a custom filter, tabs and pagination on Insights, so a visitor
+finds the right service or article in one step rather than scrolling a long
+list. The pipeline became a CMS collection too, carrying stage, indication,
+modality and last reviewed date, so the science team updates trial data
+themselves instead of raising a ticket for it.
+
+Each service page needed its own hero, since a generic template couldn't hold
+what made each service distinct, so those were custom built rather than pulled
+from a shared component. That same logic ruled out reusable cards across the
+site: content varied enough page to page that forcing it into one component
+would have flattened exactly the differences the personas needed to see. Custom
+card flip animations, built in JavaScript, HTML and CSS, let services and team
+members reveal detail on demand without adding another page to click through.
+
+A complex grid layout and multiple custom breakpoints kept the design coherent
+from investor-desk widescreens down to mobile.
+
+Every page also got a fully separate mobile design rather than a scaled-down
+desktop layout, so the experience holds up regardless of screen size, in line
+with the research finding that a broken or awkward mobile view undermines the
+credibility a biopharma site depends on.
+
+On the About Us page, a custom-coded accordion handles the team section on
+mobile, keeping a large team browsable without overwhelming a small screen.
+
+Iconography was designed to carry meaning at a glance, cutting down on the dense
+scientific text the research flagged as a turn-off.
+
+Conditional visibility on team photos and blog cover images meant the layout
+holds together whether or not that content exists yet, so an unpublished bio or
+missing image never leaves a visible gap. Blog post categories were colour-coded,
+giving Insights a visual shorthand for the kind of content on offer before a
+visitor reads a single headline.
+
+Image optimisation, schema markup, and meta titles and descriptions were handled
+site-wide, so what a visitor finds through search matches what's actually on the
+page. HubSpot and Google Analytics were integrated so LUCENT Biopharma could
+track enquiries and traffic themselves, without depending on a developer to
+check.
 
 ## handoff
 

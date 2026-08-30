@@ -215,8 +215,12 @@ export default async function CaseStudyPage({ params }) {
                 {s.body && <CaseMarkdown headingLevel={3}>{s.body}</CaseMarkdown>}
                 {s.quote && <PullQuote quote={s.quote} />}
                 {s.personas && <Personas personas={s.personas} />}
-                {s.numbered && <NumberedRows rows={s.numbered} />}
+                {/* Numbered rows sit above the artefact by default. A section
+                    sets numberedAfterArtefact when the list reads as a summary
+                    of what the artefact shows, rather than a lead-in to it. */}
+                {!s.numberedAfterArtefact && s.numbered && <NumberedRows rows={s.numbered} />}
                 {s.artefact && <Artefact artefact={s.artefact} />}
+                {s.numberedAfterArtefact && s.numbered && <NumberedRows rows={s.numbered} />}
                 {s.stats && <Counters stats={s.stats} />}
                 {s.closing && <p className="cs-closing">{s.closing}</p>}
                 {s.id === 'outcome' && cs.liveUrl && (
