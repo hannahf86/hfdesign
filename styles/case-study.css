@@ -150,7 +150,7 @@
 
 /* ---------- Artefact placeholder ---------- */
 .cs-artefact {
-  margin-top: 28px;
+  margin-top: 48px;
   aspect-ratio: 16 / 7;
   border: 1px dashed var(--hf-glyph-mid);
   border-radius: var(--r-3);
@@ -160,7 +160,13 @@
 }
 
 /* An artefact that has its asset renders as a figure, not a dashed box. */
-.cs-artefact-figure { margin: 28px 0 0; }
+/* An artefact is a large light block on a dark page, so it needs more room
+   above it than a text block does. The numbered list that can follow it
+   already opens on 32px plus row padding.
+   Both classes are on the same element and `.cs-figure` is declared later in
+   this file, so it wins on source order at equal specificity. Qualifying the
+   selector makes this margin independent of where either rule sits. */
+.cs-figure.cs-artefact-figure { margin: 48px 0 0; }
 .cs-artefact-figure img { background: var(--img-bg); }
 
 /* ---------- Live project link ---------- */
