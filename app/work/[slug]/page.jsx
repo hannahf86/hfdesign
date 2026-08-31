@@ -12,8 +12,30 @@ import CaseIndex from '@/components/CaseIndex'
 import { FillInText, hasFillIn } from '@/components/case-study/FillIn'
 import CaseMarkdown from '@/components/case-study/CaseMarkdown'
 import ArtefactGallery from '@/components/case-study/ArtefactGallery'
+import SchemaMap from '@/components/case-study/SchemaMap'
 import IMAGE_SIZES from '@/public/assets/case-studies/manifest.json'
 import { getCaseStudy, getCaseStudySlugs } from '@/lib/case-studies'
+import { Anton, Maven_Pro, Lato } from 'next/font/google'
+
+// Jorvik Web Dev's three faces, for the schema map only. They are declared
+// here rather than in the root layout so the rest of the site never carries
+// them, and with preload off because exactly one section of one case study
+// uses them — a preload hint on every page would be paying for nothing.
+const anton = Anton({ subsets: ['latin'], weight: ['400'], variable: '--font-anton', display: 'swap', preload: false })
+const mavenPro = Maven_Pro({ subsets: ['latin'], weight: ['700', '800'], variable: '--font-maven-pro', display: 'swap', preload: false })
+const lato = Lato({ subsets: ['latin'], weight: ['400'], variable: '--font-lato', display: 'swap', preload: false })
+const JWD_FONTS = `${anton.variable} ${mavenPro.variable} ${lato.variable}`
+
+// Interactive blocks a section can name in frontmatter, as `embed: <key>`.
+// Keeping this a registry rather than raw markup means the content file names
+// a behaviour, and the page decides what renders it.
+const EMBEDS = {
+  'portal-schema': () => (
+    <div className={JWD_FONTS}>
+      <SchemaMap />
+    </div>
+  ),
+}
 
 export function generateStaticParams() {
   return getCaseStudySlugs().map((slug) => ({ slug }))
@@ -227,6 +249,10 @@ export default async function CaseStudyPage({ params }) {
                 {!s.numberedAfterArtefact && s.numbered && <NumberedRows rows={s.numbered} />}
                 {s.artefact && <Artefact artefact={s.artefact} />}
                 {s.numberedAfterArtefact && s.numbered && <NumberedRows rows={s.numbered} />}
+                {/* An interactive block, named by key in frontmatter. Sits
+                    after the artefacts because it is the thing a reader digs
+                    into once the pictures have set it up. */}
+                {s.embed && EMBEDS[s.embed] && EMBEDS[s.embed]()}
                 {s.stats && <Counters stats={s.stats} />}
                 {s.closing && <p className="cs-closing">{s.closing}</p>}
                 {/* A second artefact, after the closing line rather than before

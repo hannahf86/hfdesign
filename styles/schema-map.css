@@ -1,0 +1,350 @@
+/* ---------- Portal schema map ----------
+   The interactive database diagram inside the JWD Client Portal case study.
+
+   This is Jorvik Web Dev's design, not this site's, so it carries its own
+   palette, its own three type families and its own hard-shadow language. That
+   is deliberate: the diagram is an artefact of that project, shown the way the
+   project draws it, exactly as the wireframe boards above it are.
+
+   Everything is namespaced `.sm-` and every value is declared locally, so the
+   block cannot inherit from the dark case-study page around it or leak back
+   into it. Sizes stay in px rather than rem because this is a fixed-scale
+   reproduction of a handoff, not body copy that should track reader
+   preference. */
+
+.sm-root {
+  --sm-apple: #4ca244;
+  --sm-jelly: #2a9a9e;
+  --sm-poppy: #f7931e;
+  --sm-ink: #262626;
+  --sm-cream: #fbfaf7;
+  --sm-body: #4d4d4d;
+  --sm-muted: #888;
+  --sm-muted-2: #666;
+  --sm-muted-3: #999;
+  --sm-field: #e6e3dc;
+  --sm-rule: #efece5;
+  --sm-tint: #e9f4e7;
+  --sm-on-dark: #cfcbc4;
+  --sm-on-dark-line: #4a4a4a;
+
+  --sm-display: var(--font-anton), Impact, sans-serif;
+  --sm-ui: var(--font-maven-pro), var(--font-body), sans-serif;
+  --sm-text: var(--font-lato), var(--font-body), sans-serif;
+
+  margin-top: 48px;
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--sm-cream);
+  color: var(--sm-body);
+  font-family: var(--sm-text);
+  line-height: 1.5;
+  padding-bottom: 28px;
+}
+
+/* ---------- Header band ---------- */
+.sm-head {
+  background: var(--sm-ink);
+  padding: 24px 22px 22px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.sm-eyebrow {
+  font-family: var(--sm-ui);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sm-poppy);
+  margin-bottom: 10px;
+}
+
+.sm-title {
+  font-family: var(--sm-display);
+  font-size: 40px;
+  line-height: 0.98;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.sm-intro {
+  font-family: var(--sm-text);
+  font-size: 15px;
+  color: var(--sm-on-dark);
+  margin: 10px 0 0;
+  max-width: 620px;
+}
+
+.sm-head-controls {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.sm-legend {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #ffffff14;
+  border: 2px solid var(--sm-on-dark-line);
+  border-radius: var(--r-pill);
+  padding: 7px 14px;
+}
+.sm-legend-key {
+  font-family: var(--sm-ui);
+  font-weight: 800;
+  font-size: 11px;
+}
+.sm-legend[data-tone='pk'] .sm-legend-key { color: var(--sm-apple); }
+.sm-legend[data-tone='fk'] .sm-legend-key { color: var(--sm-jelly); }
+.sm-legend[data-tone='req'] .sm-legend-key { color: var(--sm-poppy); }
+.sm-legend-label {
+  font-family: var(--sm-text);
+  font-size: 13px;
+  color: var(--sm-on-dark);
+}
+
+.sm-toggle-all {
+  font-family: var(--sm-ui);
+  font-weight: 700;
+  font-size: 14px;
+  background: var(--sm-apple);
+  color: #fff;
+  border: 2.5px solid var(--sm-ink);
+  border-radius: var(--r-pill);
+  padding: 9px 18px;
+  box-shadow: 4px 4px 0 #000;
+  cursor: pointer;
+  user-select: none;
+  transition: background var(--dur-2) var(--ease-out), color var(--dur-2) var(--ease-out);
+}
+.sm-toggle-all:hover { background: #fff; color: var(--sm-ink); }
+/* The band is near-black, so the page's own focus ring would disappear
+   against it. */
+.sm-toggle-all:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+/* ---------- Groups ---------- */
+.sm-groups {
+  padding: 26px 22px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+.sm-group-head {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.sm-group-pill {
+  font-family: var(--sm-ui);
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #fff;
+  border: 2.5px solid var(--sm-ink);
+  border-radius: var(--r-pill);
+  padding: 5px 14px;
+  margin: 0;
+  transform: rotate(-1.2deg);
+  box-shadow: 4px 4px 0 var(--sm-ink);
+  white-space: nowrap;
+}
+
+.sm-group-note {
+  font-family: var(--sm-text);
+  font-size: 14px;
+  color: var(--sm-muted);
+}
+
+.sm-group-rule {
+  flex: 1;
+  height: 2px;
+  background: var(--sm-field);
+}
+
+/* ---------- Cards ---------- */
+.sm-cards {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+.sm-card {
+  width: 254px;
+  background: #fff;
+  border: 2.5px solid var(--sm-ink);
+  border-radius: 18px;
+  box-shadow: 5px 5px 0 var(--sm-ink);
+  overflow: hidden;
+  opacity: 1;
+  transition:
+    opacity var(--dur-2) var(--ease-out),
+    box-shadow var(--dur-2) var(--ease-out),
+    border-color var(--dur-2) var(--ease-out),
+    background-color var(--dur-2) var(--ease-out);
+}
+.sm-card[data-hovered='true'] {
+  background: var(--sm-tint);
+  border-color: var(--sm-apple);
+  box-shadow: 5px 5px 0 var(--sm-apple);
+}
+.sm-card[data-dimmed='true'] { opacity: 0.28; }
+
+/* The head is the whole clickable surface, so it is a full-width button with
+   the card's own padding rather than a button sitting inside padding. */
+.sm-card-head {
+  all: unset;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 12px 14px;
+  cursor: pointer;
+}
+.sm-card-head:focus-visible {
+  outline: 2px solid var(--sm-jelly);
+  outline-offset: -4px;
+  border-radius: 14px;
+}
+
+.sm-card-name {
+  font-family: var(--sm-ui);
+  font-weight: 800;
+  font-size: 15px;
+  color: var(--sm-ink);
+  word-break: break-word;
+}
+
+.sm-card-count {
+  font-family: var(--sm-text);
+  font-size: 12px;
+  color: var(--sm-muted);
+  white-space: nowrap;
+}
+
+.sm-card-links {
+  padding: 0 14px 12px;
+  font-family: var(--sm-text);
+  font-size: 12px;
+  color: var(--sm-muted);
+}
+
+.sm-card-body {
+  border-top: 2px solid var(--sm-field);
+  background: var(--sm-cream);
+}
+
+.sm-col {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 5px 14px;
+  border-bottom: 1px solid var(--sm-rule);
+}
+
+.sm-col-name {
+  font-family: var(--sm-ui);
+  font-weight: 700;
+  font-size: 12.5px;
+  color: var(--sm-body);
+}
+.sm-col-name[data-tone='pk'] { color: var(--sm-ink); }
+.sm-col-name[data-tone='fk'] { color: var(--sm-jelly); }
+
+.sm-col-tag {
+  font-family: var(--sm-ui);
+  font-weight: 800;
+  font-size: 9px;
+  letter-spacing: 0.08em;
+}
+.sm-col-tag[data-tone='pk'] { color: var(--sm-apple); }
+.sm-col-tag[data-tone='fk'] { color: var(--sm-jelly); }
+.sm-col-tag[data-tone='req'] { color: var(--sm-poppy); }
+
+.sm-col-gap { flex: 1; }
+
+.sm-col-type {
+  font-family: var(--sm-text);
+  font-size: 11px;
+  color: var(--sm-muted-3);
+  white-space: nowrap;
+}
+
+.sm-card-refs {
+  padding: 8px 14px 10px;
+  font-family: var(--sm-text);
+  font-size: 11.5px;
+  color: var(--sm-muted-2);
+  line-height: 1.5;
+}
+
+/* ---------- auth.users callout ---------- */
+.sm-callout {
+  margin: 26px 22px 0;
+  background: var(--sm-ink);
+  border-radius: 28px;
+  padding: 22px 26px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+
+.sm-callout-pill {
+  font-family: var(--sm-ui);
+  font-weight: 800;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--sm-jelly);
+  border: 2.5px dashed var(--sm-jelly);
+  border-radius: var(--r-pill);
+  padding: 7px 16px;
+  white-space: nowrap;
+}
+
+.sm-callout-copy {
+  font-family: var(--sm-text);
+  font-size: 15px;
+  color: var(--sm-on-dark);
+  max-width: 780px;
+  margin: 0;
+}
+.sm-callout-copy strong { color: #fff; font-weight: inherit; }
+
+/* ---------- Narrow ---------- */
+/* Cards are a fixed 254px so rows stay even as they expand. Below roughly two
+   cards' worth of room that stops being a grid at all, so they go full width
+   rather than leaving a ragged single column with dead space beside it. */
+@media (max-width: 600px) {
+  .sm-head { padding: 20px 16px 18px; }
+  .sm-groups { padding: 22px 16px 0; }
+  .sm-callout { margin: 22px 16px 0; padding: 18px 18px; }
+  .sm-title { font-size: 32px; }
+  .sm-cards { gap: 12px; }
+  .sm-card { width: 100%; }
+  .sm-group-head { flex-wrap: wrap; row-gap: 6px; }
+  .sm-group-rule { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sm-card,
+  .sm-toggle-all { transition: none; }
+}
+html[data-motion='reduced'] .sm-card,
+html[data-motion='reduced'] .sm-toggle-all { transition: none; }

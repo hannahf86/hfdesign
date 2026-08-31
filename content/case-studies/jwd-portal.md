@@ -151,6 +151,10 @@ sections:
             Client settings wireframe, desktop and mobile. The details held for
             the client can be edited in place, with sign in kept separate from
             the contact address and a plain note on what the portal emails about.
+    # The interactive schema map, rendered by the page's embed registry. It
+    # sits at the end of decisions rather than in a section of its own so the
+    # numbering of handoff and outcome is left alone.
+    embed: portal-schema
   - id: handoff
     num: "04"
     label: handoff

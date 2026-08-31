@@ -1,6 +1,7 @@
 /* HF Design — global styles (2026 redesign) */
 @import './tokens.css';
 @import './case-study.css';
+@import './schema-map.css';
 
 *, *::before, *::after { box-sizing: border-box; }
 
