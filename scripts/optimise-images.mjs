@@ -22,11 +22,6 @@ const OUT_DIR = path.join(process.cwd(), 'public', 'assets', 'case-studies')
 // Covers sit at 1600px; the wide research boards get 2600px so the sticky notes
 // stay readable when a reader zooms in.
 const FILES = [
-  ['lucent-biopharma-cover.png', 'lucent-biopharma-cover', 1600],
-  ['client-portal-cover.png', 'jwd-portal-cover', 1600],
-  ['empathy-map.png', 'lucent-empathy-map', 2000],
-  ['user-story-rp.png', 'lucent-user-stories-sarah-patel', 2600],
-  ['User Journey - RL.png', 'lucent-user-stories-rebecca-lawson', 2600],
   ['cms collection and relations.webp', 'lucent-cms-collections', 2600],
   // Wireframe boards. The source set also contains 'lb wireframes 05', which
   // is a second render of the Academy page and is not used.
