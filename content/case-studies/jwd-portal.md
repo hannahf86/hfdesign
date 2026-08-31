@@ -155,6 +155,17 @@ sections:
     num: "04"
     label: handoff
     heading: Built to be handed to a client, not just used by me.
+    artefact:
+      label: Admin and client, side by side
+      image: /assets/case-studies/jwd-dashboards.webp
+      alt: >-
+        The two built dashboards side by side. On the left the admin overview,
+        with counts for overdue tasks, active projects, clients and live sites
+        above lists of work due this week, to do and in progress. On the right
+        the client home, opening on a waiting on you panel, then the project
+        summary with hours used this month, the next call, and billing. Both
+        carry a bottom navigation bar, and the client wording stays plain
+        throughout.
   - id: outcome
     num: "05"
     label: outcome
