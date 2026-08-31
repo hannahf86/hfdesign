@@ -12,7 +12,7 @@ export default function Footer() {
           gap: 16,
           justifyContent: 'space-between',
           fontFamily: 'var(--font-mono)',
-          fontSize: 11,
+          fontSize: '0.8125rem',
           letterSpacing: '.14em',
           textTransform: 'uppercase',
           color: 'var(--fg-3)',

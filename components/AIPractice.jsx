@@ -85,7 +85,7 @@ export default function AIPractice() {
             fontFamily: 'var(--font-display)',
             fontWeight: 600,
             fontVariationSettings: "'wdth' 100",
-            fontSize: 'clamp(21px, 2.4vw, 33px)',
+            fontSize: 'clamp(1.3125rem, 2.4vw, 2.0625rem)',
             lineHeight: 1.35,
             letterSpacing: '-.02em',
             color: 'var(--fg-1)',
@@ -113,7 +113,7 @@ export default function AIPractice() {
               style={{
                 fontFamily: 'var(--font-mono)',
                 fontWeight: 400,
-                fontSize: 11,
+                fontSize: '0.8125rem',
                 letterSpacing: '.2em',
                 textTransform: 'uppercase',
                 color: 'var(--accent-light)',

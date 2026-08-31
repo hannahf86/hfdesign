@@ -79,7 +79,7 @@ export default function Preferences() {
         cursor: 'pointer',
         flex: 'none',
         fontFamily: 'var(--font-mono)',
-        fontSize: 11,
+        fontSize: '0.8125rem',
         letterSpacing: '.14em',
         textTransform: 'uppercase',
         whiteSpace: 'nowrap',

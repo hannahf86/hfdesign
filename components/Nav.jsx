@@ -68,7 +68,7 @@ export default function Nav() {
               fontFamily: 'var(--font-display)',
               fontWeight: 700,
               fontVariationSettings: "'wdth' 108",
-              fontSize: 15,
+              fontSize: '1rem',
               letterSpacing: '-.01em',
               color: 'var(--fg-1)',
             }}
@@ -87,7 +87,7 @@ export default function Nav() {
             alignItems: 'center',
             gap: 26,
             fontFamily: 'var(--font-mono)',
-            fontSize: 11,
+            fontSize: '0.8125rem',
             letterSpacing: '.18em',
             textTransform: 'uppercase',
           }}
@@ -117,7 +117,7 @@ export default function Nav() {
             borderRadius: 'var(--r-pill)',
             padding: '6px 14px',
             fontFamily: 'var(--font-mono)',
-            fontSize: 11,
+            fontSize: '0.8125rem',
             letterSpacing: '.14em',
             textTransform: 'uppercase',
             color: 'var(--fg-2)',
@@ -139,7 +139,7 @@ export default function Nav() {
             borderRadius: 'var(--r-2)',
             padding: '8px 16px',
             fontFamily: 'var(--font-mono)',
-            fontSize: 11,
+            fontSize: '0.8125rem',
             letterSpacing: '.14em',
             textTransform: 'uppercase',
             color: 'var(--fg-1)',
@@ -195,7 +195,7 @@ export default function Nav() {
               style={{
                 padding: '12px 4px',
                 fontFamily: 'var(--font-mono)',
-                fontSize: 13,
+                fontSize: '0.875rem',
                 letterSpacing: '.14em',
                 textTransform: 'uppercase',
                 color: 'var(--fg-2)',
@@ -211,7 +211,7 @@ export default function Nav() {
             style={{
               padding: '12px 4px',
               fontFamily: 'var(--font-mono)',
-              fontSize: 13,
+              fontSize: '0.875rem',
               letterSpacing: '.14em',
               textTransform: 'uppercase',
               color: 'var(--fg-2)',

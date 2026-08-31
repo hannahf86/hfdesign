@@ -27,7 +27,7 @@ export default function Contact() {
         <div data-anim="up" className="contact-row">
           <h2
             style={{
-              fontSize: 'clamp(30px, 4vw, 58px)',
+              fontSize: 'clamp(1.875rem, 4vw, 3.625rem)',
               lineHeight: 0.98,
               letterSpacing: '-.035em',
               maxWidth: '16ch',
@@ -88,7 +88,7 @@ export default function Contact() {
               gap: 22,
               alignItems: 'center',
               fontFamily: 'var(--font-mono)',
-              fontSize: 11,
+              fontSize: '0.8125rem',
               letterSpacing: '.18em',
               textTransform: 'uppercase',
             }}

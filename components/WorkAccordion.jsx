@@ -34,7 +34,7 @@ function StatCell({ stat }) {
           fontFamily: 'var(--font-display)',
           fontWeight: 700,
           fontVariationSettings: "'wdth' 112",
-          fontSize: 29,
+          fontSize: '1.8125rem',
           lineHeight: 1,
           color: 'var(--fg-1)',
         }}
@@ -45,7 +45,7 @@ function StatCell({ stat }) {
       <div
         style={{
           fontFamily: 'var(--font-mono)',
-          fontSize: 10.5,
+          fontSize: '0.75rem',
           letterSpacing: '.16em',
           textTransform: 'uppercase',
           color: 'var(--fg-3)',
@@ -105,7 +105,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                 fontFamily: 'var(--font-display)',
                 fontWeight: 700,
                 fontVariationSettings: "'wdth' 112",
-                fontSize: 34,
+                fontSize: '2.125rem',
                 lineHeight: 1,
                 color: 'var(--border)',
               }}
@@ -120,7 +120,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                     fontFamily: 'var(--font-display)',
                     fontWeight: 600,
                     fontVariationSettings: "'wdth' 100",
-                    fontSize: 'clamp(22px, 2.2vw, 31px)',
+                    fontSize: 'clamp(1.375rem, 2.2vw, 1.9375rem)',
                     lineHeight: 1.05,
                     letterSpacing: '-.02em',
                     color: 'var(--fg-1)',
@@ -131,7 +131,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                 <span
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: 11,
+                    fontSize: '0.8125rem',
                     letterSpacing: '.18em',
                     textTransform: 'uppercase',
                     color: 'var(--fg-3)',
@@ -158,7 +158,7 @@ function WorkCard({ item, isOpen, onToggle }) {
             <span
               style={{
                 fontFamily: 'var(--font-mono)',
-                fontSize: 11,
+                fontSize: '0.8125rem',
                 letterSpacing: '.18em',
                 textTransform: 'uppercase',
                 color: 'var(--accent-light)',
@@ -212,7 +212,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                   href={`/work/${item.slug}`}
                   style={{
                     fontFamily: 'var(--font-mono)',
-                    fontSize: 11,
+                    fontSize: '0.8125rem',
                     letterSpacing: '.18em',
                     textTransform: 'uppercase',
                   }}
@@ -260,12 +260,12 @@ function WorkCard({ item, isOpen, onToggle }) {
                 <div className="label" style={{ marginBottom: 10 }}>
                   role
                 </div>
-                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.role}</p>
+                <p style={{ fontSize: '0.875rem', lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.role}</p>
 
                 <div className="label" style={{ marginTop: 18, marginBottom: 10 }}>
                   tools
                 </div>
-                <p style={{ fontSize: 12.5, lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.tools}</p>
+                <p style={{ fontSize: '0.875rem', lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.tools}</p>
 
                 <div style={{ marginTop: 18, paddingTop: 16, borderTop: '1px solid var(--border-soft)' }}>
                   <a
@@ -274,7 +274,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                     rel="noopener noreferrer"
                     style={{
                       fontFamily: 'var(--font-mono)',
-                      fontSize: 11,
+                      fontSize: '0.8125rem',
                       letterSpacing: '.18em',
                       textTransform: 'uppercase',
                     }}
@@ -287,7 +287,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                       style={{
                         marginTop: 12,
                         fontFamily: 'var(--font-mono)',
-                        fontSize: 12,
+                        fontSize: '0.875rem',
                         lineHeight: 1.7,
                         color: 'var(--fg-3)',
                       }}

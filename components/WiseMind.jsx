@@ -51,7 +51,7 @@ export default function WiseMind() {
             <span className="label">currently building</span>
           </div>
 
-          <h3 style={{ fontSize: 'clamp(30px, 3.2vw, 44px)', letterSpacing: '-.03em' }}>Wise Mind</h3>
+          <h3 style={{ fontSize: 'clamp(1.875rem, 3.2vw, 2.75rem)', letterSpacing: '-.03em' }}>Wise Mind</h3>
 
           <p
             style={{
@@ -59,7 +59,7 @@ export default function WiseMind() {
               fontFamily: 'var(--font-display)',
               fontWeight: 600,
               fontVariationSettings: "'wdth' 100",
-              fontSize: 'clamp(17px, 1.7vw, 21px)',
+              fontSize: 'clamp(1.0625rem, 1.7vw, 1.3125rem)',
               lineHeight: 1.35,
               letterSpacing: '-.01em',
               color: 'var(--fg-1)',

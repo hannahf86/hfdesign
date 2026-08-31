@@ -52,7 +52,7 @@ export default function Experience() {
               fontFamily: 'var(--font-display)',
               fontWeight: 600,
               fontVariationSettings: "'wdth' 100",
-              fontSize: 'clamp(19px, 1.9vw, 25px)',
+              fontSize: 'clamp(1.1875rem, 1.9vw, 1.5625rem)',
               lineHeight: 1.32,
               letterSpacing: '-.01em',
               color: 'var(--fg-1)',
@@ -80,13 +80,13 @@ export default function Experience() {
             <div key={`${row.year}-${row.role}`} data-anim="up" className="exp-row">
               <span className="label exp-year">{row.year}</span>
               <div>
-                <div style={{ fontFamily: 'var(--font-body)', fontSize: 13.5, color: 'var(--fg-1)' }}>
+                <div style={{ fontFamily: 'var(--font-body)', fontSize: '0.9375rem', color: 'var(--fg-1)' }}>
                   {row.role}
                 </div>
                 <div
                   style={{
                     fontFamily: 'var(--font-body)',
-                    fontSize: 12.5,
+                    fontSize: '0.875rem',
                     lineHeight: 1.75,
                     color: 'var(--fg-3)',
                     marginTop: 4,

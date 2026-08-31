@@ -50,7 +50,7 @@ export default function Hero() {
           className="hero-display"
           aria-label={DISPLAY}
           style={{
-            fontSize: 'clamp(58px, 10vw, 168px)',
+            fontSize: 'clamp(3.625rem, 10vw, 10.5rem)',
             lineHeight: 0.94,
             letterSpacing: '-.045em',
             margin: '16px 0 0',
@@ -100,7 +100,7 @@ export default function Hero() {
                 fontFamily: 'var(--font-display)',
                 fontWeight: 600,
                 fontVariationSettings: "'wdth' 100",
-                fontSize: 'clamp(21px, 2.1vw, 29px)',
+                fontSize: 'clamp(1.3125rem, 2.1vw, 1.8125rem)',
                 lineHeight: 1.28,
                 letterSpacing: '-.01em',
                 color: 'var(--fg-1)',
@@ -120,7 +120,7 @@ export default function Hero() {
               <div className="label" style={{ marginBottom: 10 }}>
                 background
               </div>
-              <p style={{ fontSize: 13, lineHeight: 1.85 }}>
+              <p style={{ fontSize: '1rem', lineHeight: 1.85 }}>
                 Moved into tech in 2022 via the Google UX Design certificate and full-stack training
                 with IT Career Switch, after a prior career in music education.
               </p>

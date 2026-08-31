@@ -80,7 +80,7 @@ img { display: block; max-width: 100%; }
 /* ---------- Shared type roles ---------- */
 .label {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   color: var(--fg-3);
@@ -126,13 +126,13 @@ img { display: block; max-width: 100%; }
   flex-wrap: wrap;
 }
 .sec-head h2 {
-  font-size: clamp(24px, 2.5vw, 34px);
+  font-size: clamp(1.5rem, 2.5vw, 2.125rem);
   letter-spacing: -0.02em;
 }
 .sec-head .spacer { flex: 1; }
 .sec-head .note {
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--fg-3);
@@ -144,13 +144,13 @@ img { display: block; max-width: 100%; }
   border-radius: var(--r-2);
   padding: 6px 13px;
   font-family: var(--font-mono);
-  font-size: 12px;
+  font-size: 0.875rem;
   color: var(--fg-2);
 }
 .chip-pill {
   border-radius: var(--r-pill);
   padding: 5px 12px;
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.08em;
 }
 
@@ -160,7 +160,7 @@ img { display: block; max-width: 100%; }
   align-items: center;
   gap: 8px;
   font-family: var(--font-mono);
-  font-size: 11px;
+  font-size: 0.8125rem;
   letter-spacing: 0.14em;
   text-transform: uppercase;
   border-radius: var(--r-2);
@@ -206,7 +206,7 @@ img { display: block; max-width: 100%; }
   color: #fff;
   padding: 12px 18px;
   border-radius: 0 0 var(--r-2) 0;
-  font-size: 13px;
+  font-size: 0.875rem;
 }
 .skip-link:focus-visible { left: 0; }
 
