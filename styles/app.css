@@ -252,6 +252,29 @@ html.js-anim [data-hero-line] > * { opacity: 0; }
 }
 .work-panel-inner { overflow: hidden; min-height: 0; }
 
+/* Work card calls to action.
+   Stacked (<=900px) the panel is one column, so `.work-cta` follows the case
+   study link in source order and the two sit together. From 901px the panel is
+   two columns and the link returns to the foot of the aside, where it was
+   designed to sit. Placement rather than a second copy: the link exists once in
+   the DOM at every width. */
+@media (min-width: 901px) {
+  /* The prose column spans both rows and is usually the taller of the two. With
+     auto rows the surplus is shared out and the link drifts to the bottom of
+     the card, so row 1 is pinned to the aside's own height and row 2 absorbs
+     the rest, with the link held at its top. */
+  .work-body-grid { grid-template-rows: min-content 1fr; }
+  .work-body-grid > [data-panel-stagger] { grid-column: 1; grid-row: 1 / span 2; }
+  .work-body-grid > [data-panel-aside] { grid-column: 2; grid-row: 1; align-self: start; }
+  .work-body-grid > .work-cta {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+    padding-top: 16px;
+    border-top: 1px solid var(--border-soft);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .work-panel, .work-panel[data-open='true'] { transition: none; }
 }

@@ -188,7 +188,8 @@ function WorkCard({ item, isOpen, onToggle }) {
             style={{
               display: 'grid',
               gridTemplateColumns: '1.15fr 1fr',
-              gap: 'clamp(28px, 4vw, 56px)',
+              columnGap: 'clamp(28px, 4vw, 56px)',
+              rowGap: 20,
               borderTop: '1px solid var(--border-soft)',
               paddingTop: 32,
             }}
@@ -207,28 +208,9 @@ function WorkCard({ item, isOpen, onToggle }) {
                 </div>
               ))}
 
-              {/* The two calls to action sit together, tighter than the block
-                  rhythm around them, with the demo login under the link it
-                  belongs to. */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
-                {item.hasCaseStudy && (
-                  <Link
-                    href={`/work/${item.slug}`}
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.8125rem',
-                      letterSpacing: '.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    read the full case study →
-                  </Link>
-                )}
-
-                <a
-                  href={item.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
+              {item.hasCaseStudy && (
+                <Link
+                  href={`/work/${item.slug}`}
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.8125rem',
@@ -236,26 +218,47 @@ function WorkCard({ item, isOpen, onToggle }) {
                     textTransform: 'uppercase',
                   }}
                 >
-                  visit the live site →
-                </a>
+                  read the full case study →
+                </Link>
+              )}
+            </div>
 
-                {item.credentials && (
-                  <p
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.875rem',
-                      lineHeight: 1.7,
-                      color: 'var(--fg-3)',
-                    }}
-                  >
-                    Have a play:
-                    <br />
-                    Username: {item.credentials.username}
-                    <br />
-                    Password: {item.credentials.password}
-                  </p>
-                )}
-              </div>
+            {/* Third grid child, sitting between the prose and the aside in
+                source order. Stacked, that puts the live link straight after
+                the case study link; from 901px the CSS places it back at the
+                foot of the aside. One element either way, never two. */}
+            <div className="work-cta">
+              <a
+                href={item.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  fontFamily: 'var(--font-mono)',
+                  fontSize: '0.8125rem',
+                  letterSpacing: '.18em',
+                  textTransform: 'uppercase',
+                }}
+              >
+                visit the live site →
+              </a>
+
+              {item.credentials && (
+                <p
+                  style={{
+                    marginTop: 12,
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.875rem',
+                    lineHeight: 1.7,
+                    color: 'var(--fg-3)',
+                  }}
+                >
+                  Have a play:
+                  <br />
+                  Username: {item.credentials.username}
+                  <br />
+                  Password: {item.credentials.password}
+                </p>
+              )}
             </div>
 
             <div data-panel-aside="" style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
