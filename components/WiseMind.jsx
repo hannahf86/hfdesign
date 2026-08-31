@@ -70,7 +70,7 @@ export default function WiseMind() {
             progress.
           </p>
 
-          <p style={{ marginTop: 18, fontSize: 13.5, lineHeight: 1.85, maxWidth: '54ch' }}>
+          <p style={{ marginTop: 18, fontSize: '1rem', lineHeight: 1.85, maxWidth: '54ch' }}>
             Skills reference, diary card and crisis plan in one place. The current work is a full
             visual pass: contrast, motion, reading load, and a distress-state entry path that does
             not require a decision from someone in crisis.

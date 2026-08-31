@@ -145,7 +145,7 @@ function WorkCard({ item, isOpen, onToggle }) {
                   display: 'block',
                   marginTop: 12,
                   fontFamily: 'var(--font-body)',
-                  fontSize: 13.5,
+                  fontSize: '1rem',
                   lineHeight: 1.8,
                   color: 'var(--fg-2)',
                   maxWidth: '62ch',

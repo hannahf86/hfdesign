@@ -122,7 +122,7 @@ export default function AIPractice() {
             >
               {c.title}
             </h3>
-            <p style={{ fontSize: 13.5, lineHeight: 1.85 }}>{c.body}</p>
+            <p style={{ fontSize: '1rem', lineHeight: 1.85 }}>{c.body}</p>
           </div>
         ))}
       </div>

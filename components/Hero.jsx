@@ -109,7 +109,7 @@ export default function Hero() {
             >
               I design interfaces and ship the code behind them.
             </p>
-            <p style={{ marginTop: 26, fontSize: 14, lineHeight: 1.85, maxWidth: '46ch' }}>
+            <p style={{ marginTop: 26, fontSize: '1rem', lineHeight: 1.85, maxWidth: '46ch' }}>
               Interviews and personas at the front, a design system in the middle, a built and
               accessible product at the end. Three end-to-end case studies below, one in progress.
             </p>

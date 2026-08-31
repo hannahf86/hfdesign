@@ -88,7 +88,7 @@ export default async function BlogPostPage({ params }) {
 
           <div className="cs-next" style={{ maxWidth: 'var(--prose)' }}>
             <div style={{ borderTop: '1px solid var(--border)', paddingTop: 28 }}>
-              <p style={{ fontSize: 13.5, marginBottom: 24 }}>
+              <p style={{ fontSize: '1rem', marginBottom: 24 }}>
                 Thanks for reading. Get in touch to talk through a project.
               </p>
               <div style={{ display: 'flex', gap: 12, flexWrap: 'wrap' }}>

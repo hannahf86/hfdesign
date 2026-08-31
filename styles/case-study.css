@@ -43,7 +43,7 @@
 }
 .cs-meta-value {
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 1rem;
   line-height: 1.6;
   color: var(--fg-1);
   margin-top: 8px;
@@ -107,7 +107,7 @@
 
 .cs-closing {
   margin-top: 28px;
-  font-size: 13.5px;
+  font-size: 1rem;
   line-height: 1.85;
 }
 
@@ -261,7 +261,7 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   padding: 18px 0;
   border-top: 1px solid var(--border-soft);
 }
-.cs-numbered p { font-size: 13.5px; line-height: 1.85; }
+.cs-numbered p { font-size: 1rem; line-height: 1.85; }
 
 /* ---------- Outcome counters ---------- */
 .cs-counters {
@@ -294,7 +294,7 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 .cs-next a:hover h2 { color: var(--accent-light); }
 
 /* ---------- Markdown prose inside a block ---------- */
-.cs-prose { font-family: var(--font-body); font-size: 13.5px; line-height: 1.85; color: var(--fg-2); }
+.cs-prose { font-family: var(--font-body); font-size: 1rem; line-height: 1.85; color: var(--fg-2); }
 .cs-prose p { margin: 0 0 1.1em; max-width: 68ch; }
 .cs-prose > *:last-child { margin-bottom: 0; }
 .cs-prose strong { color: var(--fg-1); font-weight: 600; }
@@ -452,7 +452,7 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   transition: color var(--dur-2) var(--ease-out);
 }
 .post-row:hover h2 { color: var(--accent-light); }
-.post-row p { font-size: 13.5px; line-height: 1.8; max-width: 60ch; }
+.post-row p { font-size: 1rem; line-height: 1.8; max-width: 60ch; }
 @media (max-width: 700px) { .post-row { grid-template-columns: 1fr; gap: 10px; } }
 
 /* ---------- Byline row (blog posts) ---------- */

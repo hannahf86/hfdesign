@@ -61,13 +61,13 @@ export default function Experience() {
           >
             UX designer and full-stack developer, based in York.
           </p>
-          <p style={{ fontSize: 13.5, lineHeight: 1.85, maxWidth: '52ch' }}>
+          <p style={{ fontSize: '1rem', lineHeight: 1.85, maxWidth: '52ch' }}>
             Five years in, I run Jorvik Web Dev as a sole trader, supporting 20+ small business
             owners with web design, SEO and Webflow. Alongside that I deliver digital skills training
             through Enterprise Cube, the York &amp; North Yorkshire Growth Hub, and LX Foundry, to
             over 100 participants.
           </p>
-          <p style={{ fontSize: 13.5, lineHeight: 1.85, maxWidth: '52ch' }}>
+          <p style={{ fontSize: '1rem', lineHeight: 1.85, maxWidth: '52ch' }}>
             My interest sits where accessibility, neurodivergent-informed design and shame-reduction
             meet: products people can still use on their worst day. Freelance work has been
             enjoyable, but I am now looking for a full-time role with room to grow as a designer and

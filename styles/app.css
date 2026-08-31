@@ -10,7 +10,10 @@ html, body {
   background: var(--bg-1);
   color: var(--fg-1);
   font-family: var(--font-mono);
-  font-size: 14px;
+  /* No px root size. A px value here silently discards the reader's own
+     browser font-size preference; 100% keeps it, and body copy is set in rem
+     so it follows. 1rem is therefore 16px by default. */
+  font-size: 100%;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
@@ -88,7 +91,7 @@ img { display: block; max-width: 100%; }
    section read identically — the card just sets its own measure. */
 .prose {
   font-family: var(--font-body);
-  font-size: 13.5px;
+  font-size: 1rem;
   line-height: 1.85;
   color: var(--fg-2);
 }
