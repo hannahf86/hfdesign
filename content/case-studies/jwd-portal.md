@@ -14,9 +14,11 @@ liveLabel: Visit portal.jorvikweb.dev
 heroAlt: The JWD Client Portal dashboard, showing project status and milestones.
 meta:
   - label: role
-    value: Product, design, full-stack
+    value: |-
+      UX/UI Designer
+      Developer
   - label: tools
-    value: Next.js, TypeScript, Supabase, Vercel, Claude Code
+    value: VS Code, Next.js, TypeScript, React, NextAuth, PostgreSQL, Vercel, Canva
   - label: duration
     value: 4 weeks
   - label: sector
@@ -25,7 +27,7 @@ next:
   slug: mirian
   label: Mirian
 seo:
-  title: JWD Client Portal — case study
+  title: JWD Client Portal case study
   description: >-
     A studio portal built around one question: what do I need to see, at what
     point.
@@ -36,36 +38,39 @@ sections:
     label: problem
     heading: >-
       Projects were managed across email, Notion and ClickUp, costing money and
-      needing a lot of set up
+      needing constant setup.
   - id: research
     num: "02"
     label: research
-    heading: >-
-      Lived experience and past research informed every design and IA decision
+    heading: Lived experience and existing research informed every design and IA decision.
   - id: decisions
     num: "03"
     label: decisions
-    heading: Exactly what needs to be seen, and nothing else
+    heading: Exactly what needs to be seen, and nothing else.
     numbered:
       - >-
-        Stats sit at the top of the overview on the dashboard. Seeing how much is
-        actually on builds momentum rather than dread by providing quick wins on
-        low dopamine days. Utilising a colour code system and large icons frame
-        this important information in a purposeful way that doesn't set off PDA
-        (pathological demand avoidance), and provides quick wins for those low
-        dopamine days.
+        Stats sit at the top of the dashboard. A visible sense of how much is
+        actually done builds momentum rather than dread, so this was placed
+        first rather than buried under task lists. Colour coding and large icons
+        frame the same numbers without triggering PDA the way a demand-styled
+        progress bar would, and give a quick, low-effort win to look at on a low
+        dopamine day, when opening a wall of text wouldn't happen at all.
       - >-
-        "To do" and "due this week" are separate, not one sorted list. "To do"
-        holds everything, spanning weeks, in date order, but a long ordered list
-        doesn't grab attention on its own. "Due this week" is the same data
-        filtered down to what actually needs doing today, so time gets planned
-        around what's real rather than what's merely logged.
+        "To do" and "due this week" are separate, not one sorted list. A single
+        long list, however well ordered, doesn't hold attention on its own, it
+        just becomes background noise. Splitting the same data into "everything,
+        in date order" and "only what's due now" means time gets planned around
+        what's actually urgent, not around whatever happens to be at the top of
+        a scroll.
       - >-
-        Views are mixed, not fixed. Kanban, lists, and charts sit alongside each
-        other so the same project can be read the way my brain needs it read
-        that day, rather than forcing one view to do every job.
+        Views are mixed, not fixed. Kanban, lists and charts sit alongside each
+        other because the same project needs to be read differently depending on
+        the day and the headspace, and forcing one view to do every job would
+        mean fighting the interface on the days it matters least to.
       - >-
-        Invoices generate with JWD branding built in, no separate tool required.
+        Invoices generate with JWD branding built in. Removing the step of
+        exporting into a separate invoicing tool removes a context switch that
+        has nothing to do with the actual task of getting paid.
   - id: handoff
     num: "04"
     label: handoff
@@ -84,44 +89,53 @@ sections:
       - value: 5-10
         label: hours saved weekly (est.)
     closing: >-
-      Communication with clients is clearer and lives in one place rather than
-      scattered across email and separate tools, so they're not learning
-      anything new to use it. Reminders and project timelines run automatically
-      instead of me tracking them by memory, which keeps projects on track
-      without extra admin. It's in daily use across 8 live client projects, with
-      onboarding now a single guided path instead of a checklist held in my head.
+      Communication with clients now lives in one place instead of scattered
+      across email and separate tools, so nobody has to learn anything new to
+      use it. Reminders and project timelines run automatically instead of being
+      tracked by memory, which keeps things on schedule without adding admin.
+      It's in daily use across 8 live client projects, with onboarding now a
+      single guided path instead of a checklist held in my head.
 ---
 
 ## problem
 
-As a freelancer web developer and a person with AuDHD, I found going across
-multiple platforms for client projects frustrating and difficult to maintain
-consistency; taking a lot of time to set up and organise, and sometimes even
-training clients. Emails would get lost in the spam, clients would miss
-deadlines, projects would drag on due to miscommunication.
+Running a freelance web dev studio across three separate platforms meant three
+separate systems to maintain, and for an AuDHD brain, three separate places to
+lose track of things. Notion and ClickUp both demanded structure be imposed up
+front, before a project had shown what structure it actually needed. Clients had
+to learn tools they'd never use again for a single job. Emails got buried in
+spam, deadlines slipped through the gap between platforms, and projects dragged
+on for reasons that had nothing to do with the work itself.
 
 ## research
 
-There was no formal research phase during the design stage itself, because years
-of lived experience and education around ND behaviour (specifically how visual
-reminders and dopamine work for an AuDHD brain, and separately how demand
-framing affects PDA) had already done that work.
+There was no separate research phase, because the research had already happened,
+just not for this project. Years of lived experience as AuDHD, alongside existing
+knowledge of how visual reminders and dopamine interact with an ADHD brain, and
+separately how demand-framing triggers PDA, had already established what the
+interface needed to avoid and what it needed to lean into before a single screen
+was drawn.
 
-Layered onto the day-to-day of running JWD, that gave a working theory of what
-the interface actually needed to do before a single screen was designed.
-Designing with my AuDHD rather than against it meant building the information
-architecture around moments of need, not around database objects.
+That reframed the brief. The question wasn't "which project management tool fits
+my workflow", it was "what does an interface have to do to stop me avoiding it".
+Designing with the AuDHD rather than around it meant building the information
+architecture around moments of need, rather than around database objects, which
+is the opposite of how Notion and ClickUp are structured.
 
 ## decisions
 
-The Overview view shows specific and meaningful information.
+Every screen decision was tested against the same standard: does this reduce the
+gap between wanting to check on a project and actually checking. If a piece of
+information couldn't justify its presence against that standard, it didn't make
+the screen.
 
 ## handoff
 
-Clients are invited manually, project by project, there's no self-serve signup.
-Once in, access is role-based: a client sees their own project in full, but
-anything not relevant to them is hidden by default rather than exposed and roped
-off. When a project ends, its data is archived rather than deleted immediately,
-and cleared after two years.
+Clients are invited manually, project by project, there's no self-serve signup
+to get wrong. Access is role-based once in: a client sees their own project in
+full, but anything not relevant to them is hidden by default rather than exposed
+and roped off, which keeps the interface calm for them in the same way it's calm
+for me. When a project ends, its data is archived rather than deleted
+immediately, and cleared after two years.
 
 ## outcome
