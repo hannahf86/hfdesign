@@ -62,7 +62,16 @@ sections:
           diagnosis to years of financial struggle. Needs the app's tone to
           explain, not judge, since it may be the first tool that has
           acknowledged the connection at all.
-    artefact: artefact · empathy map
+    artefact:
+      label: Dashboard, tracker and debts
+      image: /assets/case-studies/mirian-screens-01.webp
+      alt: >-
+        Three Mirian screens on mobile. The dashboard leads with a debt-free
+        date rather than a balance, then the total, the monthly budget and what
+        is due this month. The 2026 tracker gives each debt a twelve-month row
+        of payment markers. The debts list shows what is remaining and, on each
+        debt, a plain prompt that more details can be added whenever, with no
+        deadline attached.
   - id: decisions
     num: "03"
     label: decisions

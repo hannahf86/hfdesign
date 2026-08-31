@@ -44,6 +44,9 @@ const FILES = [
   ['jwd cp wireframe 010.webp', 'jwd-wireframe-client-files', 2600],
   ['jwd cp wireframe 011.webp', 'jwd-wireframe-client-calls', 2600],
   ['jwd cp wireframe 012.webp', 'jwd-wireframe-client-settings', 2600],
+  // Three Mirian screens for the research artefact. Source is 1440px, so the
+  // 1600 cap passes it through at native size.
+  ['mirian screens 01.webp', 'mirian-screens-01', 1600],
   // The two built dashboards side by side, for the handoff section. The source
   // is 1440px, so the 1600 cap passes it through at native size.
   ['jwd-cp-dashboards.webp', 'jwd-dashboards', 1600],
