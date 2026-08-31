@@ -110,11 +110,22 @@ on for reasons that had nothing to do with the work itself.
 ## research
 
 There was no separate research phase, because the research had already happened,
-just not for this project. Years of lived experience as AuDHD, alongside existing
-knowledge of how visual reminders and dopamine interact with an ADHD brain, and
-separately how demand-framing triggers PDA, had already established what the
-interface needed to avoid and what it needed to lean into before a single screen
-was drawn.
+just not for this project. Years of lived experience as AuDHD sat alongside
+existing evidence: adults with ADHD show measurably lower dopamine receptor and
+transporter levels in the brain regions that drive motivation and reward
+processing, which is part of why a distant, undifferentiated task list rarely
+gets opened, let alone finished. The reward system responds far better to
+something immediate and visible than to a single outcome sitting weeks away,
+which is what pointed toward stats and progress markers sitting at the top of
+the interface rather than buried in it.
+
+PDA needed separate handling from that. PDA is an anxiety-driven need to stay in
+control and avoid other people's demands and expectations, where control is what
+keeps the anxiety manageable, so anything in the interface that reads as an
+instruction risks the same shutdown a verbal demand would trigger, however
+well-intentioned the nudge. That ruled out due-date banners, red badges and
+progress bars styled as pressure, and pointed toward colour and iconography that
+inform rather than instruct.
 
 That reframed the brief. The question wasn't "which project management tool fits
 my workflow", it was "what does an interface have to do to stop me avoiding it".
