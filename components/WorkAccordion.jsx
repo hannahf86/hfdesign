@@ -207,9 +207,28 @@ function WorkCard({ item, isOpen, onToggle }) {
                 </div>
               ))}
 
-              {item.hasCaseStudy && (
-                <Link
-                  href={`/work/${item.slug}`}
+              {/* The two calls to action sit together, tighter than the block
+                  rhythm around them, with the demo login under the link it
+                  belongs to. */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: 12 }}>
+                {item.hasCaseStudy && (
+                  <Link
+                    href={`/work/${item.slug}`}
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.8125rem',
+                      letterSpacing: '.18em',
+                      textTransform: 'uppercase',
+                    }}
+                  >
+                    read the full case study →
+                  </Link>
+                )}
+
+                <a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
                     fontFamily: 'var(--font-mono)',
                     fontSize: '0.8125rem',
@@ -217,9 +236,26 @@ function WorkCard({ item, isOpen, onToggle }) {
                     textTransform: 'uppercase',
                   }}
                 >
-                  read the full case study →
-                </Link>
-              )}
+                  visit the live site →
+                </a>
+
+                {item.credentials && (
+                  <p
+                    style={{
+                      fontFamily: 'var(--font-mono)',
+                      fontSize: '0.875rem',
+                      lineHeight: 1.7,
+                      color: 'var(--fg-3)',
+                    }}
+                  >
+                    Have a play:
+                    <br />
+                    Username: {item.credentials.username}
+                    <br />
+                    Password: {item.credentials.password}
+                  </p>
+                )}
+              </div>
             </div>
 
             <div data-panel-aside="" style={{ display: 'flex', flexDirection: 'column', gap: 22 }}>
@@ -266,40 +302,6 @@ function WorkCard({ item, isOpen, onToggle }) {
                   tools
                 </div>
                 <p style={{ fontSize: '0.875rem', lineHeight: 1.8, color: 'var(--fg-3)' }}>{item.tools}</p>
-
-                <div style={{ marginTop: 18, paddingTop: 16, borderTop: '1px solid var(--border-soft)' }}>
-                  <a
-                    href={item.liveUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    style={{
-                      fontFamily: 'var(--font-mono)',
-                      fontSize: '0.8125rem',
-                      letterSpacing: '.18em',
-                      textTransform: 'uppercase',
-                    }}
-                  >
-                    visit the live site →
-                  </a>
-
-                  {item.credentials && (
-                    <p
-                      style={{
-                        marginTop: 12,
-                        fontFamily: 'var(--font-mono)',
-                        fontSize: '0.875rem',
-                        lineHeight: 1.7,
-                        color: 'var(--fg-3)',
-                      }}
-                    >
-                      Have a play:
-                      <br />
-                      Username: {item.credentials.username}
-                      <br />
-                      Password: {item.credentials.password}
-                    </p>
-                  )}
-                </div>
               </div>
             </div>
             </div>
