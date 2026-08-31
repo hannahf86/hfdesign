@@ -71,16 +71,86 @@ sections:
         Invoices generate with JWD branding built in. Removing the step of
         exporting into a separate invoicing tool removes a context switch that
         has nothing to do with the actual task of getting paid.
-    # Placeholders until the screens are exported. Replace each string with an
-    # object carrying image and alt. Labels follow the four decisions above; the
-    # count is a guess.
+    # Wireframe boards, admin side first and then the client side, in the order
+    # the source set is numbered. Each board carries the desktop screen and the
+    # same screen on mobile, which is why the alt text names both.
     artefact:
-      label: Screens
+      label: Wireframes
       items:
-        - Dashboard stats
-        - To do and due this week
-        - Mixed views
-        - Invoices
+        - image: /assets/case-studies/jwd-wireframe-admin-overview.webp
+          label: Admin, overview
+          alt: >-
+            Admin overview wireframe, desktop and mobile. Counts for overdue
+            tasks, active projects, clients and live sites sit above panels for
+            work due this week, client tasks, approvals, and every project
+            grouped by phase.
+        - image: /assets/case-studies/jwd-wireframe-admin-work.webp
+          label: Admin, my work
+          alt: >-
+            My work wireframe, desktop and mobile. Tasks sit in to do, in
+            progress and completed columns on desktop and collapse to tabs on
+            mobile, each card carrying a size chip, a due date and a status
+            control.
+        - image: /assets/case-studies/jwd-wireframe-admin-projects.webp
+          label: Admin, projects
+          alt: >-
+            Projects wireframe, desktop and mobile. Projects are grouped by
+            phase under maintenance retainers, discovery and live, each row
+            showing the client, the work, hours a month and a status pill.
+        - image: /assets/case-studies/jwd-wireframe-admin-approvals.webp
+          label: Admin, approvals
+          alt: >-
+            Approvals wireframe, desktop and mobile. A single awaiting approval
+            row names the item, the project it belongs to, the date it is due
+            and its status.
+        - image: /assets/case-studies/jwd-wireframe-admin-clients.webp
+          label: Admin, clients
+          alt: >-
+            Clients wireframe, desktop and mobile. Each client is one row with
+            initials, contact details and a project count, with archived clients
+            behind a link at the foot of the list.
+        - image: /assets/case-studies/jwd-wireframe-admin-invoices.webp
+          label: Admin, invoices
+          alt: >-
+            Invoices wireframe, desktop and mobile. Outstanding, overdue, paid
+            and draft totals sit above the invoice list, each invoice showing its
+            reference, the project, the date it was paid and the amount.
+        - image: /assets/case-studies/jwd-wireframe-client-home.webp
+          label: Client, home
+          alt: >-
+            Client home wireframe, desktop and mobile. A waiting on you panel
+            leads, followed by the project summary with hours used this month,
+            the next call, billing, and buttons to book a call or ask for an
+            update.
+        - image: /assets/case-studies/jwd-wireframe-client-timeline.webp
+          label: Client, timeline
+          alt: >-
+            Client timeline wireframe, desktop and mobile. A progress bar runs
+            from discovery through to maintenance, above the most recent piece of
+            work and a list of completed client tasks with dates.
+        - image: /assets/case-studies/jwd-wireframe-client-tasks.webp
+          label: Client, tasks
+          alt: >-
+            Client tasks wireframe, desktop and mobile. A needs you panel sits
+            above a done list, with completed tasks struck through.
+        - image: /assets/case-studies/jwd-wireframe-client-files.webp
+          label: Client, files
+          alt: >-
+            Client files wireframe, desktop and mobile. A send us something form
+            asks what the file is before offering the file picker, above the list
+            of files already shared with the project.
+        - image: /assets/case-studies/jwd-wireframe-client-calls.webp
+          label: Client, calls
+          alt: >-
+            Client calls wireframe, desktop and mobile. Suggested times are
+            confirmed here and the calendar invite follows by email, with past
+            calls listed underneath.
+        - image: /assets/case-studies/jwd-wireframe-client-settings.webp
+          label: Client, settings
+          alt: >-
+            Client settings wireframe, desktop and mobile. The details held for
+            the client can be edited in place, with sign in kept separate from
+            the contact address and a plain note on what the portal emails about.
   - id: handoff
     num: "04"
     label: handoff

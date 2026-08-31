@@ -29,6 +29,21 @@ const FILES = [
   ['lb wireframes 02.webp', 'lucent-wireframe-about', 2600],
   ['lb wireframes 03.webp', 'lucent-wireframe-academy', 2600],
   ['lb wireframes 04.webp', 'lucent-wireframe-insights', 2600],
+  // JWD client portal wireframes. Source numbering runs 01-09 then 010-012.
+  // Each board carries the admin screen, the same screen on mobile, and a
+  // reference badge (1a, 1b, ...); the badge on 'calls' reads 11 rather than 1k.
+  ['jwd cp wireframe 01.webp', 'jwd-wireframe-admin-overview', 2600],
+  ['jwd cp wireframe 02.webp', 'jwd-wireframe-admin-work', 2600],
+  ['jwd cp wireframe 03.webp', 'jwd-wireframe-admin-projects', 2600],
+  ['jwd cp wireframe 04.webp', 'jwd-wireframe-admin-approvals', 2600],
+  ['jwd cp wireframe 05.webp', 'jwd-wireframe-admin-clients', 2600],
+  ['jwd cp wireframe 06.webp', 'jwd-wireframe-admin-invoices', 2600],
+  ['jwd cp wireframe 07.webp', 'jwd-wireframe-client-home', 2600],
+  ['jwd cp wireframe 08.webp', 'jwd-wireframe-client-timeline', 2600],
+  ['jwd cp wireframe 09.webp', 'jwd-wireframe-client-tasks', 2600],
+  ['jwd cp wireframe 010.webp', 'jwd-wireframe-client-files', 2600],
+  ['jwd cp wireframe 011.webp', 'jwd-wireframe-client-calls', 2600],
+  ['jwd cp wireframe 012.webp', 'jwd-wireframe-client-settings', 2600],
   // The export below is mis-named at source: it is the Sarah Patel persona
   // board, not a journey map.
   ['User Journey - FULL.webp', 'LB-user-persona-02', 2600],

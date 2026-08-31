@@ -30,5 +30,53 @@
   "/assets/case-studies/lucent-wireframe-insights.webp": {
     "width": 2600,
     "height": 2467
+  },
+  "/assets/case-studies/jwd-wireframe-admin-overview.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-admin-work.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-admin-projects.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-admin-approvals.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-admin-clients.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-admin-invoices.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-client-home.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-client-timeline.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-client-tasks.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-client-files.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-client-calls.webp": {
+    "width": 2600,
+    "height": 1467
+  },
+  "/assets/case-studies/jwd-wireframe-client-settings.webp": {
+    "width": 2600,
+    "height": 1467
   }
 }
