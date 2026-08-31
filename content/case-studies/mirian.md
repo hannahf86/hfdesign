@@ -156,9 +156,6 @@ recorded as a loss. Research on ADHD motivation shows goals become more
 achievable with visible context and reachable wins, which reframed the problem:
 the interface was the thing triggering avoidance, not the balance itself.
 
-[FILL IN — if you ran your own interviews or a diary study, add the numbers and
-what they surfaced. Nothing is claimed here that the CV does not support.]
-
 ## decisions
 
 ## handoff
