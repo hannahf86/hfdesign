@@ -71,6 +71,16 @@ sections:
         Invoices generate with JWD branding built in. Removing the step of
         exporting into a separate invoicing tool removes a context switch that
         has nothing to do with the actual task of getting paid.
+    # Placeholders until the screens are exported. Replace each string with an
+    # object carrying image and alt. Labels follow the four decisions above; the
+    # count is a guess.
+    artefact:
+      label: Screens
+      items:
+        - Dashboard stats
+        - To do and due this week
+        - Mixed views
+        - Invoices
   - id: handoff
     num: "04"
     label: handoff

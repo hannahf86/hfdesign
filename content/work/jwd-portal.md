@@ -2,8 +2,10 @@
 # NOTE: figures come from Hannah's handover notes: 8 live clients as of Aug
 # 2026 and roughly 60% less admin. These replace the old "9 live projects" and
 # "62% less status email" placeholders.
-# CREDENTIALS: the demo login below is rendered on the public page. Confirm the
-# account is safe to publish (read-only, disposable data) before launch.
+# CREDENTIALS: the demo login below is rendered on the public page, where it can
+# be scraped and indexed. It is now a personal Gmail address rather than a
+# disposable one, so the password must be portal-only and used nowhere else,
+# above all not on that Google account. Unconfirmed as of this change.
 slug: jwd-portal
 num: "02"
 title: JWD Client Portal
@@ -18,8 +20,8 @@ role: UX/UI Designer | Developer
 tools: VS Code, Next.js, TypeScript, React, NextAuth, Postgres, Vercel, Canva
 liveUrl: https://portal.jorvikweb.dev
 credentials:
-  username: client@jorvikweb.dev
-  password: JorvikWebDev2026!
+  username: hannahfeehan.music@gmail.com
+  password: "Asturias86!"
 openByDefault: false
 hasCaseStudy: true
 stats:
