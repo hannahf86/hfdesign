@@ -22,7 +22,7 @@ meta:
   - label: tools
     value: Figma, React, TypeScript, Supabase
   - label: duration
-    value: "[FILL IN]"
+    value: 6 weeks
   - label: sector
     value: Personal finance
 next:
