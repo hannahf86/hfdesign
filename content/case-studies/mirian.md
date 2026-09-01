@@ -175,6 +175,4 @@ and the interface set in Atkinson Hyperlegible throughout for legibility. Jade
 green and peach replace the red-and-alarm palette the category defaults to, with
 a leaf motif standing in for growth rather than debt.
 
-[FILL IN — what moving out of beta will involve.]
-
 ## outcome
