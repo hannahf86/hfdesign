@@ -45,20 +45,27 @@ const ANIMATED = [
 
 export default function Motion() {
   const pathname = usePathname()
-  // Bumped when the header's motion toggle fires, so the layer re-runs
-  // immediately instead of waiting for the next navigation.
+  // Bumped when the system's reduced-motion setting changes, so the layer
+  // re-runs immediately instead of waiting for the next navigation.
   const [pref, setPref] = useState(0)
 
+  // Re-run when the reader changes the system setting, which is now the only
+  // thing that moves `data-motion`. The bootstrap only reads it at first paint,
+  // so the attribute is refreshed here too.
   useEffect(() => {
-    const onChange = () => setPref((n) => n + 1)
-    window.addEventListener('hf:motion-change', onChange)
-    return () => window.removeEventListener('hf:motion-change', onChange)
+    const mq = matchMedia('(prefers-reduced-motion: reduce)')
+    const onChange = () => {
+      document.documentElement.dataset.motion = mq.matches ? 'reduced' : 'full'
+      setPref((n) => n + 1)
+    }
+    mq.addEventListener('change', onChange)
+    return () => mq.removeEventListener('change', onChange)
   }, [])
 
   useEffect(() => {
     const root = document.documentElement
-    // `data-motion` is the single source of truth: the bootstrap script seeds it
-    // from the stored preference, falling back to the system setting.
+    // `data-motion` is the single source of truth: the bootstrap script seeds
+    // it from the system's reduced-motion setting.
     const reduce = root.dataset.motion === 'reduced'
 
     let pointerCleanup = null

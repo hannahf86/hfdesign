@@ -55,10 +55,15 @@ export const metadata = {
   icons: { icon: '/hf-monogram.svg' },
 }
 
-// Applies the stored motion preference before first paint, and only then marks
-// the document as animating. `js-anim` is what the CSS uses to hide
-// pre-animation state, so it is added ONLY when motion is allowed — no-JS and
-// reduced-motion visitors never get hidden content.
+// Resolves the motion setting before first paint, and only then marks the
+// document as animating. `js-anim` is what the CSS uses to hide pre-animation
+// state, so it is added ONLY when motion is allowed — no-JS and reduced-motion
+// visitors never get hidden content.
+//
+// The source is the system's `prefers-reduced-motion` and nothing else. The
+// in-page toggle that used to override it is gone, so the stored key is cleared
+// rather than read: without that, anyone who had switched motion off would be
+// held there permanently with no control left to switch it back on.
 //
 // The watchdog is the safety net: if the app bundle never boots — blocked
 // script, network failure, a runtime error — nothing would ever animate the
@@ -66,9 +71,9 @@ export const metadata = {
 // is removed and everything falls back to its final CSS state. Motion.jsx
 // cancels the watchdog as soon as it has taken over.
 const MOTION_BOOTSTRAP = `(function(){try{
-var d=document.documentElement,s=null;
-try{s=localStorage.getItem('hf-motion')}catch(e){}
-var m=(s==='reduced'||s==='full')?s:(matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full');
+var d=document.documentElement;
+try{localStorage.removeItem('hf-motion')}catch(e){}
+var m=matchMedia('(prefers-reduced-motion: reduce)').matches?'reduced':'full';
 d.dataset.motion=m;
 if(m==='full'){d.classList.add('js-anim');window.__hfMotionWatchdog=setTimeout(function(){d.classList.remove('js-anim')},2500)}
 }catch(e){}})()`

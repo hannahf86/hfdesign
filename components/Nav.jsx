@@ -8,7 +8,6 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
-import Preferences from './Preferences'
 
 const LINKS = [
   { id: 'work', label: 'work' },
@@ -127,8 +126,6 @@ export default function Nav() {
           <span className="dot" data-dot="" aria-hidden="true" />
           open to roles
         </div>
-
-        <Preferences />
 
         <a
           href="/#contact"
