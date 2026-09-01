@@ -115,7 +115,11 @@ export default function Hero() {
             </p>
           </div>
 
-          <div data-anim="up" style={{ display: 'flex', flexDirection: 'column', gap: 26, paddingTop: 8 }}>
+          <div
+            data-anim="up"
+            className="hero-aside"
+            style={{ display: 'flex', flexDirection: 'column', gap: 26, paddingTop: 8 }}
+          >
             <div>
               <div className="label" style={{ marginBottom: 10 }}>
                 background
@@ -129,7 +133,7 @@ export default function Hero() {
               <div className="label" style={{ marginBottom: 10 }}>
                 certified
               </div>
-              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8 }}>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: 8, justifyContent: 'flex-end' }}>
                 {CERTS.map((c) => (
                   <span key={c} className="chip chip-pill">
                     {c}
@@ -149,7 +153,16 @@ export default function Hero() {
           margin-top: 64px;
           align-items: start;
         }
+        /* The aside is right-aligned so "background" and "certified" hang off the
+           same edge as "…fullstack developer" in the rule row above it. */
+        .hero-aside { text-align: right; }
+        .hero-aside p { margin-left: auto; }
+
         @media (max-width: 860px) {
+          /* Once the grid stacks there is no right edge to align to. */
+          .hero-aside { text-align: left; }
+          .hero-aside p { margin-left: 0; }
+          .hero-aside > div > div:last-child { justify-content: flex-start !important; }
           .hero { padding-top: 132px !important; padding-bottom: 64px !important; }
           .hero-display { font-size: 42px !important; }
           .hero-grid { grid-template-columns: 1fr; gap: 40px; margin-top: 40px; }
