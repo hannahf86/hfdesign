@@ -55,15 +55,28 @@ job."
 
 I did not know that "having a good UI" was a transferable skill. I certainly
 didn't know it was a job. But it rattled around in my head long enough that I
-started dusting off some old graphic design instincts, which turned into a real
-interest in UI design, which turned — fairly quickly, once I started reading
-about it properly — into UX, once I realised the "why" behind the interface was
-the part I actually found addictive. I was a guitar teacher at the time, and in
-2022 I decided, with the calm confidence of someone who has genuinely no idea
-what she's getting into, that I was going to become a UX designer properly. I
-signed up for the Google UX Design certificate, then followed it with a
-full-stack development bootcamp through IT Career Switch, because apparently one
-career leap wasn't dramatic enough.
+started dusting off my old graphic design skills, studying with Lindsay Marsh on
+Udemy, which propelled my real interest in UI design.
+
+> It's hard to study UI design without UX, if you're doing it properly.
+
+Once I realised the "why" behind the interface was the part I actually found
+addictive.
+
+I was a guitar teacher at the time, running activities in a school teaching
+basic HTML, CSS and JavaScript, as well as Graphic Design, and in 2022 I
+decided, with the calm confidence of someone who has genuinely no idea what
+she's getting into, that I was going to become a UX designer properly. I signed
+up for the Google UX Design certificate.
+
+I spent hours in Figma and XD designing these genuinely exciting mobile and web
+apps, but that's all they were; designs. I knew how to code a bit but I was
+getting frustrated that my apps that could solve genuine life problems were just
+sat there.
+
+This led me to push myself again and learn full-stack development through IT
+Career Switch and Codecademy, because apparently one career leap wasn't dramatic
+enough.
 
 I now run a UX and dev freelance practice, I've built and shipped multiple apps,
 and I deliver digital skills training through Enterprise Cube, the York and
