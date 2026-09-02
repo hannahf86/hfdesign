@@ -60,8 +60,7 @@ Udemy, which propelled my real interest in UI design.
 
 > It's hard to study UI design without UX, if you're doing it properly.
 
-Once I realised the "why" behind the interface was the part I actually found
-addictive.
+Once I realised the "why" behind the interface I actually found addictive.
 
 I was a guitar teacher at the time, running activities in a school teaching
 basic HTML, CSS and JavaScript, as well as Graphic Design, and in 2022 I
