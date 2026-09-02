@@ -4,6 +4,10 @@
 
 import { Archivo, DM_Sans, DM_Mono, Cormorant_Garamond } from 'next/font/google'
 import Motion from '@/components/Motion'
+// Vercel Web Analytics. Cookieless and no personal data, so it needs no consent
+// banner — which matters on a site whose argument is low cognitive load. It
+// only reports from the deployed site; locally the script no-ops.
+import { Analytics } from '@vercel/analytics/next'
 import '@/styles/app.css'
 
 // Display face. The design uses the width axis heavily — 'wdth' 100 for lead
@@ -94,6 +98,7 @@ export default function RootLayout({ children }) {
         </a>
         {children}
         <Motion />
+        <Analytics />
       </body>
     </html>
   )
