@@ -161,11 +161,10 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             )}
           </div>
 
-          {/* Sits under the search rather than in the filter row, where it
-              pushed the tabs around as the number changed width. Announced on
-              change, so filtering is not a silent update for anyone using a
-              screen reader. */}
-          <p className="blog-count label" role="status" aria-live="polite">
+          {/* The visible count is gone at Hannah's request, but the change
+              still has to be announced — otherwise filtering silently rewrites
+              the page for anyone using a screen reader. */}
+          <p className="sr-only" role="status" aria-live="polite">
             showing {results.length} of {posts.length}
           </p>
         </div>
@@ -238,8 +237,10 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             {rows.map((post, i) => (
               <li key={post.slug} className="blog-mask">
                 <Link href={`/blog/${post.slug}`} className="blog-row">
+                  {/* The featured card is 01, so the rows carry on from there
+                      rather than restarting the sequence. */}
                   <span className="label blog-num" aria-hidden="true">
-                    {String(i + 1).padStart(2, '0')}
+                    {String(i + (featured ? 2 : 1)).padStart(2, '0')}
                   </span>
                   <div className="blog-row-body">
                     <Cats items={post.categories} />

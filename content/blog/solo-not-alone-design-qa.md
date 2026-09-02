@@ -9,7 +9,7 @@ excerpt: >-
   made unfamiliar with the work, using tools built to compensate for the fact
   that I can't unknow what I already know about it.
 categories:
-  - work flow
+  - workflow
   - Development
 tags:
   - Process
