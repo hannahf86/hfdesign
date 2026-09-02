@@ -1,7 +1,7 @@
 'use client'
 
-// Component: BlogFilter — the search box, category tabs and result list on the
-// writing index.
+// Component: BlogFilter — the writing index: filter bar, featured card,
+// numbered rows.
 //
 // The rows carry no `data-anim`. The global motion layer hides those with
 // `html.js-anim [data-anim='up'] { opacity: 0 }` and only reveals what existed
@@ -9,14 +9,47 @@
 // would be stranded invisible. This component owns its own reveal instead, and
 // re-runs it whenever the result set changes.
 //
-// The gesture is the hero's: text rising out of a mask on an expo curve, here
-// per row rather than per character. GSAP owns every transform; the CSS never
-// sets one, so the two can't stack (which is what once left the hero blank).
+// The gesture is the hero's: content rising out of a mask on an expo curve.
+// GSAP owns every transform; the CSS never sets one, so the two can't stack
+// (which is what once left the hero blank).
 
 import { useMemo, useState, useId, useRef, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
+import IMAGE_SIZES from '@/public/assets/case-studies/manifest.json'
 
 const ALL = 'all'
+
+// Section: the cover slot on the featured card. A post without a `cover` gets a
+// visibly unfinished box rather than a collapsed layout — the same rule the
+// case studies follow for an artefact that has not been made yet.
+function Cover({ post }) {
+  if (!post.cover) {
+    return (
+      <div className="blog-cover blog-cover-empty" role="note">
+        <span className="label">cover image</span>
+      </div>
+    )
+  }
+  const dims = IMAGE_SIZES[post.cover]
+  return (
+    <div className="blog-cover">
+      <Image
+        src={post.cover}
+        alt={post.coverAlt || ''}
+        width={dims?.width || 1024}
+        height={dims?.height || 1024}
+        sizes="(max-width: 900px) 92vw, 420px"
+        priority
+      />
+    </div>
+  )
+}
+
+function Cats({ items }) {
+  if (!items?.length) return null
+  return <div className="label label-accent blog-cats">{items.join(' · ')}</div>
+}
 
 export default function BlogFilter({ posts = [], categories = [] }) {
   const [query, setQuery] = useState('')
@@ -31,6 +64,12 @@ export default function BlogFilter({ posts = [], categories = [] }) {
       return q ? post.haystack.includes(q) : true
     })
   }, [posts, query, active])
+
+  // The featured card is only drawn when the pinned post leads the current
+  // results. Filter it out and everything falls back to the numbered list, so
+  // there is never an empty hero slot or a card out of sequence.
+  const featured = results[0]?.pinned ? results[0] : null
+  const rows = featured ? results.slice(1) : results
 
   // Keyed on which posts are showing, not on the raw query: typing a character
   // that doesn't change the results shouldn't restart the animation.
@@ -49,13 +88,13 @@ export default function BlogFilter({ posts = [], categories = [] }) {
     // rows in their natural, visible state instead of a half-applied one.
     import('gsap').then(({ gsap }) => {
       if (cancelled || !listRef.current) return
-      const targets = listRef.current.querySelectorAll('.blog-row-mask > *')
+      const targets = listRef.current.querySelectorAll('.blog-mask > *')
       if (!targets.length) return
 
-      // Masks clip during the reveal only: a permanent overflow:hidden would
-      // also clip the focus ring on the row links.
       const duration = 0.9
       const stagger = 0.07
+      // Masks clip during the reveal only: a permanent overflow:hidden would
+      // also clip the focus ring on the row links.
       list.classList.add('is-revealing')
 
       ctx = gsap.context(() => {
@@ -94,7 +133,6 @@ export default function BlogFilter({ posts = [], categories = [] }) {
 
   // Only offer a tab that actually has something behind it.
   const shown = categories.filter((c) => posts.some((p) => (p.categories || []).includes(c)))
-  const filtering = active !== ALL || query.trim() !== ''
 
   return (
     <>
@@ -112,7 +150,7 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             type="search"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
-            placeholder="Search writing"
+            placeholder="search writing"
             autoComplete="off"
           />
           {query && (
@@ -143,13 +181,13 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             </button>
           ))}
         </div>
-      </div>
 
-      {/* Announced on change, so a filter is not a silent update for anyone
-          using a screen reader. Only speaks once a filter is actually on. */}
-      <p className="blog-count" role="status" aria-live="polite">
-        {filtering ? `${results.length} ${results.length === 1 ? 'post' : 'posts'}` : ' '}
-      </p>
+        {/* Announced on change, so filtering is not a silent update for anyone
+            using a screen reader. */}
+        <p className="blog-count label" role="status" aria-live="polite">
+          showing {results.length} of {posts.length}
+        </p>
+      </div>
 
       {results.length === 0 ? (
         <p className="blog-empty">
@@ -166,28 +204,56 @@ export default function BlogFilter({ posts = [], categories = [] }) {
           </button>
         </p>
       ) : (
-        <ul className="blog-list" ref={listRef}>
-          {results.map((post) => (
-            <li key={post.slug}>
-              <div className="blog-row-mask">
-                <Link href={`/blog/${post.slug}`} className="post-row">
-                  <div style={{ minWidth: 0 }}>
-                    {post.pinned ? (
-                      <span className="post-flag">featured</span>
-                    ) : (
-                      post.eyebrow && <div className="label">{post.eyebrow}</div>
-                    )}
+        <div ref={listRef}>
+          {featured && (
+            <div className="blog-mask">
+              <Link href={`/blog/${featured.slug}`} className="blog-feature">
+                <div className="blog-feature-body">
+                  <div className="blog-feature-tags">
+                    <span className="post-flag">featured</span>
+                    <Cats items={featured.categories} />
+                  </div>
+                  <h2>{featured.title}</h2>
+                  {featured.excerpt && <p>{featured.excerpt}</p>}
+                  <div className="blog-feature-foot">
+                    <span className="label">
+                      {featured.dateLabel}
+                      {featured.readingTime ? ` · ${featured.readingTime}` : ''}
+                    </span>
+                    <span className="label label-accent blog-read">
+                      read the note <span aria-hidden="true">→</span>
+                    </span>
+                  </div>
+                </div>
+                <Cover post={featured} />
+              </Link>
+            </div>
+          )}
+
+          <ol className="blog-list">
+            {rows.map((post, i) => (
+              <li key={post.slug} className="blog-mask">
+                <Link href={`/blog/${post.slug}`} className="blog-row">
+                  <span className="label blog-num" aria-hidden="true">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <div className="blog-row-body">
+                    <Cats items={post.categories} />
                     <h2>{post.title}</h2>
                     {post.excerpt && <p>{post.excerpt}</p>}
                   </div>
-                  <span className="label" style={{ whiteSpace: 'nowrap' }}>
-                    {post.dateLabel}
-                  </span>
+                  <div className="blog-row-meta">
+                    <span className="label">{post.dateLabel}</span>
+                    {post.readingTime && <span className="label">{post.readingTime}</span>}
+                    <span className="label label-accent blog-read">
+                      read <span aria-hidden="true">→</span>
+                    </span>
+                  </div>
                 </Link>
-              </div>
-            </li>
-          ))}
-        </ul>
+              </li>
+            ))}
+          </ol>
+        </div>
       )}
     </>
   )

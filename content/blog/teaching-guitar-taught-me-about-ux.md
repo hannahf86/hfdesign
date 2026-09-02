@@ -5,6 +5,10 @@ date: 2026-08-22
 order: 1
 pinned: true
 readingTime: 8 min read
+cover: /assets/blog/guitar-ux.webp
+coverAlt: >-
+  An illustration of a classical guitar surrounded by a laptop, a phone showing a
+  wireframe, a stack of books, a lightbulb, a brain and a target.
 excerpt: >-
   A decade of watching people fail at a physical, cognitive, emotionally loaded
   task in real time — with no undo button and no analytics dashboard to hide

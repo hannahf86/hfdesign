@@ -86,5 +86,9 @@
   "/assets/case-studies/mirian-screens-01.webp": {
     "width": 1440,
     "height": 800
+  },
+  "/assets/blog/guitar-ux.webp": {
+    "width": 1024,
+    "height": 1024
   }
 }

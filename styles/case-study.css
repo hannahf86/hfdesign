@@ -478,13 +478,20 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 }
 
 /* ---------- Writing index: search + category tabs ---------- */
+/* Three columns rather than a wrapping flex row, so the count stays pinned to
+   the right while the tabs wrap inside their own cell. */
 .blog-filter {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
   align-items: center;
   gap: 16px 24px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--border);
+}
+
+@media (max-width: 1100px) {
+  .blog-filter { grid-template-columns: minmax(0, 1fr); justify-items: start; }
+  .blog-count { margin-left: 0; }
 }
 
 .blog-search {
@@ -561,17 +568,144 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 }
 .blog-tab:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
 
-.blog-count {
-  min-height: 1.4em;
-  margin: 18px 0 0;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  letter-spacing: 0.16em;
-  text-transform: uppercase;
-  color: var(--fg-3);
+/* Sits at the far end of the filter row and holds the count. */
+.blog-count { margin: 0 0 0 auto; white-space: nowrap; }
+
+/* ---------- Featured card ---------- */
+.blog-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  margin-top: 40px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-4);
+  background: var(--hf-accent-tint);
+  transition: border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+}
+.blog-feature:hover { border-color: var(--accent-light); background: rgba(102, 87, 212, 0.11); }
+
+.blog-feature-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.blog-feature h2 {
+  margin: 20px 0 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--fg-1);
+  max-width: 18ch;
+}
+.blog-feature p {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 52ch;
+}
+.blog-feature-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
 }
 
+.blog-cover {
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--img-bg);
+  aspect-ratio: 4 / 3;
+}
+.blog-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Unfinished, and visibly so — never a collapsed or invented slot. */
+.blog-cover-empty {
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--hf-glyph-mid);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 7px,
+    rgba(102, 87, 212, 0.07) 7px 14px
+  );
+}
+
+/* ---------- Numbered rows ---------- */
 .blog-list { list-style: none; margin: 0; padding: 0; }
+.blog-row {
+  display: grid;
+  grid-template-columns: 44px minmax(0, 1fr) auto;
+  gap: clamp(16px, 3vw, 40px);
+  align-items: start;
+  padding: 34px 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.blog-num { padding-top: 4px; color: var(--fg-3); }
+.blog-row h2 {
+  margin: 12px 0 0;
+  font-size: clamp(1.3125rem, 2.2vw, 1.8125rem);
+  line-height: 1.18;
+  letter-spacing: -0.025em;
+  color: var(--fg-1);
+  transition: color var(--dur-2) var(--ease-out);
+  max-width: 22ch;
+}
+.blog-row:hover h2 { color: var(--accent-light); }
+.blog-row p { margin: 14px 0 0; font-size: 1rem; line-height: 1.8; max-width: 58ch; }
+.blog-row-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 8px;
+  text-align: right;
+  white-space: nowrap;
+  padding-top: 4px;
+}
+.blog-read { transition: color var(--dur-2) var(--ease-out); }
+.blog-feature:hover .blog-read,
+.blog-row:hover .blog-read { color: var(--fg-1); }
+
+@media (max-width: 900px) {
+  .blog-feature { grid-template-columns: minmax(0, 1fr); }
+  /* Cover first on a narrow screen: it is the thing that identifies the post
+     at a glance, and pushing it under the excerpt buries it. */
+  .blog-feature .blog-cover { order: -1; }
+  .blog-row { grid-template-columns: 32px minmax(0, 1fr); }
+  .blog-row-meta {
+    grid-column: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 14px;
+    text-align: left;
+    margin-top: 16px;
+    padding-top: 0;
+  }
+}
+
+/* ---------- Closing call to action ---------- */
+.blog-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.blog-cta h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--fg-1);
+  max-width: 16ch;
+}
+.blog-cta p { margin-top: 18px; font-size: 1rem; line-height: 1.8; max-width: 44ch; }
+.blog-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
 
 .blog-empty { margin-top: 28px; font-size: 1rem; color: var(--fg-2); }
 .blog-reset {
@@ -592,7 +726,8 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
    The mask only clips while the reveal is playing. Left on permanently it would
    also clip the focus ring on the row links, which is a worse trade than a
    momentarily unmasked edge. */
-.blog-list.is-revealing .blog-row-mask { overflow: hidden; }
+.blog-list.is-revealing .blog-mask,
+.is-revealing > .blog-mask { overflow: hidden; }
 
 @media (max-width: 700px) {
   .blog-search { max-width: none; flex-basis: 100%; }

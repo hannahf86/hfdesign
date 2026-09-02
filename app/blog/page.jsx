@@ -1,5 +1,6 @@
 // Page: /blog — the post index, with search and category filtering.
 
+import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import BlogFilter from '@/components/BlogFilter'
@@ -21,9 +22,11 @@ export default function BlogIndexPage() {
     slug: post.slug,
     title: post.title,
     excerpt: post.excerpt || '',
-    eyebrow: post.eyebrow || null,
     pinned: post.pinned,
     categories: post.categories || [],
+    readingTime: post.readingTime || null,
+    cover: post.cover || null,
+    coverAlt: post.coverAlt || '',
     dateLabel: formatPostDate(post.date),
     haystack: [post.title, post.subtitle, post.excerpt, ...(post.categories || []), ...(post.tags || [])]
       .filter(Boolean)
@@ -53,6 +56,25 @@ export default function BlogIndexPage() {
             <BlogFilter posts={posts} categories={POST_CATEGORIES} />
           )}
         </div>
+
+        {/* Section: closing call to action, from the redesign. */}
+        <section className="wrap blog-cta">
+          <div>
+            <h2 data-anim="up">New notes land every few weeks.</h2>
+            <p data-anim="up">
+              Mostly research write-ups, accessibility notes, and what I got wrong on the way to
+              shipping something.
+            </p>
+          </div>
+          <div data-anim="up" className="blog-cta-actions">
+            <Link href="/#contact" className="btn btn-primary">
+              say hello <span aria-hidden="true">→</span>
+            </Link>
+            <Link href="/#work" className="btn btn-ghost">
+              see the work
+            </Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

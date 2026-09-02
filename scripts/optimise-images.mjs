@@ -13,6 +13,11 @@ const SOURCE_DIR = 'C:/Users/Hannah/Desktop/JWD/UX Portfolio'
 // own project rather than in the portfolio export folder.
 const isAbsolute = (p) => /^[A-Za-z]:[\/]|^\//.test(p)
 const OUT_DIR = path.join(process.cwd(), 'public', 'assets', 'case-studies')
+// options.dir sends an asset to a different folder under public/assets — blog
+// covers do not belong with the case study artefacts.
+const outDirFor = (opts) =>
+  opts.dir ? path.join(process.cwd(), 'public', 'assets', opts.dir) : OUT_DIR
+const publicPathFor = (opts, name) => `/assets/${opts.dir ?? 'case-studies'}/${name}.webp`
 
 // [source file, output name, max width, options?]
 // options.extract crops before resizing — used to remove a device bezel that is
@@ -58,6 +63,8 @@ const FILES = [
   // the frame the site draws around it.
   ['C:/Users/Hannah/Desktop/Developer/wise-mind/assets/Lesson - Wise Mind-selection.png', 'wisemind-lesson', 900, { extract: { left: 16, top: 16, width: 792, height: 1752 } }],
   ['C:/Users/Hannah/Desktop/Developer/wise-mind/assets/Journal - Wise Mind-selection.png', 'wisemind-journal', 900, { extract: { left: 16, top: 16, width: 792, height: 1752 } }],
+  // Blog covers. Square source, shown in a 4:3 slot on the featured card.
+  ['C:/Users/Hannah/Downloads/guitar-ux.webp', 'guitar-ux', 1200, { dir: 'blog' }],
 ]
 
 fs.mkdirSync(OUT_DIR, { recursive: true })
@@ -78,7 +85,9 @@ for (const [src, name, maxWidth, opts = {}] of FILES) {
     continue
   }
 
-  const to = path.join(OUT_DIR, `${name}.webp`)
+  const dir = outDirFor(opts)
+  fs.mkdirSync(dir, { recursive: true })
+  const to = path.join(dir, `${name}.webp`)
   const meta = await sharp(from).metadata()
 
   let pipeline = sharp(from)
@@ -95,7 +104,7 @@ for (const [src, name, maxWidth, opts = {}] of FILES) {
   const out = await sharp(to).metadata()
   totalIn += inKb
   totalOut += outKb
-  manifest[`/assets/case-studies/${name}.webp`] = { width: out.width, height: out.height }
+  manifest[publicPathFor(opts, name)] = { width: out.width, height: out.height }
 
   console.log(
     `  ${name}.webp  ${meta.width}x${meta.height} -> ${out.width}x${out.height}  ` +
