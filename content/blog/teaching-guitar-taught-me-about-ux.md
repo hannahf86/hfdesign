@@ -1,7 +1,7 @@
 ---
 slug: teaching-guitar-taught-me-about-ux
 title: Teaching guitar taught me more about UX than my UX course did
-date: 2026-09-02
+date: 2026-08-22
 pinned: true
 readingTime: 8 min read
 excerpt: >-
