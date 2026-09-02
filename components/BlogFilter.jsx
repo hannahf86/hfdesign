@@ -221,7 +221,7 @@ export default function BlogFilter({ posts = [], categories = [] }) {
                       {featured.readingTime ? ` · ${featured.readingTime}` : ''}
                     </span>
                     <span className="label label-accent blog-read">
-                      read the note <span aria-hidden="true">→</span>
+                      read the post <span aria-hidden="true">→</span>
                     </span>
                   </div>
                 </div>
