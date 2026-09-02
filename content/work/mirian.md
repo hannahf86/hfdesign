@@ -7,12 +7,12 @@
 slug: mirian
 num: "01"
 title: Mirian
-meta: 2026 · Research, Product Design, Fullstack Development
+meta: 2026 · UX Research, Product Design, Fullstack Development
 year: "2026"
 summary: A debt tracker designed to reduce shame.
 cover: /assets/work/mirian.webp
 coverAlt: The Mirian debt tracker, showing the calm, red-free balance view.
-role: Research, Product Design, Fullstack Development
+role: UX Research, Product Design, Fullstack Development
 tools: Figma, Canva, VS Code, React, Next.js, TypeScript, NextAuth, PostgreSQL, Vercel
 liveUrl: https://www.mirian-debt-tracker.app/auth/login
 credentials:
