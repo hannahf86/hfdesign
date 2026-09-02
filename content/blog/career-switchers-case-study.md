@@ -3,9 +3,10 @@ slug: career-switchers-case-study
 title: The career-switcher's case study
 subtitle: What I'd tell myself starting the Google UX cert today.
 date: 2026-08-18
+order: 2
 readingTime: 9 min read
 excerpt: >-
-  My entry into this industry started in World of Warcraft. Three years on,
+  My entry into this industry started in World of Warcraft. Five years on,
   training the next batch of career-switchers, here's what I got right, what I
   got needlessly wrong, and what I'd hand my 2022 self.
 tags:
@@ -137,12 +138,11 @@ else's.
 
 > Your career-change story is a garnish, not the meal.
 
-What I'd tell past-me: your career-change story is a garnish, not the meal. It's
-genuinely worth one good line in a cover letter or an "about" page, and it's
-worth absolutely nothing if the case studies behind it don't hold up on their
-own merits. Ironically, this post works because I've since built a body of real,
-technical, well-documented work — Wise Mind, Mirian, client sites — that the
-story sits on top of. Three years ago, the story was doing all the lifting
+It's genuinely worth one good line in a cover letter or an "about" page, and
+it's worth absolutely nothing if the case studies behind it don't hold up on
+their own merits. Ironically, this post works because I've since built a body of
+real, technical, well-documented work — Wise Mind, Mirian, client sites — that
+the story sits on top of. Five years ago, the story was doing all the lifting
 because there was nothing underneath it yet, and that's a shakier place to build
 a career from than it feels like at the time.
 
@@ -155,18 +155,16 @@ to ask for as a designer. I stopped drawing wireframes that were technically
 fantasy the moment I understood what a component actually costs to maintain.
 
 But the harder skill, and the one nobody puts on a syllabus, was learning to
-state a design opinion without three qualifying clauses in front of it. Early
-on, every piece of feedback I gave sounded like "this is just my thought, and I
-could be totally wrong, but maybe possibly the button could be bigger?" I'd tell
-past-me: you did the research. You ran the test. You're allowed to say "the
-button needs to be bigger" as a sentence, full stop, and let the room disagree
-with you if they want to.
+state a design opinion without three qualifying clauses in front of it.
 
 > Softening a professional opinion into a question isn't humility — it's just
 > noise that makes people trust your judgement less.
 
-Softening a professional opinion into a question isn't humility — it's just
-noise that makes people trust your judgement less.
+Early on, every piece of feedback I gave sounded like "this is just my thought,
+and I could be totally wrong, but maybe possibly the button could be bigger?"
+I'd tell past-me: you did the research. You ran the test. You're allowed to say
+"the button needs to be bigger" as a sentence, full stop, and let the room
+disagree with you if they want to.
 
 ## The people who "aren't real designers yet" are usually the best people to learn from
 
@@ -178,17 +176,16 @@ quietly convinced everyone else in the room is further along than they are.
 Here's the thing I didn't expect: they are, almost without exception, sharper
 observers of bad design than people five years into the industry, because they
 haven't yet been trained to accept a bad pattern just because "that's how it's
-always done." A career-switcher coming from teaching, nursing, retail,
-hospitality — any job that's fundamentally about reading a room and solving a
-human problem in real time — usually walks in with better instincts for empathy
-and friction than a lot of design-school graduates who've mostly practised on
-briefs rather than people.
+always done."
 
 > The thing you think is your weakness — that you came from somewhere else — is
 > going to be one of your actual advantages.
 
-I'd tell past-me: the thing you think is your weakness — that you came from
-somewhere else — is going to be one of your actual advantages.
+A career-switcher coming from teaching, nursing, retail, hospitality — any job
+that's fundamentally about reading a room and solving a human problem in real
+time — usually walks in with better instincts for empathy and friction than a
+lot of design-school graduates who've mostly practised on briefs rather than
+people.
 
 ## What I'd actually change, concretely
 
