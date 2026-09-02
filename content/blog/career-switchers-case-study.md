@@ -70,7 +70,7 @@ she's getting into, that I was going to become a UX designer properly. I signed
 up for the Google UX Design certificate.
 
 I spent hours in Figma and XD designing these genuinely exciting mobile and web
-apps, but that's all they were; designs. I knew how to code a bit but I was
+apps, but that's all they were: designs. I knew how to code a bit but I was
 getting frustrated that my apps that could solve genuine life problems were just
 sat there.
 
@@ -78,13 +78,14 @@ This led me to push myself again and learn full-stack development through IT
 Career Switch and Codecademy, because apparently one career leap wasn't dramatic
 enough.
 
-I now run a UX and dev freelance practice, I've built and shipped multiple apps,
+I now run a UX and web dev freelance practice, I've built and shipped multiple apps,
 and I deliver digital skills training through Enterprise Cube, the York and
 North Yorkshire Growth Hub, and LX Foundry — which means a meaningful chunk of
 my working week is now spent helping other career-switchers do the thing I did.
+
 So I've had a lot of time to reflect on what I got right, what I got needlessly
 wrong, and what I'd say to the version of me who was three weeks into that
-certificate, mildly panicking, and Googling "is Figma hard."
+certificate, mildly panicking, and Googling "do I need TypeScript."
 
 This is that letter. I'm publishing it because if you're reading this as a
 recruiter wondering whether a non-traditional path produces a worse designer, my
