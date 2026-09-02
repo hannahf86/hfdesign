@@ -9,6 +9,10 @@ excerpt: >-
   A decade of watching people fail at a physical, cognitive, emotionally loaded
   task in real time — with no undo button and no analytics dashboard to hide
   behind. The instrument changed. The empathy didn't.
+categories:
+  - my story
+  - Design
+  - research
 tags:
   - UX
   - Career

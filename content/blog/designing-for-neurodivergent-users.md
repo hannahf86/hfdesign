@@ -8,6 +8,10 @@ excerpt: >-
   Most of what I knew about cognitive load was written for users having a
   reasonably okay day. This is what changed once I started designing for the
   worst five minutes of someone's week.
+categories:
+  - Neurodivergence
+  - Design
+  - research
 tags:
   - Accessibility
   - UX

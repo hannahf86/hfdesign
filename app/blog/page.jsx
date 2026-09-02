@@ -1,9 +1,9 @@
-// Page: /blog — the post index.
+// Page: /blog — the post index, with search and category filtering.
 
-import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { getAllPosts, formatPostDate } from '@/lib/blog'
+import BlogFilter from '@/components/BlogFilter'
+import { getAllPosts, formatPostDate, POST_CATEGORIES } from '@/lib/blog'
 
 export const metadata = {
   title: 'Writing',
@@ -14,7 +14,22 @@ export const metadata = {
 }
 
 export default function BlogIndexPage() {
-  const posts = getAllPosts()
+  // The search text is assembled here rather than in the browser: the filter
+  // only ever needs one lowercase string per post, and the body never has to
+  // cross into the client bundle.
+  const posts = getAllPosts().map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt || '',
+    eyebrow: post.eyebrow || null,
+    pinned: post.pinned,
+    categories: post.categories || [],
+    dateLabel: formatPostDate(post.date),
+    haystack: [post.title, post.subtitle, post.excerpt, ...(post.categories || []), ...(post.tags || [])]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase(),
+  }))
 
   return (
     <>
@@ -31,34 +46,11 @@ export default function BlogIndexPage() {
           </p>
         </header>
 
-        <div className="wrap" style={{ paddingTop: 64, paddingBottom: 96 }}>
+        <div className="wrap" style={{ paddingTop: 56, paddingBottom: 96 }}>
           {posts.length === 0 ? (
             <p className="label">Nothing published yet.</p>
           ) : (
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-              {posts.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="post-row"
-                    data-anim="up"
-                  >
-                    <div style={{ minWidth: 0 }}>
-                      {post.pinned ? (
-                        <span className="post-flag">featured</span>
-                      ) : (
-                        post.eyebrow && <div className="label">{post.eyebrow}</div>
-                      )}
-                      <h2>{post.title}</h2>
-                      {post.excerpt && <p>{post.excerpt}</p>}
-                    </div>
-                    <span className="label" style={{ whiteSpace: 'nowrap' }}>
-                      {formatPostDate(post.date)}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <BlogFilter posts={posts} categories={POST_CATEGORIES} />
           )}
         </div>
       </main>

@@ -6,9 +6,13 @@ date: 2026-08-18
 order: 2
 readingTime: 9 min read
 excerpt: >-
-  My entry into this industry started in World of Warcraft. Five years on,
+  My entry into this industry started in World of Warcraft. Four years on,
   training the next batch of career-switchers, here's what I got right, what I
   got needlessly wrong, and what I'd hand my 2022 self.
+categories:
+  - my story
+  - Design
+  - Development
 tags:
   - Career
   - UX
@@ -142,7 +146,7 @@ It's genuinely worth one good line in a cover letter or an "about" page, and
 it's worth absolutely nothing if the case studies behind it don't hold up on
 their own merits. Ironically, this post works because I've since built a body of
 real, technical, well-documented work — Wise Mind, Mirian, client sites — that
-the story sits on top of. Five years ago, the story was doing all the lifting
+the story sits on top of. Four years ago, the story was doing all the lifting
 because there was nothing underneath it yet, and that's a shakier place to build
 a career from than it feels like at the time.
 
