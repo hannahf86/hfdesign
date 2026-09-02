@@ -283,7 +283,12 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 
 /* ---------- Next link ---------- */
 .cs-next { padding-top: 96px; }
-.cs-next a { display: block; border-top: 1px solid var(--border); padding-top: 28px; }
+/* Direct child only. This styles the big "next case study" link, which is the
+   section's own anchor — as `.cs-next a` it also hit the buttons nested in the
+   blog post footer, overriding .btn's padding (28px top against 14px bottom)
+   and its transparent border, because a class-plus-type selector outranks the
+   single class .btn. */
+.cs-next > a { display: block; border-top: 1px solid var(--border); padding-top: 28px; }
 .cs-next h2 {
   font-size: clamp(1.75rem, 3.4vw, 2.875rem);
   letter-spacing: -0.03em;
@@ -291,7 +296,7 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   color: var(--fg-1);
   transition: color var(--dur-2) var(--ease-out);
 }
-.cs-next a:hover h2 { color: var(--accent-light); }
+.cs-next > a:hover h2 { color: var(--accent-light); }
 
 /* ---------- Markdown prose inside a block ---------- */
 .cs-prose { font-family: var(--font-body); font-size: 1rem; line-height: 1.85; color: var(--fg-2); }
@@ -484,6 +489,13 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   line-height: 1.7;
   color: var(--fg-1);
   max-width: 60ch;
+}
+/* A list in the intro sits at the intro's own size, not the smaller body size
+   it would otherwise inherit from .cs-prose. */
+.post-intro li {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--fg-1);
 }
 .post-intro p:first-child {
   font-family: var(--font-display);

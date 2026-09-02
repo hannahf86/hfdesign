@@ -26,20 +26,30 @@ true and not a bit, in World of Warcraft.
 I was the healing officer on a mythic raiding guild, which meant that on top of
 keeping a twenty-person raid team alive through fights that punished the
 slightest half-second of hesitation, I was also responsible for building the
-addon setup that let me actually do that — custom unit frames, threat trackers,
-cooldown timers, a dozen tiny information streams all fighting for the same real
-estate on one screen, arranged so I could parse a wall of health bars mid-crisis
-without my brain falling over. Every time an addon update dropped, the guild
-Discord turned into an impromptu design crit — everyone posting screenshots of
-their revamped UIs, half showing off, half quietly asking "does this look insane
-or is it just me." I became the person people brought their UIs to before
-posting, and not just the other healers — tanks and DPS too, people whose entire
-information priorities were completely different from mine. Without knowing the
-term for it yet, I was doing user research across different roles with genuinely
-different needs from the same interface. One night, mid-flex in that same
-Discord, a guildie said, with the sort of casual authority you only get from
-someone who has no idea they're about to redirect your entire career, "you know
-your UI's the best on the team, right? Like, actually good."
+addon setup that let me actually do that:
+
+- custom unit frames
+- threat trackers
+- cooldown timers
+- incoming damage
+
+A dozen tiny information streams all fighting for the same real estate on one
+screen, arranged so I could parse a wall of health bars mid-crisis without my
+brain falling over.
+
+Every time an addon update dropped, the guild Discord turned into an impromptu
+design crit — everyone posting screenshots of their revamped UIs, half showing
+off, half quietly asking "does this look insane or is it just me." I became the
+person people brought their UIs to before posting, and not just the other
+healers — tanks and DPS too, people whose entire information priorities were
+completely different from mine. Without knowing the term for it yet, I was doing
+user research across different roles with genuinely different needs from the
+same interface.
+
+One night, mid-flex in that same Discord, a guildie said, with the sort of
+casual authority you only get from someone who has no idea they're about to
+redirect your entire career, "you know your UI's the best on the team, right?
+Like, actually good."
 
 I did not know that "having a good UI" was a transferable skill. I certainly
 didn't know it was a job. But it rattled around in my head long enough that I
