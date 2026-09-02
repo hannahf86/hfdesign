@@ -5,7 +5,7 @@
 # CREDENTIALS: the demo login below is rendered on the public page. Confirm the
 # account is safe to publish before launch.
 slug: mirian
-num: "03"
+num: "01"
 title: Mirian
 meta: 2026 · Research, Product Design, Fullstack Development
 year: "2026"
@@ -18,7 +18,7 @@ liveUrl: https://www.mirian-debt-tracker.app/auth/login
 credentials:
   username: client@jorvikweb.dev
   password: JorvikWebDev2026!
-openByDefault: false
+openByDefault: true
 hasCaseStudy: true
 stats:
   - value: "12"

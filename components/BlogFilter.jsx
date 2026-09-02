@@ -56,6 +56,8 @@ export default function BlogFilter({ posts = [], categories = [] }) {
   const [active, setActive] = useState(ALL)
   const searchId = useId()
   const listRef = useRef(null)
+  const [announcement, setAnnouncement] = useState('')
+  const settled = useRef(false)
 
   const results = useMemo(() => {
     const q = query.trim().toLowerCase()
@@ -131,6 +133,30 @@ export default function BlogFilter({ posts = [], categories = [] }) {
     }
   }, [resultKey])
 
+  // Filtering rewrites the list with no visible status text, so the change has
+  // to reach assistive tech some other way. Three things matter here:
+  //
+  //   - Nothing is announced on first render. The region starts empty and only
+  //     speaks once the reader has actually changed something; a live region
+  //     that arrives already populated can be read out on page load.
+  //   - Typing is debounced. Without it the region fires on every keystroke and
+  //     interrupts the reader mid-word.
+  //   - The message names the filter, not just a count, because "3 posts" on
+  //     its own does not say what happened.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (!settled.current) {
+        settled.current = true
+        return
+      }
+      const n = results.length
+      const where = active !== ALL ? ` in ${active}` : ''
+      const q = query.trim() ? ` matching ${query.trim()}` : ''
+      setAnnouncement(n === 0 ? `No posts${where}${q}` : `${n} ${n === 1 ? 'post' : 'posts'}${where}${q}`)
+    }, 500)
+    return () => clearTimeout(timer)
+  }, [resultKey, active, query, results.length])
+
   // Only offer a tab that actually has something behind it.
   const shown = categories.filter((c) => posts.some((p) => (p.categories || []).includes(c)))
 
@@ -161,11 +187,8 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             )}
           </div>
 
-          {/* The visible count is gone at Hannah's request, but the change
-              still has to be announced — otherwise filtering silently rewrites
-              the page for anyone using a screen reader. */}
-          <p className="sr-only" role="status" aria-live="polite">
-            showing {results.length} of {posts.length}
+          <p className="sr-only" role="status" aria-live="polite" aria-atomic="true">
+            {announcement}
           </p>
         </div>
 

@@ -24,8 +24,8 @@ meta:
   - label: sector
     value: Internal tools
 next:
-  slug: mirian
-  label: Mirian
+  slug: lucent-biopharma
+  label: LUCENT Biopharma
 seo:
   title: JWD Client Portal case study
   description: >-

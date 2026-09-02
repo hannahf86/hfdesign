@@ -4,9 +4,9 @@
 # Those figures have been removed rather than carried over from the design
 # handoff, where they were placeholders.
 slug: mirian
-num: "03"
+num: "01"
 client: Mirian
-eyebrow: case study 03 · 2026
+eyebrow: case study 01 · 2026
 title: Mirian
 titleLine2: Debt Tracker
 lead: >-
@@ -26,8 +26,8 @@ meta:
   - label: sector
     value: Personal finance
 next:
-  slug: lucent-biopharma
-  label: LUCENT Biopharma
+  slug: jwd-portal
+  label: JWD Client Portal
 seo:
   title: Mirian case study
   description: >-
