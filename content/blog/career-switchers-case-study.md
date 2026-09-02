@@ -120,9 +120,11 @@ something the brief explicitly told you not to touch.
 I'd tell past-me: the course is your scaffolding, not your ceiling. The actual
 skill you're building isn't "can you execute the five phases," it's holding onto
 the reasoning behind the process when the real world refuses to cooperate with
-the tidy version. That instinct only comes from doing it on messy, real projects
-with real limitations — no amount of extra course content substitutes for going
-and doing three actual client projects, badly, and learning from the bruises.
+the tidy version.
+
+> That instinct only comes from doing it on messy, real projects with real
+> limitations — no amount of extra course content substitutes for going and
+> doing three actual client projects, badly, and learning from the bruises.
 
 ## Nobody cares about your career change story except you, and that's fine
 
