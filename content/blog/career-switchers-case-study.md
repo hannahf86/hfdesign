@@ -3,7 +3,6 @@ slug: career-switchers-case-study
 title: The career-switcher's case study
 subtitle: What I'd tell myself starting the Google UX cert today.
 date: 2026-08-18
-order: 2
 readingTime: 9 min read
 excerpt: >-
   My entry into this industry started in World of Warcraft. Four years on,

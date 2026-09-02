@@ -137,7 +137,8 @@ export default function BlogFilter({ posts = [], categories = [] }) {
   return (
     <>
       <div className="blog-filter">
-        <div className="blog-search">
+        <div className="blog-search-col">
+          <div className="blog-search">
           <label htmlFor={searchId} className="sr-only">
             Search writing
           </label>
@@ -153,11 +154,20 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             placeholder="search writing"
             autoComplete="off"
           />
-          {query && (
-            <button type="button" className="blog-search-clear" onClick={() => setQuery('')}>
-              Clear<span className="sr-only"> search</span>
-            </button>
-          )}
+            {query && (
+              <button type="button" className="blog-search-clear" onClick={() => setQuery('')}>
+                Clear<span className="sr-only"> search</span>
+              </button>
+            )}
+          </div>
+
+          {/* Sits under the search rather than in the filter row, where it
+              pushed the tabs around as the number changed width. Announced on
+              change, so filtering is not a silent update for anyone using a
+              screen reader. */}
+          <p className="blog-count label" role="status" aria-live="polite">
+            showing {results.length} of {posts.length}
+          </p>
         </div>
 
         <div className="blog-tabs" role="group" aria-label="Filter by category">
@@ -181,12 +191,6 @@ export default function BlogFilter({ posts = [], categories = [] }) {
             </button>
           ))}
         </div>
-
-        {/* Announced on change, so filtering is not a silent update for anyone
-            using a screen reader. */}
-        <p className="blog-count label" role="status" aria-live="polite">
-          showing {results.length} of {posts.length}
-        </p>
       </div>
 
       {results.length === 0 ? (

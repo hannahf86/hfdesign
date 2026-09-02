@@ -478,28 +478,40 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 }
 
 /* ---------- Writing index: search + category tabs ---------- */
-/* Three columns rather than a wrapping flex row, so the count stays pinned to
-   the right while the tabs wrap inside their own cell. */
+/* Search and its count in one column, tabs in the other. The count sat in the
+   row itself at first, where its changing width shifted the tabs on every
+   filter. */
 .blog-filter {
   display: grid;
-  grid-template-columns: auto minmax(0, 1fr) auto;
-  align-items: center;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
   gap: 16px 24px;
   padding-bottom: 28px;
   border-bottom: 1px solid var(--border);
 }
+.blog-search-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  width: clamp(240px, 24vw, 340px);
+}
+/* Nudged so the pills sit centred against the 42px input beside them. */
+.blog-tabs { padding-top: 6px; }
 
 @media (max-width: 1100px) {
   .blog-filter { grid-template-columns: minmax(0, 1fr); justify-items: start; }
-  .blog-count { margin-left: 0; }
+  .blog-tabs { padding-top: 0; }
+  .blog-search-col { width: 100%; }
 }
 
+/* Width comes from the column, not from a flex basis: inside a column-direction
+   parent `flex: 1 1 260px` sets the HEIGHT basis, which made the search box
+   260px tall. */
 .blog-search {
   position: relative;
   display: flex;
   align-items: center;
-  flex: 1 1 260px;
-  max-width: 340px;
+  width: 100%;
 }
 .blog-search-icon {
   position: absolute;
@@ -568,8 +580,8 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 }
 .blog-tab:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
 
-/* Sits at the far end of the filter row and holds the count. */
-.blog-count { margin: 0 0 0 auto; white-space: nowrap; }
+/* Under the search box, not in the filter row. */
+.blog-count { margin: 0; white-space: nowrap; }
 
 /* ---------- Featured card ---------- */
 .blog-feature {
@@ -729,9 +741,6 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 .blog-list.is-revealing .blog-mask,
 .is-revealing > .blog-mask { overflow: hidden; }
 
-@media (max-width: 700px) {
-  .blog-search { max-width: none; flex-basis: 100%; }
-}
 
 /* ---------- Blog post body ----------
    A post is one long column, so the structure has to come from the type rather
