@@ -455,6 +455,23 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 .post-row p { font-size: 1rem; line-height: 1.8; max-width: 60ch; }
 @media (max-width: 700px) { .post-row { grid-template-columns: 1fr; gap: 10px; } }
 
+/* Marks a pinned post on the index, so a reader can tell the top row is
+   deliberately first rather than simply newest. Accent on the border, the
+   lighter accent on the text — per the note in tokens.css, --accent is for
+   borders and fills, never for small type. */
+.post-flag {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  background: var(--hf-accent-tint);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
 /* ---------- Byline row (blog posts) ---------- */
 .cs-byline {
   display: flex;

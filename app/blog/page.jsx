@@ -41,7 +41,11 @@ export default function BlogIndexPage() {
                     data-anim="up"
                   >
                     <div style={{ minWidth: 0 }}>
-                      {post.eyebrow && <div className="label">{post.eyebrow}</div>}
+                      {post.pinned ? (
+                        <span className="post-flag">featured</span>
+                      ) : (
+                        post.eyebrow && <div className="label">{post.eyebrow}</div>
+                      )}
                       <h2>{post.title}</h2>
                       {post.excerpt && <p>{post.excerpt}</p>}
                     </div>
