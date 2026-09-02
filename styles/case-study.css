@@ -484,7 +484,10 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 
 /* The opening block, before the first heading. Larger and lighter than body
    copy so a reader lands on it rather than on a uniform grey wall. */
-.post-intro p {
+/* Direct children only. A paragraph nested inside a pull quote is also a
+   `p:first-child`, and that selector outranks `.post-pull blockquote p` — so
+   an unscoped rule here restyles the quote in the display face. */
+.post-intro > p {
   font-size: 1.1875rem;
   line-height: 1.7;
   color: var(--fg-1);
@@ -497,7 +500,7 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   line-height: 1.7;
   color: var(--fg-1);
 }
-.post-intro p:first-child {
+.post-intro > p:first-child {
   font-family: var(--font-display);
   font-weight: 600;
   font-variation-settings: 'wdth' 100;
@@ -540,7 +543,18 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   color: var(--fg-1);
   text-wrap: pretty;
 }
-.post-pull blockquote p { margin: 0; color: var(--fg-1); }
+/* Markdown wraps the quote in a `p`, and the global `p` rule sets the body
+   font on it directly — which beats the Cormorant inherited from the
+   blockquote, since any matching rule outranks inheritance. Everything the
+   quote should own is inherited back explicitly here. */
+.post-pull blockquote p {
+  margin: 0;
+  color: var(--fg-1);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  max-width: none;
+}
 
 @media (max-width: 700px) {
   .post-section { margin-top: 52px; padding-top: 32px; }

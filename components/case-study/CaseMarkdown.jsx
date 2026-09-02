@@ -128,19 +128,47 @@ const components = {
   },
 }
 
-// In a blog post a `>` blockquote is a pull quote: a line lifted out of the
-// prose and set large, to break up the column. It repeats the sentence that
-// follows it, so it is hidden from assistive tech — otherwise a screen reader
-// hears the same sentence twice. Everywhere else a blockquote stays a
-// blockquote, which is what the case studies use it for.
-const blogComponents = {
-  blockquote({ children }) {
-    return (
-      <figure className="post-pull" aria-hidden="true">
-        <blockquote>{children}</blockquote>
-      </figure>
-    )
-  },
+// Strip the markdown that separates a pull quote from the same words in the
+// prose: the `>` markers, emphasis, and the line wrapping.
+const normaliseQuote = (s) =>
+  s
+    .toLowerCase()
+    .replace(/[*_>`]/g, '')
+    .replace(/\s+/g, ' ')
+    .trim()
+
+// In a blog post a `>` blockquote is a pull quote, set large to break up the
+// column. Two kinds exist and they need opposite accessibility treatment:
+//
+//   - A quote that REPEATS a sentence from the prose is decorative. Leaving it
+//     announced makes a screen reader read the same sentence twice.
+//   - A quote that is LIFTED out — the only place those words appear — is the
+//     content. Hiding it would delete the sentence for anyone not looking at
+//     the page.
+//
+// Rather than make the author remember a marker, we count: if the quote's text
+// also appears in the surrounding source it is a repeat, otherwise it is a
+// lift. Everywhere outside a blog post a blockquote stays a blockquote, which
+// is what the case studies use it for.
+function blogComponents(source) {
+  const haystack = normaliseQuote(source || '')
+
+  return {
+    blockquote({ children }) {
+      // Trailing punctuation is dropped before matching: a pull quote often
+      // closes a sentence the prose carries on ("…the job title." against
+      // "…the job title, because…"), and that full stop alone would make a
+      // repeat look like a lift.
+      const text = normaliseQuote(textOf(children)).replace(/[.,;:!?—–-]+$/, '').trim()
+      const repeats = text ? haystack.split(text).length - 1 > 1 : false
+
+      return (
+        <figure className="post-pull" {...(repeats ? { 'aria-hidden': 'true' } : {})}>
+          <blockquote>{children}</blockquote>
+        </figure>
+      )
+    },
+  }
 }
 
 export default function CaseMarkdown({ children, headingLevel = 3, variant, className = '' }) {
@@ -152,7 +180,7 @@ export default function CaseMarkdown({ children, headingLevel = 3, variant, clas
         components={{
           ...components,
           ...headingComponents(headingLevel),
-          ...(variant === 'blog' ? blogComponents : {}),
+          ...(variant === 'blog' ? blogComponents(children) : {}),
         }}
       >
         {children}
