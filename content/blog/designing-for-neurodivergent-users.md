@@ -1,7 +1,7 @@
 ---
 slug: designing-for-neurodivergent-users
-title: What Wise Mind taught me about cognitive load.
-eyebrow: Designing for neurodivergent users
+title: Designing for neurodivergent users
+subtitle: What Wise Mind taught me about cognitive load.
 date: 2026-09-02
 readingTime: 9 min read
 excerpt: >-

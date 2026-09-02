@@ -64,6 +64,15 @@ export default async function BlogPostPage({ params }) {
             {post.title}
           </h1>
 
+          {/* The subtitle is the post's deck: it sits under the h1 in the lead
+              style rather than as a second heading, so the outline stays h1 →
+              h2 and the sections keep their level. */}
+          {post.subtitle && (
+            <p data-anim="up" className="cs-lead">
+              {post.subtitle}
+            </p>
+          )}
+
           <div data-anim="up" className="cs-byline">
             <time dateTime={post.date || undefined}>{formatPostDate(post.date)}</time>
             {post.readingTime && (
