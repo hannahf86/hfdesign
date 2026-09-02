@@ -23,8 +23,11 @@ export default function BlogIndexPage() {
         <header className="wrap cs-top">
           <div data-anim="up" className="label">Writing</div>
           <h1 data-anim="up" className="cs-title">Notes on the work.</h1>
-          <p data-anim="up" className="cs-lead">
-            Research, design and build — written up as I go.
+          {/* Wider than the case study leads: this one is a full sentence
+              rather than a standfirst, and 30ch breaks it into a narrow column. */}
+          <p data-anim="up" className="cs-lead" style={{ maxWidth: '44ch' }}>
+            My thoughts about research, design, development, and my journey to
+            becoming a UX Engineer.
           </p>
         </header>
 
