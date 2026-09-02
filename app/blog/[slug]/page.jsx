@@ -5,7 +5,7 @@ import { notFound } from 'next/navigation'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
 import CaseMarkdown from '@/components/case-study/CaseMarkdown'
-import { getPost, getPostSlugs, getAllPosts, formatPostDate } from '@/lib/blog'
+import { getPost, getPostSlugs, getAllPosts, getPostSections, formatPostDate } from '@/lib/blog'
 
 export function generateStaticParams() {
   return getPostSlugs().map((slug) => ({ slug }))
@@ -44,6 +44,7 @@ export default async function BlogPostPage({ params }) {
   const all = getAllPosts()
   const index = all.findIndex((p) => p.slug === post.slug)
   const next = all[index + 1] ?? null
+  const { intro, sections } = getPostSections(post.body)
 
   return (
     <>
@@ -92,7 +93,23 @@ export default async function BlogPostPage({ params }) {
 
         <div className="wrap" style={{ paddingTop: 56 }}>
           <article style={{ maxWidth: 'var(--prose)' }}>
-            <CaseMarkdown headingLevel={2}>{post.body}</CaseMarkdown>
+            {/* The intro carries no heading of its own, so it is set as a lead
+                paragraph rather than as the first block of body copy. */}
+            {intro && (
+              <CaseMarkdown variant="blog" className="post-intro">
+                {intro}
+              </CaseMarkdown>
+            )}
+
+            {sections.map((s) => (
+              <section key={s.id} id={s.id} data-reveal="1" className="post-section">
+                <div className="label label-accent">{s.num}</div>
+                <h2 className="post-heading">{s.heading}</h2>
+                <CaseMarkdown headingLevel={3} variant="blog">
+                  {s.body}
+                </CaseMarkdown>
+              </section>
+            ))}
           </article>
 
           <div className="cs-next" style={{ maxWidth: 'var(--prose)' }}>

@@ -41,6 +41,8 @@ I'm not here to trash minimalism. But early on, I made a mistake that's common
 enough to have a name in accessibility circles: I confused **visually quiet**
 with **cognitively quiet**.
 
+> What actually helps is predictable.
+
 A screen can look uncluttered and still be hard to parse if the person using it
 is dysregulated, distracted, or processing information differently than a
 neurotypical baseline. For someone in emotional crisis, or someone with ADHD
@@ -86,6 +88,9 @@ SOS screen. It surfaces UK crisis line numbers and walks a user through
 5-4-3-2-1 grounding — the sensory technique where you name five things you can
 see, four you can touch, and so on, pulling attention back into the present
 moment.
+
+> In a crisis flow, every single design decision either lowers cognitive load or
+> adds to it, and there is no neutral option.
 
 Designing this screen taught me something I hadn't fully internalised before: in
 a crisis flow, every single design decision either lowers cognitive load or adds

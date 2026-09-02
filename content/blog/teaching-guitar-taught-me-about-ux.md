@@ -56,6 +56,8 @@ they don't go back and read the carousel — they just conclude your product is
 broken, or that they're bad at it, and one of those conclusions is a UX failure
 regardless of which one they land on.
 
+> If your student won't read the manual, the manual is not the intervention.
+
 The guitar-teaching version of this lesson: if your student won't read the
 manual, the manual is not the intervention. The *first five minutes with the
 instrument in their hands* is the intervention. I stopped starting lessons with
@@ -137,6 +139,8 @@ one in the book. You break the win into something achievable in the next ten
 minutes instead of the next ten weeks. You make the *feedback loop* shorter,
 because a nine-year-old's tolerance for delayed gratification is, generously,
 about ninety seconds.
+
+> The kid isn't lazy. The user isn't dumb.
 
 This is, essentially, retention design. Every product person who's ever said
 "users just aren't engaged enough with this feature" and stopped there, without

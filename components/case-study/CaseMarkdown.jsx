@@ -128,13 +128,32 @@ const components = {
   },
 }
 
-export default function CaseMarkdown({ children, headingLevel = 3 }) {
+// In a blog post a `>` blockquote is a pull quote: a line lifted out of the
+// prose and set large, to break up the column. It repeats the sentence that
+// follows it, so it is hidden from assistive tech — otherwise a screen reader
+// hears the same sentence twice. Everywhere else a blockquote stays a
+// blockquote, which is what the case studies use it for.
+const blogComponents = {
+  blockquote({ children }) {
+    return (
+      <figure className="post-pull" aria-hidden="true">
+        <blockquote>{children}</blockquote>
+      </figure>
+    )
+  },
+}
+
+export default function CaseMarkdown({ children, headingLevel = 3, variant, className = '' }) {
   if (!children?.trim()) return null
   return (
-    <div className="cs-prose">
+    <div className={`cs-prose ${className}`.trim()}>
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
-        components={{ ...components, ...headingComponents(headingLevel) }}
+        components={{
+          ...components,
+          ...headingComponents(headingLevel),
+          ...(variant === 'blog' ? blogComponents : {}),
+        }}
       >
         {children}
       </ReactMarkdown>
