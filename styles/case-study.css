@@ -670,14 +670,19 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 }
 .blog-card:hover { border-color: var(--accent-light); background: var(--bg-3); }
 
+/* The number and the categories share a line. Left to wrap as whole flex items,
+   a long category list jumped below the number and left it stranded on a line
+   of its own; instead the number holds its width and the categories take the
+   rest, wrapping within their own column. */
 .blog-card-top {
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: baseline;
-  gap: 6px 12px;
+  gap: 12px;
   margin-bottom: 16px;
 }
-.blog-num { color: var(--fg-3); }
+.blog-num { flex: none; color: var(--fg-3); }
+.blog-cats { flex: 1 1 auto; min-width: 0; }
 
 .blog-card h2 {
   font-size: 1.25rem;
