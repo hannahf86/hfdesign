@@ -631,58 +631,76 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   );
 }
 
-/* ---------- Numbered rows ---------- */
-.blog-list { list-style: none; margin: 0; padding: 0; }
-.blog-row {
+/* ---------- Post cards ----------
+   A grid rather than a stack: eight posts as full-width rows is a long scroll,
+   and the point of the index is to let someone see what is here at a glance. */
+.blog-list {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
   display: grid;
-  grid-template-columns: 44px minmax(0, 1fr) auto;
-  gap: clamp(16px, 3vw, 40px);
-  align-items: start;
-  padding: 34px 0;
-  border-bottom: 1px solid var(--border-soft);
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
 }
-.blog-num { padding-top: 4px; color: var(--fg-3); }
-.blog-row h2 {
-  margin: 12px 0 0;
-  font-size: clamp(1.3125rem, 2.2vw, 1.8125rem);
-  line-height: 1.18;
-  letter-spacing: -0.025em;
-  color: var(--fg-1);
-  transition: color var(--dur-2) var(--ease-out);
-  max-width: 22ch;
-}
-.blog-row:hover h2 { color: var(--accent-light); }
-.blog-row p { margin: 14px 0 0; font-size: 1rem; line-height: 1.8; max-width: 58ch; }
-.blog-row-meta {
+/* The mask is the grid item, so it has to stretch for the cards in a row to
+   come out the same height. */
+.blog-mask { display: flex; }
+
+.blog-card {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  gap: 8px;
-  text-align: right;
-  white-space: nowrap;
-  padding-top: 4px;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-3);
+  background: var(--bg-2);
+  transition: border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+}
+.blog-card:hover { border-color: var(--accent-light); background: var(--bg-3); }
+
+.blog-card-top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 12px;
+  margin-bottom: 16px;
+}
+.blog-num { color: var(--fg-3); }
+
+.blog-card h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  transition: color var(--dur-2) var(--ease-out);
+  text-wrap: pretty;
+}
+.blog-card:hover h2 { color: var(--accent-light); }
+.blog-card p { margin: 12px 0 0; font-size: 0.9375rem; line-height: 1.75; }
+
+/* Pushed to the bottom so the feet line up across a row however long the
+   excerpts above them run. */
+.blog-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
 }
 .blog-read { transition: color var(--dur-2) var(--ease-out); }
 .blog-feature:hover .blog-read,
-.blog-row:hover .blog-read { color: var(--fg-1); }
+.blog-card:hover .blog-read { color: var(--fg-1); }
 
 @media (max-width: 900px) {
   .blog-feature { grid-template-columns: minmax(0, 1fr); }
   /* Cover first on a narrow screen: it is the thing that identifies the post
      at a glance, and pushing it under the excerpt buries it. */
   .blog-feature .blog-cover { order: -1; }
-  .blog-row { grid-template-columns: 32px minmax(0, 1fr); }
-  .blog-row-meta {
-    grid-column: 2;
-    flex-direction: row;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: flex-start;
-    gap: 14px;
-    text-align: left;
-    margin-top: 16px;
-    padding-top: 0;
-  }
+}
+@media (max-width: 600px) {
+  .blog-list { grid-template-columns: minmax(0, 1fr); }
 }
 
 /* ---------- Closing call to action ---------- */

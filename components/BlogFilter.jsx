@@ -261,20 +261,22 @@ export default function BlogFilter({ posts = [], categories = [] }) {
           <ol className="blog-list">
             {rows.map((post, i) => (
               <li key={post.slug} className="blog-mask">
-                <Link href={`/blog/${post.slug}`} className="blog-row">
-                  {/* The featured card is 01, so the rows carry on from there
-                      rather than restarting the sequence. */}
-                  <span className="label blog-num" aria-hidden="true">
-                    {String(i + (featured ? 2 : 1)).padStart(2, '0')}
-                  </span>
-                  <div className="blog-row-body">
+                <Link href={`/blog/${post.slug}`} className="blog-card">
+                  <div className="blog-card-top">
+                    {/* The featured card is 01, so the cards carry on from
+                        there rather than restarting the sequence. */}
+                    <span className="label blog-num" aria-hidden="true">
+                      {String(i + (featured ? 2 : 1)).padStart(2, '0')}
+                    </span>
                     <Cats items={post.categories} />
-                    <h2>{post.title}</h2>
-                    {post.excerpt && <p>{post.excerpt}</p>}
                   </div>
-                  <div className="blog-row-meta">
-                    <span className="label">{post.dateLabel}</span>
-                    {post.readingTime && <span className="label">{post.readingTime}</span>}
+                  <h2>{post.title}</h2>
+                  {post.excerpt && <p>{post.excerpt}</p>}
+                  <div className="blog-card-foot">
+                    <span className="label">
+                      {post.dateLabel}
+                      {post.readingTime ? ` · ${post.readingTime}` : ''}
+                    </span>
                     <span className="label label-accent blog-read">
                       read <span aria-hidden="true">→</span>
                     </span>
