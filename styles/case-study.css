@@ -303,6 +303,18 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 .cs-prose p { margin: 0 0 1.1em; max-width: 68ch; }
 .cs-prose > *:last-child { margin-bottom: 0; }
 .cs-prose strong { color: var(--fg-1); font-weight: 600; }
+/* Inline code — sized at 0.9em so a mono run does not sit taller than the body
+   text around it, and tinted rather than boxed so it reads as a term, not a
+   block. */
+.cs-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+  border-radius: var(--r-1, 5px);
+  background: var(--hf-accent-tint);
+  color: var(--fg-1);
+  word-break: break-word;
+}
 .cs-prose em { color: var(--fg-1); }
 .cs-prose h3 { font-size: 1.25rem; margin: 28px 0 12px; }
 .cs-prose ul, .cs-prose ol { margin: 0 0 1.1em; padding-left: 0; list-style: none; max-width: 68ch; }
