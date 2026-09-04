@@ -67,10 +67,12 @@ export default function BlogFilter({ posts = [], categories = [] }) {
     })
   }, [posts, query, active])
 
-  // The featured card is only drawn when the pinned post leads the current
-  // results. Filter it out and everything falls back to the numbered list, so
-  // there is never an empty hero slot or a card out of sequence.
-  const featured = results[0]?.pinned ? results[0] : null
+  // The featured card belongs to the unfiltered view only. Once a reader has
+  // narrowed the list themselves, "read this one first" is no longer a claim
+  // the page gets to make — so filtering drops the card and everything becomes
+  // a numbered row, renumbered from 01.
+  const filtering = active !== ALL || query.trim() !== ''
+  const featured = !filtering && results[0]?.pinned ? results[0] : null
   const rows = featured ? results.slice(1) : results
 
   // Keyed on which posts are showing, not on the raw query: typing a character
