@@ -88,7 +88,7 @@ export default function Experience() {
           {/* Last child of the prose column, so it lands under the copy and
               above the timeline at both breakpoints: stacked, the prose column
               comes first; side by side, it closes that column. */}
-          <Link href="/blog" className="btn btn-ghost exp-cta">
+          <Link href="/blog/career-switchers-case-study" className="btn btn-ghost exp-cta">
             Read more about my story
             <span aria-hidden="true">→</span>
           </Link>
