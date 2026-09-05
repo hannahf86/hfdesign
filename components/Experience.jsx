@@ -63,16 +63,26 @@ export default function Experience() {
             UX designer and full-stack developer, based in York.
           </p>
           <p style={{ fontSize: '1rem', lineHeight: 1.85, maxWidth: '52ch' }}>
-            Five years in, I run Jorvik Web Dev as a sole trader, supporting 20+ small business
-            owners with web design, SEO and Webflow. Alongside that I deliver digital skills training
-            through Enterprise Cube, the York &amp; North Yorkshire Growth Hub, and LX Foundry, to
-            over 100 participants.
+            Five years in, I run Jorvik Web Dev as a sole trader, which is a professional way of
+            saying I have personally argued with 20+ small business owners about why their homepage
+            needs fewer fonts. Alongside that I deliver digital skills training through Enterprise
+            Cube, the York &amp; North Yorkshire Growth Hub, and LX Foundry. Over 100 participants
+            now know what a call-to-action is, whether they wanted to or not.
           </p>
           <p style={{ fontSize: '1rem', lineHeight: 1.85, maxWidth: '52ch' }}>
-            My interest sits where accessibility, neurodivergent-informed design and shame-reduction
-            meet: products people can still use on their worst day. Freelance work has been
-            enjoyable, but I am now looking for a full-time role with room to grow as a designer and
-            developer.
+            I move fast and I hold the whole picture at once, which sounds like a LinkedIn platitude
+            until you&apos;ve watched me untangle a client&apos;s three-year-old Webflow build while
+            also remembering why they don&apos;t want the button red. Mostly it means I&apos;ve
+            spent a lot of years watching people get stuck on things and quietly figuring out
+            whether the stuck was theirs or mine. Spoiler: it&apos;s usually mine, and fixing that
+            is the actual job.
+          </p>
+          <p style={{ fontSize: '1rem', lineHeight: 1.85, maxWidth: '52ch' }}>
+            My interest sits where accessibility, neurodivergent-informed design, and
+            shame-reduction meet: products people can still use on their worst day, not just their
+            best one. Freelance work has been genuinely good to me, but I&apos;m ready for a
+            full-time role with more room to grow, and ideally someone else&apos;s problem to obsess
+            over for a change.
           </p>
 
           {/* Last child of the prose column, so it lands under the copy and
