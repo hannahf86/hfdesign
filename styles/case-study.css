@@ -283,7 +283,12 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 
 /* ---------- Next link ---------- */
 .cs-next { padding-top: 96px; }
-.cs-next a { display: block; border-top: 1px solid var(--border); padding-top: 28px; }
+/* Direct child only. This styles the big "next case study" link, which is the
+   section's own anchor — as `.cs-next a` it also hit the buttons nested in the
+   blog post footer, overriding .btn's padding (28px top against 14px bottom)
+   and its transparent border, because a class-plus-type selector outranks the
+   single class .btn. */
+.cs-next > a { display: block; border-top: 1px solid var(--border); padding-top: 28px; }
 .cs-next h2 {
   font-size: clamp(1.75rem, 3.4vw, 2.875rem);
   letter-spacing: -0.03em;
@@ -291,13 +296,25 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
   color: var(--fg-1);
   transition: color var(--dur-2) var(--ease-out);
 }
-.cs-next a:hover h2 { color: var(--accent-light); }
+.cs-next > a:hover h2 { color: var(--accent-light); }
 
 /* ---------- Markdown prose inside a block ---------- */
 .cs-prose { font-family: var(--font-body); font-size: 1rem; line-height: 1.85; color: var(--fg-2); }
 .cs-prose p { margin: 0 0 1.1em; max-width: 68ch; }
 .cs-prose > *:last-child { margin-bottom: 0; }
 .cs-prose strong { color: var(--fg-1); font-weight: 600; }
+/* Inline code — sized at 0.9em so a mono run does not sit taller than the body
+   text around it, and tinted rather than boxed so it reads as a term, not a
+   block. */
+.cs-prose code {
+  font-family: var(--font-mono);
+  font-size: 0.9em;
+  padding: 0.15em 0.4em;
+  border-radius: var(--r-1, 5px);
+  background: var(--hf-accent-tint);
+  color: var(--fg-1);
+  word-break: break-word;
+}
 .cs-prose em { color: var(--fg-1); }
 .cs-prose h3 { font-size: 1.25rem; margin: 28px 0 12px; }
 .cs-prose ul, .cs-prose ol { margin: 0 0 1.1em; padding-left: 0; list-style: none; max-width: 68ch; }
@@ -454,6 +471,383 @@ html[data-motion='reduced'] .cs-gallery-arrows button { transition: none; }
 .post-row:hover h2 { color: var(--accent-light); }
 .post-row p { font-size: 1rem; line-height: 1.8; max-width: 60ch; }
 @media (max-width: 700px) { .post-row { grid-template-columns: 1fr; gap: 10px; } }
+
+/* Marks a pinned post on the index, so a reader can tell the top row is
+   deliberately first rather than simply newest. Accent on the border, the
+   lighter accent on the text — per the note in tokens.css, --accent is for
+   borders and fills, never for small type. */
+.post-flag {
+  display: inline-block;
+  padding: 4px 12px;
+  border: 1px solid var(--accent);
+  border-radius: var(--r-pill);
+  background: var(--hf-accent-tint);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+}
+
+/* ---------- Writing index: search + category tabs ---------- */
+/* Search on its own row, category pills beneath it. */
+.blog-filter {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  padding-bottom: 28px;
+  border-bottom: 1px solid var(--border);
+}
+.blog-search-col { width: clamp(240px, 24vw, 340px); }
+@media (max-width: 700px) {
+  .blog-search-col { width: 100%; }
+}
+
+/* Width comes from the column, not from a flex basis: inside a column-direction
+   parent `flex: 1 1 260px` sets the HEIGHT basis, which made the search box
+   260px tall. */
+.blog-search {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.blog-search-icon {
+  position: absolute;
+  left: 13px;
+  width: 15px;
+  height: 15px;
+  color: var(--fg-3);
+  pointer-events: none;
+}
+.blog-search input {
+  width: 100%;
+  height: 42px;
+  padding: 0 13px 0 36px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  background: var(--bg-2);
+  color: var(--fg-1);
+  font-family: var(--font-mono);
+  font-size: 0.8125rem;
+  letter-spacing: 0.06em;
+}
+.blog-search input::placeholder { color: var(--fg-3); letter-spacing: 0.06em; }
+.blog-search input:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
+/* The type="search" clear affordance is browser-drawn and unstyleable; ours is
+   a real button, so the native one would be a duplicate control. */
+.blog-search input::-webkit-search-cancel-button { display: none; }
+
+.blog-search-clear {
+  position: absolute;
+  right: 8px;
+  padding: 5px 8px;
+  border: 0;
+  border-radius: var(--r-1, 6px);
+  background: none;
+  color: var(--fg-3);
+  font-family: var(--font-mono);
+  font-size: 0.6875rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.blog-search-clear:hover { color: var(--fg-1); }
+
+.blog-tabs { display: flex; flex-wrap: wrap; gap: 8px; }
+.blog-tab {
+  padding: 6px 13px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-pill);
+  background: transparent;
+  color: var(--fg-2);
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: color var(--dur-2) var(--ease-out), border-color var(--dur-2) var(--ease-out),
+    background var(--dur-2) var(--ease-out);
+}
+.blog-tab:hover { color: var(--fg-1); border-color: var(--fg-3); }
+/* Pressed state carries a fill as well as a colour, so the active tab is not
+   signalled by colour alone. */
+.blog-tab[aria-pressed='true'] {
+  border-color: var(--accent);
+  background: var(--hf-accent-tint);
+  color: var(--accent-light);
+}
+.blog-tab:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 2px; }
+
+/* Under the search box, not in the filter row. */
+.blog-count { margin: 0; white-space: nowrap; }
+
+/* ---------- Featured card ---------- */
+.blog-feature {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 0.72fr);
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  margin-top: 40px;
+  padding: clamp(24px, 3vw, 36px);
+  border: 1px solid var(--accent);
+  border-radius: var(--r-4);
+  background: var(--hf-accent-tint);
+  transition: border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+}
+.blog-feature:hover { border-color: var(--accent-light); background: rgba(102, 87, 212, 0.11); }
+
+.blog-feature-tags { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+.blog-feature h2 {
+  margin: 20px 0 0;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--fg-1);
+  max-width: 18ch;
+}
+.blog-feature p {
+  margin: 16px 0 0;
+  font-size: 1rem;
+  line-height: 1.8;
+  max-width: 52ch;
+}
+.blog-feature-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-top: 28px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border);
+}
+
+.blog-cover {
+  border-radius: var(--r-3);
+  overflow: hidden;
+  background: var(--img-bg);
+  aspect-ratio: 4 / 3;
+}
+.blog-cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+/* Unfinished, and visibly so — never a collapsed or invented slot. */
+.blog-cover-empty {
+  display: grid;
+  place-items: center;
+  border: 1px dashed var(--hf-glyph-mid);
+  background: repeating-linear-gradient(
+    -45deg,
+    transparent 0 7px,
+    rgba(102, 87, 212, 0.07) 7px 14px
+  );
+}
+
+/* ---------- Post cards ----------
+   A grid rather than a stack: eight posts as full-width rows is a long scroll,
+   and the point of the index is to let someone see what is here at a glance. */
+.blog-list {
+  list-style: none;
+  margin: 40px 0 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 20px;
+}
+/* The mask is the grid item, so it has to stretch for the cards in a row to
+   come out the same height. */
+.blog-mask { display: flex; }
+
+.blog-card {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 24px;
+  border: 1px solid var(--border);
+  border-radius: var(--r-3);
+  background: var(--bg-2);
+  transition: border-color var(--dur-2) var(--ease-out), background var(--dur-2) var(--ease-out);
+}
+.blog-card:hover { border-color: var(--accent-light); background: var(--bg-3); }
+
+/* The number and the categories share a line. Left to wrap as whole flex items,
+   a long category list jumped below the number and left it stranded on a line
+   of its own; instead the number holds its width and the categories take the
+   rest, wrapping within their own column. */
+.blog-card-top {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 16px;
+}
+.blog-num { flex: none; color: var(--fg-3); }
+.blog-cats { flex: 1 1 auto; min-width: 0; }
+
+.blog-card h2 {
+  font-size: 1.25rem;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+  color: var(--fg-1);
+  transition: color var(--dur-2) var(--ease-out);
+  text-wrap: pretty;
+}
+.blog-card:hover h2 { color: var(--accent-light); }
+.blog-card p { margin: 12px 0 0; font-size: 0.9375rem; line-height: 1.75; }
+
+/* Pushed to the bottom so the feet line up across a row however long the
+   excerpts above them run. */
+.blog-card-foot {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+.blog-read { transition: color var(--dur-2) var(--ease-out); }
+.blog-feature:hover .blog-read,
+.blog-card:hover .blog-read { color: var(--fg-1); }
+
+@media (max-width: 900px) {
+  .blog-feature { grid-template-columns: minmax(0, 1fr); }
+  /* Cover first on a narrow screen: it is the thing that identifies the post
+     at a glance, and pushing it under the excerpt buries it. */
+  .blog-feature .blog-cover { order: -1; }
+}
+@media (max-width: 600px) {
+  .blog-list { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* ---------- Closing call to action ---------- */
+.blog-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 32px;
+  padding-top: 96px;
+  padding-bottom: 96px;
+  border-top: 1px solid var(--border);
+  margin-top: 40px;
+}
+.blog-cta h2 {
+  font-size: clamp(1.75rem, 3.4vw, 2.75rem);
+  line-height: 1.12;
+  letter-spacing: -0.03em;
+  color: var(--fg-1);
+  max-width: 16ch;
+}
+.blog-cta p { margin-top: 18px; font-size: 1rem; line-height: 1.8; max-width: 44ch; }
+.blog-cta-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+.blog-empty { margin-top: 28px; font-size: 1rem; color: var(--fg-2); }
+.blog-reset {
+  border: 0;
+  padding: 0;
+  background: none;
+  color: var(--accent-light);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Rows rise out of a mask when the filter changes — the hero's gesture, per row
+   instead of per character. BlogFilter.jsx drives it with GSAP and owns every
+   transform; nothing here hides a row, so if the tween never runs the list is
+   simply visible.
+
+   The mask only clips while the reveal is playing. Left on permanently it would
+   also clip the focus ring on the row links, which is a worse trade than a
+   momentarily unmasked edge. */
+.blog-list.is-revealing .blog-mask,
+.is-revealing > .blog-mask { overflow: hidden; }
+
+
+/* ---------- Blog post body ----------
+   A post is one long column, so the structure has to come from the type rather
+   than from a layout. Three things do that work: a lead paragraph, numbered
+   sections divided by a rule, and pull quotes lifted out of the prose. */
+
+/* The opening block, before the first heading. Larger and lighter than body
+   copy so a reader lands on it rather than on a uniform grey wall. */
+/* Direct children only. A paragraph nested inside a pull quote is also a
+   `p:first-child`, and that selector outranks `.post-pull blockquote p` — so
+   an unscoped rule here restyles the quote in the display face. */
+.post-intro > p {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--fg-1);
+  max-width: 60ch;
+}
+/* A list in the intro sits at the intro's own size, not the smaller body size
+   it would otherwise inherit from .cs-prose. */
+.post-intro li {
+  font-size: 1.1875rem;
+  line-height: 1.7;
+  color: var(--fg-1);
+}
+.post-intro > p:first-child {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  max-width: 34ch;
+}
+
+.post-section {
+  margin-top: 72px;
+  padding-top: 40px;
+  border-top: 1px solid var(--border-soft);
+}
+.post-heading {
+  font-size: clamp(1.5rem, 2.4vw, 2rem);
+  line-height: 1.2;
+  letter-spacing: -0.03em;
+  margin: 12px 0 24px;
+  max-width: 26ch;
+  text-wrap: pretty;
+}
+
+/* Pull quote — the same Cormorant the case studies use for their one quote,
+   set off from the column by an accent rule. */
+.post-pull {
+  margin: 40px 0;
+  padding-left: 26px;
+  border-left: 1px solid var(--accent);
+}
+.post-pull blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  background: none;
+  font-family: var(--font-quote);
+  font-style: italic;
+  font-size: clamp(1.375rem, 2.4vw, 1.875rem);
+  line-height: 1.3;
+  color: var(--fg-1);
+  text-wrap: pretty;
+}
+/* Markdown wraps the quote in a `p`, and the global `p` rule sets the body
+   font on it directly — which beats the Cormorant inherited from the
+   blockquote, since any matching rule outranks inheritance. Everything the
+   quote should own is inherited back explicitly here. */
+.post-pull blockquote p {
+  margin: 0;
+  color: var(--fg-1);
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  max-width: none;
+}
+
+@media (max-width: 700px) {
+  .post-section { margin-top: 52px; padding-top: 32px; }
+  .post-pull { margin: 32px 0; padding-left: 18px; }
+}
 
 /* ---------- Byline row (blog posts) ---------- */
 .cs-byline {

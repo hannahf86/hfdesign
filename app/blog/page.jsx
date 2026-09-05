@@ -1,9 +1,10 @@
-// Page: /blog — the post index.
+// Page: /blog — the post index, with search and category filtering.
 
 import Link from 'next/link'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
-import { getAllPosts, formatPostDate } from '@/lib/blog'
+import BlogFilter from '@/components/BlogFilter'
+import { getAllPosts, formatPostDate, POST_CATEGORIES } from '@/lib/blog'
 
 export const metadata = {
   title: 'Writing',
@@ -14,7 +15,24 @@ export const metadata = {
 }
 
 export default function BlogIndexPage() {
-  const posts = getAllPosts()
+  // The search text is assembled here rather than in the browser: the filter
+  // only ever needs one lowercase string per post, and the body never has to
+  // cross into the client bundle.
+  const posts = getAllPosts().map((post) => ({
+    slug: post.slug,
+    title: post.title,
+    excerpt: post.excerpt || '',
+    pinned: post.pinned,
+    categories: post.categories || [],
+    readingTime: post.readingTime || null,
+    cover: post.cover || null,
+    coverAlt: post.coverAlt || '',
+    dateLabel: formatPostDate(post.date),
+    haystack: [post.title, post.subtitle, post.excerpt, ...(post.categories || []), ...(post.tags || [])]
+      .filter(Boolean)
+      .join(' ')
+      .toLowerCase(),
+  }))
 
   return (
     <>
@@ -23,37 +41,40 @@ export default function BlogIndexPage() {
         <header className="wrap cs-top">
           <div data-anim="up" className="label">Writing</div>
           <h1 data-anim="up" className="cs-title">Notes on the work.</h1>
-          <p data-anim="up" className="cs-lead">
-            Research, design and build — written up as I go.
+          {/* Wider than the case study leads: this one is a full sentence
+              rather than a standfirst, and 30ch breaks it into a narrow column. */}
+          <p data-anim="up" className="cs-lead" style={{ maxWidth: '44ch' }}>
+            My thoughts about research, design, development, and my journey to
+            becoming a UX Engineer.
           </p>
         </header>
 
-        <div className="wrap" style={{ paddingTop: 64, paddingBottom: 96 }}>
+        <div className="wrap" style={{ paddingTop: 56, paddingBottom: 96 }}>
           {posts.length === 0 ? (
             <p className="label">Nothing published yet.</p>
           ) : (
-            <ul style={{ listStyle: 'none', margin: 0, padding: 0 }}>
-              {posts.map((post) => (
-                <li key={post.slug}>
-                  <Link
-                    href={`/blog/${post.slug}`}
-                    className="post-row"
-                    data-anim="up"
-                  >
-                    <div style={{ minWidth: 0 }}>
-                      {post.eyebrow && <div className="label">{post.eyebrow}</div>}
-                      <h2>{post.title}</h2>
-                      {post.excerpt && <p>{post.excerpt}</p>}
-                    </div>
-                    <span className="label" style={{ whiteSpace: 'nowrap' }}>
-                      {formatPostDate(post.date)}
-                    </span>
-                  </Link>
-                </li>
-              ))}
-            </ul>
+            <BlogFilter posts={posts} categories={POST_CATEGORIES} />
           )}
         </div>
+
+        {/* Section: closing call to action, from the redesign. */}
+        <section className="wrap blog-cta">
+          <div>
+            <h2 data-anim="up">New notes land every few weeks.</h2>
+            <p data-anim="up">
+              Mostly research write-ups, accessibility notes, and what I got wrong on the way to
+              shipping something.
+            </p>
+          </div>
+          <div data-anim="up" className="blog-cta-actions">
+            <Link href="/#contact" className="btn btn-primary">
+              say hello <span aria-hidden="true">→</span>
+            </Link>
+            <Link href="/#work" className="btn btn-ghost">
+              see the work
+            </Link>
+          </div>
+        </section>
       </main>
       <Footer />
     </>

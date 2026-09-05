@@ -3,9 +3,9 @@
 # records desktop performance lifted from 67 to 97). "22 pages shipped" and the
 # 40-component figure come from the client handover notes.
 slug: lucent-biopharma
-num: "01"
+num: "03"
 client: LUCENT Biopharma
-eyebrow: case study 01 · 2026
+eyebrow: case study 03 · 2026
 title: LUCENT
 titleLine2: Biopharma
 lead: >-
@@ -27,8 +27,8 @@ meta:
   - label: sector
     value: Biopharma · B2B
 next:
-  slug: jwd-portal
-  label: JWD Client Portal
+  slug: mirian
+  label: Mirian
 seo:
   title: LUCENT Biopharma case study
   description: >-

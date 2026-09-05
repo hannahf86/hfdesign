@@ -69,7 +69,7 @@ export default function Contact() {
           />
         </div>
 
-        <div data-anim="up" className="contact-row">
+        <div data-anim="up" className="contact-row contact-actions">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
             <a href="mailto:hannahfeehan.dev@gmail.com" className="btn btn-primary">
               hannahfeehan.dev@gmail.com →
@@ -87,6 +87,7 @@ export default function Contact() {
               flexWrap: 'wrap',
               gap: 22,
               alignItems: 'center',
+              justifyContent: 'flex-end',
               fontFamily: 'var(--font-mono)',
               fontSize: '0.8125rem',
               letterSpacing: '.18em',
@@ -113,8 +114,13 @@ export default function Contact() {
           gap: clamp(24px, 4vw, 64px);
           align-items: end;
         }
+        /* Only the actions row centres: the heading row above it uses the same
+           class and is meant to sit on its baseline. */
+        .contact-row.contact-actions { align-items: center; }
         @media (max-width: 900px) {
           .contact-row { grid-template-columns: 1fr; align-items: start; gap: 24px; }
+          /* Once the row stacks there is no right edge to hang off. */
+          .contact-links { justify-content: flex-start !important; }
         }
       `}</style>
     </section>

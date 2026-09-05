@@ -3,7 +3,7 @@
 # handover notes. Lighthouse (97) and accessibility (93) come from the CV and
 # are real: the CV records desktop performance lifted from 67 to 97.
 slug: lucent-biopharma
-num: "01"
+num: "03"
 title: LUCENT Biopharma
 meta: 2026 · UX research, design, development
 year: "2026"
@@ -16,7 +16,7 @@ role: UX Researcher and Designer | Developer
 tools: Figma, Adobe CC, Webflow and CMS, Custom CSS and JavaScript
 liveUrl: https://www.lucentbiopharma.com
 credentials: null
-openByDefault: true
+openByDefault: false
 hasCaseStudy: true
 stats:
   - value: "22"
