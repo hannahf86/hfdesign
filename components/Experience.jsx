@@ -2,6 +2,7 @@
 // Replaces the old Training & Credentials block; the training work now sits
 // inside the prose and the timeline rather than in its own section.
 
+import Link from 'next/link'
 import SectionHead from './SectionHead'
 
 // Dates and roles follow the CV (Hannah-Feehan-UX-Designer-Web-Developer-CV-2026).
@@ -73,6 +74,14 @@ export default function Experience() {
             enjoyable, but I am now looking for a full-time role with room to grow as a designer and
             developer.
           </p>
+
+          {/* Last child of the prose column, so it lands under the copy and
+              above the timeline at both breakpoints: stacked, the prose column
+              comes first; side by side, it closes that column. */}
+          <Link href="/blog" className="btn btn-ghost exp-cta">
+            Read more about my story
+            <span aria-hidden="true">→</span>
+          </Link>
         </div>
 
         <div className="exp-timeline">
@@ -124,6 +133,15 @@ export default function Experience() {
             grid-template-columns: 108px 1fr;
             column-gap: clamp(20px, 3vw, 40px);
           }
+        }
+        /* The prose column is a flex column with a 20px gap, which is the
+           rhythm between paragraphs rather than the space a button wants
+           before it. align-self keeps the button to its own width instead of
+           stretching it across the column. (No backticks in here: this block
+           is a template literal, and they would close it.) */
+        .exp-cta {
+          align-self: start;
+          margin-top: 8px;
         }
         .exp-grid {
           display: grid;
