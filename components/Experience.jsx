@@ -1,4 +1,7 @@
-// Component: Experience — three prose paragraphs beside a four-row timeline.
+// Component: About — a lead line, three prose paragraphs and a link to the
+// writing, beside a five-row timeline. Headed "About" to match the section id
+// and the nav label, both of which already said about.
+//
 // Replaces the old Training & Credentials block; the training work now sits
 // inside the prose and the timeline rather than in its own section.
 
@@ -44,7 +47,7 @@ const TIMELINE = [
 export default function Experience() {
   return (
     <section id="about" className="wrap block">
-      <SectionHead index="02" title="Experience" />
+      <SectionHead index="02" title="About" />
 
       <div className="exp-grid">
         <div data-anim="up" style={{ display: 'flex', flexDirection: 'column', gap: 20 }}>
