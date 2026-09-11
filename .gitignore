@@ -2,7 +2,12 @@ node_modules
 .next
 out
 dist
-.env*.local
+# Every env filename, not just *.local. This repo is public, so a bare `.env`
+# committed by accident would publish its contents and leave them in the
+# history. Local secrets belong in .env.local; deployed ones in Vercel.
+.env
+.env.*
+!.env.example
 .DS_Store
 .vercel
 .claude
