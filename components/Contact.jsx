@@ -76,10 +76,10 @@ export default function Contact() {
             simply rather use their own mail client. */}
         <div data-anim="up" className="contact-form-row">
           <ContactForm />
-        </div>
 
-        <div data-anim="up" className="contact-row contact-actions">
-          <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
+          {/* Beside the form rather than under it: these are the alternative
+              to filling it in, not the step after. */}
+          <div className="contact-side">
             <a href="mailto:hannahfeehan.dev@gmail.com" className="btn btn-primary">
               hannahfeehan.dev@gmail.com →
             </a>
@@ -89,6 +89,9 @@ export default function Contact() {
               </a>
             )}
           </div>
+        </div>
+
+        <div data-anim="up" className="contact-row contact-actions">
           <div
             className="contact-links"
             style={{
@@ -126,9 +129,34 @@ export default function Contact() {
         /* Only the actions row centres: the heading row above it uses the same
            class and is meant to sit on its baseline. */
         .contact-row.contact-actions { align-items: center; }
-        /* Narrower than the section, because a form that spans a wide canvas
-           gives inputs a line length nobody wants to type into. */
-        .contact-form-row { max-width: 620px; }
+        /* The buttons moved up beside the form, so the links are all that is
+           left in this row and the two-column grid no longer applies. */
+        .contact-row.contact-actions { grid-template-columns: 1fr; }
+        /* The form keeps a typable line length on the left; the direct-contact
+           buttons take the room to its right that the form deliberately leaves
+           empty. An auto second column sizes it to the wider button, so both
+           hang off the same right edge. (No backticks in this block: it is a
+           template literal and they would close it.) */
+        .contact-form-row {
+          display: grid;
+          grid-template-columns: minmax(0, 620px) auto;
+          gap: clamp(24px, 4vw, 64px);
+          align-items: start;
+          justify-content: space-between;
+        }
+        .contact-side {
+          display: flex;
+          flex-direction: column;
+          align-items: flex-end;
+          gap: 12px;
+        }
+        /* The buttons are inline-flex, so each is only as wide as its label and
+           they would otherwise step in from the right by different amounts. */
+        .contact-side .btn { justify-content: center; width: 100%; }
+        @media (max-width: 900px) {
+          .contact-form-row { grid-template-columns: 1fr; gap: 32px; }
+          .contact-side { align-items: stretch; }
+        }
         @media (max-width: 900px) {
           .contact-row { grid-template-columns: 1fr; align-items: start; gap: 24px; }
           /* Once the row stacks there is no right edge to hang off. */
