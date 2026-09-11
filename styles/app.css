@@ -447,3 +447,116 @@ html.prefs-switching *::after { transition: none !important; }
 }
 html[data-motion='reduced'] .work-panel[data-open='true'] [data-panel-stagger] > *,
 html[data-motion='reduced'] .work-panel[data-open='true'] [data-panel-aside] > * { animation: none; }
+
+/* ---------- Contact form ----------
+   Sits in the contact section under the heading it answers. Inputs are built
+   from the same tokens as the rest of the site rather than left at browser
+   defaults, which on a dark canvas would come out white. */
+.cf { display: flex; flex-direction: column; gap: 18px; }
+.cf-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+@media (max-width: 620px) { .cf-grid { grid-template-columns: 1fr; } }
+
+.cf-field { display: flex; flex-direction: column; gap: 8px; min-width: 0; }
+
+.cf input,
+.cf select,
+.cf textarea {
+  width: 100%;
+  box-sizing: border-box;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--fg-1);
+  background: var(--bg-2);
+  border: 1px solid var(--border);
+  border-radius: var(--r-2);
+  padding: 12px 14px;
+  /* iOS zooms the page when a focused control is under 16px. 1rem is 16px, so
+     this is only a guard against that changing. */
+  min-height: 46px;
+  transition: border-color var(--dur-2) var(--ease-out);
+}
+.cf textarea { resize: vertical; min-height: 112px; }
+.cf select { appearance: none; padding-right: 38px; cursor: pointer; }
+/* The arrow is a background image because `appearance: none` removes the
+   native one, and an inline SVG would need a wrapper element per select. */
+.cf-field:has(select) { position: relative; }
+.cf-field:has(select)::after {
+  content: '';
+  position: absolute;
+  right: 15px;
+  bottom: 19px;
+  width: 9px;
+  height: 9px;
+  border-right: 1.5px solid var(--fg-3);
+  border-bottom: 1.5px solid var(--fg-3);
+  transform: rotate(45deg);
+  pointer-events: none;
+}
+/* The options list is drawn by the OS, so it needs its own colours or it
+   inherits the page's light-on-dark into a light popup. */
+.cf select option { background: var(--bg-2); color: var(--fg-1); }
+
+.cf input:focus-visible,
+.cf select:focus-visible,
+.cf textarea:focus-visible {
+  outline: 2px solid var(--accent-light);
+  outline-offset: 2px;
+  border-color: var(--accent-light);
+}
+.cf [aria-invalid='true'] { border-color: var(--cf-invalid, #e0794f); }
+
+.cf-error {
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--cf-invalid, #e0794f);
+  margin: 0;
+}
+
+.cf-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-top: 4px; }
+.cf-status { margin: 0; font-size: 0.875rem; line-height: 1.6; color: var(--fg-2); }
+.cf-status:empty { display: none; }
+.cf-status a { text-decoration: underline; }
+.cf button[disabled] { opacity: 0.6; cursor: default; }
+
+/* Off-screen rather than display:none, because some bots skip anything a
+   browser would not render at all. The input needs shrinking too: it inherits
+   `width: 100%` and padding from the field rules above, which under border-box
+   makes it wider than the 1px wrapper and leaves it overflowing. */
+.cf-hp {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+.cf-hp input {
+  width: 1px;
+  min-height: 0;
+  height: 1px;
+  padding: 0;
+  border: 0;
+}
+
+.cf-done { display: flex; align-items: flex-start; gap: 18px; padding: 8px 0; }
+.cf-done svg { flex: none; }
+.cf-done-head {
+  margin: 0 0 6px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-variation-settings: 'wdth' 100;
+  font-size: 1.25rem;
+  letter-spacing: -.01em;
+  color: var(--fg-1);
+}
+.cf-done-head:focus-visible { outline: 2px solid var(--accent-light); outline-offset: 4px; }
+.cf-done-body { margin: 0; font-size: 1rem; line-height: 1.7; color: var(--fg-2); }
+
+@media (prefers-reduced-motion: reduce) {
+  .cf input, .cf select, .cf textarea { transition: none; }
+}
+html[data-motion='reduced'] .cf input,
+html[data-motion='reduced'] .cf select,
+html[data-motion='reduced'] .cf textarea { transition: none; }

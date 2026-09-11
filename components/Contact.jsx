@@ -1,5 +1,6 @@
 import fs from 'node:fs'
 import path from 'node:path'
+import ContactForm from './ContactForm'
 
 // Where a downloadable CV should live. The button below only renders when the
 // file is actually present, so the site never offers a download that 404s.
@@ -69,6 +70,14 @@ export default function Contact() {
           />
         </div>
 
+        {/* The form answers the heading above it, so it sits directly under
+            the rule rather than below the links. The mailto button stays where
+            it is: it is the fallback if the form fails, or if a reader would
+            simply rather use their own mail client. */}
+        <div data-anim="up" className="contact-form-row">
+          <ContactForm />
+        </div>
+
         <div data-anim="up" className="contact-row contact-actions">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: 12 }}>
             <a href="mailto:hannahfeehan.dev@gmail.com" className="btn btn-primary">
@@ -117,6 +126,9 @@ export default function Contact() {
         /* Only the actions row centres: the heading row above it uses the same
            class and is meant to sit on its baseline. */
         .contact-row.contact-actions { align-items: center; }
+        /* Narrower than the section, because a form that spans a wide canvas
+           gives inputs a line length nobody wants to type into. */
+        .contact-form-row { max-width: 620px; }
         @media (max-width: 900px) {
           .contact-row { grid-template-columns: 1fr; align-items: start; gap: 24px; }
           /* Once the row stacks there is no right edge to hang off. */
