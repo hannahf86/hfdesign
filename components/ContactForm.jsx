@@ -48,7 +48,7 @@ export default function ContactForm() {
   const [values, setValues] = useState({ name: '', email: '', project: '', message: '' })
   const [errors, setErrors] = useState({})
   const [state, setState] = useState('idle') // idle | sending | sent | error
-  const [company, setCompany] = useState('') // honeypot
+  const [trap, setTrap] = useState('') // honeypot
   const startedAt = useRef(Date.now())
   const formRef = useRef(null)
   const doneRef = useRef(null)
@@ -95,7 +95,11 @@ export default function ContactForm() {
       const res = await fetch('/api/contact', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ ...values, company, startedAt: startedAt.current }),
+        // Elapsed time is worked out here, from one clock. Sending the start
+        // timestamp and subtracting it server-side compared the browser's clock
+        // to Vercel's, so any skew between them read as an instant submission
+        // and the request was dropped as a bot.
+        body: JSON.stringify({ ...values, trap, elapsedMs: Date.now() - startedAt.current }),
       })
       const data = await res.json().catch(() => ({}))
 
@@ -216,18 +220,23 @@ export default function ContactForm() {
         {errors.message && <p id="cf-message-error" className="cf-error">{errors.message}</p>}
       </div>
 
-      {/* Honeypot. Hidden from view and from assistive tech, and never
-          autofilled, so only a bot filling every field it finds will reach it. */}
+      {/* Honeypot: hidden from view and from assistive tech, so only a bot
+          filling every field it finds will reach it.
+
+          The name and label are deliberately meaningless. Calling it "company"
+          made it a target for browser autofill, which fills organisation fields
+          regardless of autocomplete="off" and silently got real submissions
+          dropped as spam. Nothing here matches an autofill heuristic. */}
       <div className="cf-hp" aria-hidden="true">
-        <label htmlFor="cf-company">Company</label>
+        <label htmlFor="cf-hf-ref">Leave this field empty</label>
         <input
-          id="cf-company"
-          name="company"
+          id="cf-hf-ref"
+          name="hf-ref"
           type="text"
           tabIndex={-1}
           autoComplete="off"
-          value={company}
-          onChange={(e) => setCompany(e.target.value)}
+          value={trap}
+          onChange={(e) => setTrap(e.target.value)}
         />
       </div>
 

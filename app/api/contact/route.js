@@ -45,14 +45,28 @@ export async function POST(request) {
     return Response.json({ error: 'Malformed request.' }, { status: 400 })
   }
 
-  // Spam traps, both invisible to a person. `company` is a honeypot: it is
-  // hidden from view and from assistive tech, so only a bot filling every field
-  // it finds will populate it. `startedAt` catches the other kind, which posts
-  // the moment the page loads. Both return 200 rather than an error, because an
-  // error tells a bot what to change.
-  if (clean(body.company, 100)) return Response.json({ ok: true })
-  const elapsed = Date.now() - Number(body.startedAt || 0)
-  if (!Number.isFinite(elapsed) || elapsed < 2500) return Response.json({ ok: true })
+  // Spam traps, both invisible to a person. Both return 200 rather than an
+  // error, because an error tells a bot what to change. Both log, because a
+  // trap that silently eats real messages is worse than no trap: without this
+  // line a drop is indistinguishable from a delivery in the runtime logs.
+  //
+  // The honeypot is a hidden field no person can fill. It is not named after
+  // anything real: when it was called "company", browser autofill filled it and
+  // genuine submissions were dropped as spam.
+  if (clean(body.trap, 100)) {
+    console.warn('Contact form: dropped, honeypot filled.')
+    return Response.json({ ok: true })
+  }
+
+  // How long the form was open, measured by the browser and sent as a duration.
+  // It must not be derived from a timestamp the client sends, because that
+  // subtracts the browser's clock from this one and any skew between them looks
+  // like an instant submission.
+  const elapsed = Number(body.elapsedMs)
+  if (!Number.isFinite(elapsed) || elapsed < 2500) {
+    console.warn(`Contact form: dropped, submitted after ${elapsed}ms.`)
+    return Response.json({ ok: true })
+  }
 
   const name = clean(body.name, LIMITS.name)
   const email = clean(body.email, LIMITS.email)
