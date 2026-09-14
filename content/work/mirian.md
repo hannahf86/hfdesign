@@ -14,6 +14,9 @@ role: UX Research, Product Design, Fullstack Development
 tools: Figma, Canva, VS Code, React, Next.js, TypeScript, NextAuth, PostgreSQL, Vercel
 liveUrl: https://www.mirian-debt-tracker.app/auth/login
 credentials: null
+# Shows "Have a play!" above the live-site link — for the built apps a visitor
+# can actually use, not a brochure site.
+playable: true
 openByDefault: true
 hasCaseStudy: true
 stats:

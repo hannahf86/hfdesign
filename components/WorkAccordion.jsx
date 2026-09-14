@@ -228,6 +228,22 @@ function WorkCard({ item, isOpen, onToggle }) {
                 the case study link; from 901px the CSS places it back at the
                 foot of the aside. One element either way, never two. */}
             <div className="work-cta">
+              {/* An invitation, not a login: only on the built apps a visitor
+                  can actually use (`playable` in the work file). .work-cta is a
+                  plain block, so this stacks above the link. */}
+              {item.playable && (
+                <p
+                  style={{
+                    margin: '0 0 10px',
+                    fontFamily: 'var(--font-mono)',
+                    fontSize: '0.875rem',
+                    lineHeight: 1.7,
+                    color: 'var(--fg-3)',
+                  }}
+                >
+                  Have a play!
+                </p>
+              )}
               <a
                 href={item.liveUrl}
                 target="_blank"

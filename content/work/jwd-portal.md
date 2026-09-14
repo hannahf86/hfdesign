@@ -16,6 +16,9 @@ role: UX/UI Designer | Developer
 tools: VS Code, Next.js, TypeScript, React, NextAuth, Postgres, Vercel, Canva
 liveUrl: https://portal.jorvikweb.dev
 credentials: null
+# Shows "Have a play!" above the live-site link — for the built apps a visitor
+# can actually use, not a brochure site.
+playable: true
 openByDefault: false
 hasCaseStudy: true
 stats:
