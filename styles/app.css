@@ -267,12 +267,17 @@ html.js-anim [data-hero-line] > * { opacity: 0; }
   .work-body-grid { grid-template-rows: min-content 1fr; }
   .work-body-grid > [data-panel-stagger] { grid-column: 1; grid-row: 1 / span 2; }
   .work-body-grid > [data-panel-aside] { grid-column: 2; grid-row: 1; align-self: start; }
+  /* The rule above the live status is the divider under the tools list. It
+     was --border-soft, which measures 1.05:1 against the panel and simply
+     does not read as a line; --border is the site's standard visible rule.
+     Desktop only: stacked, this block sits above the aside rather than under
+     tools, so there is nothing for a line to divide. */
   .work-body-grid > .work-cta {
     grid-column: 2;
     grid-row: 2;
     align-self: start;
-    padding-top: 16px;
-    border-top: 1px solid var(--border-soft);
+    padding-top: 20px;
+    border-top: 1px solid var(--border);
   }
 }
 

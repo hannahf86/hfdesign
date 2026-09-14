@@ -229,22 +229,43 @@ function WorkCard({ item, isOpen, onToggle }) {
                 foot of the aside. One element either way, never two. */}
             <div className="work-cta">
               {/* A built app a visitor can actually use (`playable` in the work
-                  file) gets one primary button in place of a caption plus a
-                  link that said the same thing. The green dot is the same live
-                  indicator as "open to roles": it says this is a working app,
-                  not a mockup. It pulses through the motion layer's [data-dot]
-                  ring, so reduced motion leaves it still. A brochure site keeps
-                  the plain text link. */}
+                  file) gets a status line and a primary button. The status is
+                  the same pulsing dot as "open to roles", set as its own label
+                  so it reads as state ("this is live") rather than as part of
+                  the action. The pulse runs through the motion layer's
+                  [data-dot] ring, so reduced motion leaves it still. A brochure
+                  site keeps the plain text link. */}
               {item.playable ? (
-                <a
-                  href={item.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary"
-                >
-                  <span className="dot" data-dot="" aria-hidden="true" />
-                  live — have a play <span aria-hidden="true">→</span>
-                </a>
+                <>
+                  <div
+                    className="label"
+                    style={{
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: 10,
+                      color: 'var(--fg-2)',
+                      marginBottom: 14,
+                    }}
+                  >
+                    <span className="dot" data-dot="" aria-hidden="true" />
+                    live
+                  </div>
+                  <a
+                    href={item.liveUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="btn btn-primary"
+                  >
+                    {/* Two cards carry this button, so the app's name is added
+                        for assistive tech: a links list would otherwise read
+                        "have a play" twice with nothing to tell them apart.
+                        No space before the arrow — .btn's gap already spaces
+                        it, and a literal space becomes its own flex item that
+                        takes a second gap. */}
+                    have a play<span className="sr-only"> with {item.title}</span>
+                    <span aria-hidden="true">→</span>
+                  </a>
+                </>
               ) : (
                 <a
                   href={item.liveUrl}
