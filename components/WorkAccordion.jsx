@@ -228,35 +228,38 @@ function WorkCard({ item, isOpen, onToggle }) {
                 the case study link; from 901px the CSS places it back at the
                 foot of the aside. One element either way, never two. */}
             <div className="work-cta">
-              {/* An invitation, not a login: only on the built apps a visitor
-                  can actually use (`playable` in the work file). .work-cta is a
-                  plain block, so this stacks above the link. */}
-              {item.playable && (
-                <p
+              {/* A built app a visitor can actually use (`playable` in the work
+                  file) gets one primary button in place of a caption plus a
+                  link that said the same thing. The green dot is the same live
+                  indicator as "open to roles": it says this is a working app,
+                  not a mockup. It pulses through the motion layer's [data-dot]
+                  ring, so reduced motion leaves it still. A brochure site keeps
+                  the plain text link. */}
+              {item.playable ? (
+                <a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="btn btn-primary"
+                >
+                  <span className="dot" data-dot="" aria-hidden="true" />
+                  live — have a play <span aria-hidden="true">→</span>
+                </a>
+              ) : (
+                <a
+                  href={item.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   style={{
-                    margin: '0 0 10px',
                     fontFamily: 'var(--font-mono)',
-                    fontSize: '0.875rem',
-                    lineHeight: 1.7,
-                    color: 'var(--fg-3)',
+                    fontSize: '0.8125rem',
+                    letterSpacing: '.18em',
+                    textTransform: 'uppercase',
                   }}
                 >
-                  Have a play!
-                </p>
+                  visit the live site →
+                </a>
               )}
-              <a
-                href={item.liveUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                style={{
-                  fontFamily: 'var(--font-mono)',
-                  fontSize: '0.8125rem',
-                  letterSpacing: '.18em',
-                  textTransform: 'uppercase',
-                }}
-              >
-                visit the live site →
-              </a>
 
               {item.credentials && (
                 <p
