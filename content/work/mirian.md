@@ -2,8 +2,6 @@
 # Copy, stats and tools come from Hannah's own notes: Mirian is built and live,
 # awaiting its first testers. No interview counts, SUS scores or usability
 # testing results are claimed here, because none have been run yet.
-# CREDENTIALS: the demo login below is rendered on the public page. Confirm the
-# account is safe to publish before launch.
 slug: mirian
 num: "01"
 title: Mirian
@@ -15,9 +13,7 @@ coverAlt: The Mirian debt tracker, showing the calm, red-free balance view.
 role: UX Research, Product Design, Fullstack Development
 tools: Figma, Canva, VS Code, React, Next.js, TypeScript, NextAuth, PostgreSQL, Vercel
 liveUrl: https://www.mirian-debt-tracker.app/auth/login
-credentials:
-  username: client@jorvikweb.dev
-  password: JorvikWebDev2026!
+credentials: null
 openByDefault: true
 hasCaseStudy: true
 stats:

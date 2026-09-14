@@ -2,8 +2,6 @@
 # NOTE: figures come from Hannah's handover notes: 8 live clients as of Aug
 # 2026 and roughly 60% less admin. These replace the old "9 live projects" and
 # "62% less status email" placeholders.
-# CREDENTIALS: the demo login below is rendered on the public page. Confirm the
-# account is safe to publish (read-only, disposable data) before launch.
 slug: jwd-portal
 num: "02"
 title: JWD Client Portal
@@ -17,9 +15,7 @@ coverAlt: The JWD Client Portal dashboard, showing project status and milestones
 role: UX/UI Designer | Developer
 tools: VS Code, Next.js, TypeScript, React, NextAuth, Postgres, Vercel, Canva
 liveUrl: https://portal.jorvikweb.dev
-credentials:
-  username: client@jorvikweb.dev
-  password: JorvikWebDev2026!
+credentials: null
 openByDefault: false
 hasCaseStudy: true
 stats:
