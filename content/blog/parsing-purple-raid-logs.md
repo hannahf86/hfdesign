@@ -33,11 +33,12 @@ seconds in the middle of a boss fight that otherwise went fine.
 If you've never seen one: a raid log is a colour-coded percentile ranking of
 your performance against every other player who's logged the same fight on the
 same difficulty, on the same class and spec. Green is mediocre. Blue is decent.
-Purple is good — the top quarter or so of logged performances. Orange and pink
-are the rarefied territory most people never sniff. I spent a genuinely large
-amount of time trying to turn my blues into purples, and it wasn't until years
-later, staring at a GA4 funnel for a client's checkout flow, that I realised I'd
-been training the exact same muscle the whole time.
+Purple is good — the top quarter or so of logged performances. Orange, pink and
+gold are the rarefied territory most people never sniff. I parsed orange and
+gold a lot, and getting there took a genuinely large amount of time in those
+logs. It wasn't until years later, staring at a GA4 funnel for a client's
+checkout flow, that I realised I'd been training the exact same muscle the whole
+time.
 
 ## A percentile ranking tells you where you stand. It doesn't tell you why.
 
