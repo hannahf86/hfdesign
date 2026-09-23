@@ -9,7 +9,10 @@ meta: 2026 · UX Research, Product Design, Fullstack Development
 year: "2026"
 summary: A debt tracker designed to reduce shame.
 cover: /assets/work/mirian.webp
-coverAlt: The Mirian debt tracker, showing the calm, red-free balance view.
+coverAlt: >-
+  A grid of angled Mirian screens: the dashboard leading on a debt-free date,
+  the debts list, adding a debt, logging a payment, the year tracker, a single
+  debt's detail page and settings.
 role: UX Research, Product Design, Fullstack Development
 tools: Figma, Canva, VS Code, React, Next.js, TypeScript, NextAuth, PostgreSQL, Vercel
 liveUrl: https://www.mirian-debt-tracker.app/auth/login

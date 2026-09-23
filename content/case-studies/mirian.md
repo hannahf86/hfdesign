@@ -15,7 +15,10 @@ lead: >-
 hero: /assets/work/mirian.webp
 liveUrl: https://www.mirian-debt-tracker.app/auth/login
 liveLabel: Visit the Mirian beta
-heroAlt: The Mirian debt tracker, showing the calm, red-free balance view.
+heroAlt: >-
+  A grid of angled Mirian screens: the dashboard leading on a debt-free date,
+  the debts list, adding a debt, logging a payment, the year tracker, a single
+  debt's detail page and settings.
 meta:
   - label: role
     value: Product design, research, frontend
