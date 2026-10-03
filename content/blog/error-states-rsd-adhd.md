@@ -2,7 +2,7 @@
 slug: error-states-rsd-adhd
 title: "Error states are a cruelty risk for ADHD users, and most devs don't treat them that way"
 subtitle: A red border costs most users half a second of irritation. For some users, it costs a lot more.
-date: 2026-10-03
+date: 2026-09-23
 readingTime: 8 min read
 excerpt: >-
   A red border and the word "Error" cost most users half a second of irritation.
