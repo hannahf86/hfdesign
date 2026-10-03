@@ -32,9 +32,9 @@ us implement it without thinking about it, which is exactly the problem, because
 "without thinking about it" is precisely how a genuinely harmful default gets
 copied from project to project without anyone ever questioning it.
 
-Rejection-sensitive dysphoria — an intense emotional response to perceived
-criticism or failure, common though not universal among people with ADHD — means
-that for a meaningful number of users, a red form field isn't a neutral piece of
+Rejection-sensitive dysphoria is an intense emotional response to perceived
+criticism or failure, common though not universal among people with ADHD. For a
+meaningful number of users, it means a red form field isn't a neutral piece of
 information. It can register as something closer to a personal verdict. I didn't
 fully internalise how much that should change my validation logic until I was
 building Mirian, a debt tracker explicitly aimed at ADHD and PDA users, where
@@ -49,8 +49,8 @@ Validation fires on blur or on submit, often after the user has already moved
 past the field, so the "failure" is delivered as a surprise rather than in the
 moment it's still easy to act on. The visual language is red, a colour that
 carries an alarm connotation regardless of how mild the actual issue is. And the
-copy is frequently terse and declarative — "Invalid input," "This field is
-required" — phrased as a statement about what's wrong rather than an instruction
+copy is frequently terse and declarative: "Invalid input," "This field is
+required," phrased as a statement about what's wrong rather than an instruction
 about what to do next.
 
 > None of these decisions were made maliciously. They were made by default,
@@ -60,16 +60,16 @@ about what to do next.
 
 For a user without RSD, this pattern costs a flash of mild annoyance. For a user
 with it, the same pattern can trigger a genuine shame spiral severe enough to
-make them close the tab rather than finish the form — which, in a debt-tracking
-app specifically, means the one moment they were trying to engage with their
+make them close the tab rather than finish the form. In a debt-tracking app
+specifically, that means the one moment they were trying to engage with their
 finances just got interrupted by the tool itself.
 
 ## Moving validation earlier, so "wrong" never gets a chance to feel like a verdict
 
 The single highest-leverage change is timing, not colour. Validating as the user
 types, rather than after they've moved on or submitted, means a mismatch gets
-caught and corrected while it's still part of active, forward-moving effort —
-not surfaced later as a standalone failure to confront.
+caught and corrected while it's still part of active, forward-moving effort, not
+surfaced later as a standalone failure to confront.
 
 In Mirian's forms, inline validation runs on a short debounce as the user types,
 with feedback appearing close to the moment of the actual keystroke that caused
@@ -80,7 +80,7 @@ The same information reaches them either way. The emotional framing is
 completely different depending on when it arrives.
 
 > An error delivered mid-task reads as a correction. The same error delivered
-> after submission reads as a result — and a result is the kind of thing RSD
+> after submission reads as a result, and a result is the kind of thing RSD
 > attaches itself to.
 
 ## No red, anywhere, regardless of severity
@@ -121,14 +121,14 @@ The information content is identical. The emotional register is not.
 
 I apply this as close to a hard rule across every form I write now: no error
 copy that names the user as the subject of the sentence. The field is missing
-something, or the format doesn't match — the user isn't wrong, the input doesn't
+something, or the format doesn't match. The user isn't wrong, the input doesn't
 match yet, which is a factually identical statement with a completely different
 emotional target.
 
 ## Letting a field stay "unresolved" without escalating
 
 One pattern I actively avoid is compounding visual severity the longer a field
-stays unfixed — a field that starts with a gentle outline and gets progressively
+stays unfixed: a field that starts with a gentle outline and gets progressively
 louder, redder, or more insistent the more times a user fails to correct it.
 It's a common pattern, usually framed as "drawing attention," but for an
 RSD-sensitive user, an error state that gets visually louder each time they fail
@@ -155,7 +155,7 @@ users with a specific, common, often undiagnosed trait.
 > being built to be fair to them. Once you know that, shipping the default
 > without examining it is a choice, not an oversight.
 
-I don't think every form needs the full treatment Mirian's forms get — not every
+I don't think every form needs the full treatment Mirian's forms get. Not every
 product carries the same stakes. But I now default to asking the same four
 questions on every form I build regardless of the project: when does this fire,
 what colour is doing the signalling, who is the grammatical subject of the error

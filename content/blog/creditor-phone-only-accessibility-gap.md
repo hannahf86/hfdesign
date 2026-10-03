@@ -6,7 +6,7 @@ date: 2026-09-29
 readingTime: 7 min read
 excerpt: >-
   There's no API for a creditor's contact details, so I'm building the directory
-  by hand. The harder problem isn't the data-sourcing effort — it's that a
+  by hand. The harder problem isn't the data-sourcing effort. It's that a
   meaningful number of UK utility companies still don't publish an email address
   at all, which is an accessibility failure I can't design around, only design
   beside.
@@ -21,7 +21,7 @@ seo:
   title: The creditor who only takes phone calls
   description: >-
     There's no API for a creditor's contact details, so I'm building the
-    directory by hand. The harder problem isn't the data-sourcing effort — it's
+    directory by hand. The harder problem isn't the data-sourcing effort. It's
     that a meaningful number of UK utility companies still don't publish an
     email address at all, which is an accessibility failure I can't design
     around, only design beside.
@@ -43,7 +43,7 @@ around.
 ## Why there's no API, and what that already tells you
 
 The first thing I checked, reflexively, was whether a contact-directory API
-existed — something I could query rather than compile by hand. There isn't one,
+existed, something I could query rather than compile by hand. There isn't one,
 at least not in any usable, comprehensive form for UK creditors. That absence is
 itself a small data point worth sitting with: the infrastructure for "how do I
 reach this company" hasn't been treated as worth building properly, which tracks
@@ -81,14 +81,14 @@ contact policy. Pretending otherwise would be dishonest about what software can
 actually solve.
 
 What I can do is make the barrier visible and specific rather than silent. Each
-creditor entry in the directory records which contact channels actually exist —
+creditor entry in the directory records which contact channels actually exist:
 not just "here's a number," but an explicit note when email genuinely isn't an
 option, so the user knows that going in rather than discovering it mid-task
 after they've already built up the resolve to make contact. Knowing in advance
 that a call is unavoidable is a meaningfully different experience from psyching
 yourself up to send an email and then hitting a wall.
 
-> A false affordance — implying a channel exists when it doesn't — is worse than
+> A false affordance, implying a channel exists when it doesn't, is worse than
 > an honest constraint. If the app can't remove the barrier, the least it can do
 > is stop pretending the barrier isn't there.
 
@@ -101,7 +101,7 @@ make progress on.
 
 This means structuring information the user will need mid-call before they pick
 up the phone, rather than expecting them to locate and relay it live under
-pressure — account references, the specific ask, key dates — presented as a
+pressure. Account references, the specific ask and key dates are presented as a
 short, scannable brief they can have open on screen while talking, rather than
 something they have to hold entirely in working memory while also managing the
 conversation itself. It's a small thing. It doesn't remove the phone call. It
@@ -113,8 +113,8 @@ and putting it off another week.
 
 There's a reasonable objection here: should a debt-tracking app be in the
 business of compensating for institutional accessibility failures it didn't
-cause? I've gone back and forth on this, and landed on yes, within limits, for a
-specific reason — the user doesn't experience the barrier as "the bank's
+cause? I've gone back and forth on this, and landed on yes, within limits, for
+one specific reason. The user doesn't experience the barrier as "the bank's
 problem" and "the app's problem" as two separate things. They experience it as
 one continuous task that either gets completed or doesn't. If Mirian's job is to
 help someone follow through on managing their debt, stopping at "well,
@@ -135,7 +135,7 @@ solved."
 ## Why I think this is worth writing about
 
 It would be easy to write this project up as a straightforward data-sourcing
-story — compiled a directory, filled a gap, shipped a feature. The more
+story: compiled a directory, filled a gap, shipped a feature. The more
 interesting, and more honest, version is that building it surfaced a structural
 accessibility failure sitting entirely outside my own codebase, that I have no
 authority to fix, and that I had to decide how much responsibility to take for
